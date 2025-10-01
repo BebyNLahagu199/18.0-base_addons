@@ -1,0 +1,1238 @@
+<odoo noupdate="1">
+
+    <!-- Resources: HR Department -->
+    <record id="dep_estate_management" model="hr.department">
+        <field name="name">Estate</field>
+        <field name="parent_id" ref="hr.dep_management" />
+        <field name="color" eval="7" />
+        <field name="farm_data">True</field>
+    </record>
+
+    <record id="dep_estate_harvest" model="hr.department">
+        <field name="name">Harvest</field>
+        <field name="parent_id" ref="dep_estate_management" />
+        <field name="color" eval="10" />
+    </record>
+
+    <record id="dep_estate_upkeep" model="hr.department">
+        <field name="name">Upkeep</field>
+        <field name="parent_id" ref="dep_estate_management" />
+        <field name="color" eval="11" />
+    </record>
+
+    <record id="dep_estate_nursery" model="hr.department">
+        <field name="name">Nursery</field>
+        <field name="parent_id" ref="dep_estate_management" />
+        <field name="color" eval="9" />
+    </record>
+
+    <!-- Resources: Hr Job Position -->
+    <record id="job_position_estate_manager" model="hr.job">
+        <field name="name">Estate Manager</field>
+        <field name="department_id" ref="dep_estate_management" />
+        <field
+            name="description"
+        >The Estate Manager is responsible for the overall management of the estate.</field>
+        <field
+            name="requirements"
+        >Must have at least 5 years of experience in estate management.
+    Must have a degree in Agriculture or related field.
+    Must be able to work under pressure.
+    Must be able to work long hours.
+    Must be able to work with a team.</field>
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+    </record>
+
+    <record id="job_position_estate_assistant" model="hr.job">
+        <field name="name">Estate Assistant</field>
+        <field name="department_id" ref="dep_estate_management" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Estate Assistant is responsible for the administrative tasks of the estate.</field>
+    </record>
+
+    <record id="job_position_estate_security" model="hr.job">
+        <field name="name">Estate Security</field>
+        <field name="department_id" ref="dep_estate_management" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Estate Security is responsible for the security of the estate.</field>
+    </record>
+
+    <record id="job_position_harvest_manager" model="hr.job">
+        <field name="name">Harvest Manager</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Harvest Manager is responsible for the overall management of the harvest operations.</field>
+    </record>
+
+    <record id="job_position_harvester" model="hr.job">
+        <field name="name">Harvester</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Harvester is responsible for the harvesting of the crops.</field>
+    </record>
+
+    <record id="job_position_harvest_clerk" model="hr.job">
+        <field name="name">Harvest Clerk</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Clerk is responsible for the administrative tasks of the harvest operations.</field>
+    </record>
+
+    <record id="job_position_recorded_clerk" model="hr.job">
+        <field name="name">Recorded Clerk</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Clerk is responsible for the administrative tasks of the harvest operations.</field>
+    </record>
+
+    <record id="job_position_harvest_foreman" model="hr.job">
+        <field name="name">Harvest Foreman </field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Foreman is responsible for the overall management of the harvest operations.</field>
+    </record>
+
+    <record id="job_position_upkeep_manager" model="hr.job">
+        <field name="name">Upkeep Manager</field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Upkeep Manager is responsible for the overall management of the upkeep operations.</field>
+    </record>
+
+    <record id="job_position_upkeep_foreman" model="hr.job">
+        <field name="name">Upkeep Foreman </field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Foreman is responsible for the overall management of the upkeep operations.</field>
+    </record>
+
+    <record id="job_position_upkeep_clerk" model="hr.job">
+        <field name="name">Upkeep Clerk</field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Clerk is responsible for the administrative tasks of the upkeep operations.</field>
+    </record>
+
+    <record id="job_position_nursery_manager" model="hr.job">
+        <field name="name">Nursery Manager</field>
+        <field name="department_id" ref="dep_estate_nursery" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Nursery Manager is responsible for the overall management of the nursery operations.</field>
+    </record>
+
+    <record id="job_position_nursery_foreman" model="hr.job">
+        <field name="name">Nursery Foreman </field>
+        <field name="department_id" ref="dep_estate_nursery" />
+        <field name="contract_type_id" ref="hr.contract_type_permanent" />
+        <field
+            name="description"
+        >The Foreman is responsible for the overall management of the nursery operations.</field>
+    </record>
+
+    <!--  Resources: Hr Employee -->
+    <record id="work_contact_twl" model="res.partner">
+        <field name="name">Tan Wei Ling</field>
+        <field name="email">tan.weiling@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_twl-image.jpg"
+        />
+    </record>
+
+    <record id="employee_twl" model="hr.employee">
+        <field name="name">Tan Wei Ling</field>
+        <field name="department_id" ref="dep_estate_management" />
+        <field name="parent_id" ref="hr.employee_admin" />
+        <field name="job_id" ref="job_position_estate_manager" />
+        <field name="job_title">Estate Manager</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-888-8888</field>
+        <field name="work_contact_id" ref="work_contact_twl" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_twl-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan MH Thamrin No. 789</field>
+        <field name="private_zip">67890</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">tan.weiling.private@example.com</field>
+    </record>
+
+    <record id="work_contact_jt" model="res.partner">
+        <field name="name">Jessica Tan</field>
+        <field name="email">jessica.tan@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_jt-image.jpg"
+        />
+    </record>
+
+    <record id="employee_jt" model="hr.employee">
+        <field name="name">Jessica Tan</field>
+        <field name="department_id" ref="dep_estate_management" />
+        <field name="parent_id" ref="employee_twl" />
+        <field name="job_id" ref="job_position_estate_assistant" />
+        <field name="job_title">Estate Assistant</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-333-3333</field>
+        <field name="work_contact_id" ref="work_contact_jt" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_jt-image.jpg"
+        />
+        <field name="create_date">2023-10-10 10:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 789</field>
+        <field name="private_zip">54321</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-444-4444</field>
+        <field name="private_email">jessica.tan.private@example.com</field>
+    </record>
+
+    <record id="work_contact_dl" model="res.partner">
+        <field name="name">Daniel Lim</field>
+        <field name="email">daniel.lim@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_dl-image.jpg"
+        />
+    </record>
+
+    <record id="employee_dl" model="hr.employee">
+        <field name="name">Daniel Lim</field>
+        <field name="department_id" ref="dep_estate_management" />
+        <field name="parent_id" ref="employee_twl" />
+        <field name="job_id" ref="job_position_estate_security" />
+        <field name="job_title">Estate Security</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-777-7777</field>
+        <field name="work_contact_id" ref="work_contact_dl" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_dl-image.jpg"
+        />
+        <field name="create_date">2023-12-12 12:00:00</field>
+        <field name="private_street">Jalan Thamrin No. 987</field>
+        <field name="private_zip">56789</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-888-8888</field>
+        <field name="private_email">daniel.lim.private@example.com</field>
+    </record>
+
+    <record id="work_contact_kt" model="res.partner">
+        <field name="name">Kevin Tan</field>
+        <field name="email">kevin.tan@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_kt-image.jpg"
+        />
+    </record>
+
+    <record id="employee_kt" model="hr.employee">
+        <field name="name">Kevin Tan</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_twl" />
+        <field name="job_id" ref="job_position_harvest_manager" />
+        <field name="job_title">Harvest Manager</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-999-9999</field>
+        <field name="work_contact_id" ref="work_contact_kt" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_kt-image.jpg"
+        />
+        <field name="create_date">2024-02-27 09:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 111</field>
+        <field name="private_zip">12345</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-666-6666</field>
+        <field name="private_email">kevin.tan.private@example.com</field>
+    </record>
+
+    <record id="work_contact_ahmad" model="res.partner">
+        <field name="name">Ahmad bin Ismail</field>
+        <field name="email">ahmad.ismail@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ahmad-image.jpg"
+        />
+    </record>
+
+    <record id="employee_ahmad" model="hr.employee">
+        <field name="name">Ahmad bin Ismail</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_kt" />
+        <field name="job_id" ref="job_position_harvest_foreman" />
+        <field name="job_title">Harvest Foreman</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-821-1231</field>
+        <field name="work_contact_id" ref="work_contact_ahmad" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ahmad-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 456</field>
+        <field name="private_zip">45678</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">ahmad.ismail.private@example.com</field>
+    </record>
+
+    <record id="work_contact_ts" model="res.partner">
+        <field name="name">Tanaka Satoshi</field>
+        <field name="email">tanaka.satoshi@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ts-image.jpg"
+        />
+    </record>
+
+    <record id="employee_ts" model="hr.employee">
+        <field name="name">Tanaka Satoshi</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_kt" />
+        <field name="job_id" ref="job_position_harvest_foreman" />
+        <field name="job_title">Harvest Foreman</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(233)-234-3451</field>
+        <field name="work_contact_id" ref="work_contact_ts" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ts-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan Gatot Subroto No. 123</field>
+        <field name="private_zip">12345</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">tanaka.satoshi.private@example.com</field>
+    </record>
+
+
+    <record id="work_contact_ismail" model="res.partner">
+        <field name="name">Ismail bin Mail</field>
+        <field name="email">ismail.mail@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ismail-image.jpg"
+        />
+    </record>
+
+    <record id="employee_ismail" model="hr.employee">
+        <field name="name">Ismail bin Mail</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_ts" />
+        <field name="job_id" ref="job_position_harvester" />
+        <field name="job_title">Harvester</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-666-6666</field>
+        <field name="work_contact_id" ref="work_contact_ismail" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ismail-image.jpg"
+        />
+        <field name="create_date">2023-09-09 09:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 789</field>
+        <field name="private_zip">67890</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-555-5555</field>
+        <field name="private_email">ismail.mail.private@example.com</field>
+    </record>
+
+    <record id="work_contact_bs" model="res.partner">
+        <field name="name">Budi Susanto</field>
+        <field name="email">budi.susanto@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_bs-image.jpg"
+        />
+    </record>
+
+    <record id="employee_bs" model="hr.employee">
+        <field name="name">Budi Susanto</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_ahmad" />
+        <field name="job_id" ref="job_position_harvester" />
+        <field name="job_title">Harvester</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-444-4444</field>
+        <field name="work_contact_id" ref="work_contact_bs" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_bs-image.jpg"
+        />
+        <field name="create_date">2023-08-08 08:00:00</field>
+        <field name="private_street">Jalan Merdeka No. 321</field>
+        <field name="private_zip">56789</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-333-3333</field>
+        <field name="private_email">budi.susanto.private@example.com</field>
+    </record>
+
+    <record id="work_contact_ap" model="res.partner">
+        <field name="name">Adi Prasetyo</field>
+        <field name="email">adi.prasetyo@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ap-image.jpg"
+        />
+    </record>
+
+    <record id="employee_ap" model="hr.employee">
+        <field name="name">Adi Prasetyo</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_ahmad" />
+        <field name="job_id" ref="job_position_harvester" />
+        <field name="job_title">Harvester</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-555-5555</field>
+        <field name="work_contact_id" ref="work_contact_ap" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ap-image.jpg"
+        />
+        <field name="create_date">2023-06-06 06:00:00</field>
+        <field name="private_street">Jalan Gatot Subroto No. 789</field>
+        <field name="private_zip">67890</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-222-2222</field>
+        <field name="private_email">adi.prasetyo.private@example.com</field>
+    </record>
+
+    <record id="work_contact_rs" model="res.partner">
+        <field name="name">Rudi Setiawan</field>
+        <field name="email">rudi.setiawan@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_rs-image.jpg"
+        />
+    </record>
+
+    <record id="employee_rs" model="hr.employee">
+        <field name="name">Rudi Setiawan</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_ts" />
+        <field name="job_id" ref="job_position_harvester" />
+        <field name="job_title">Harvester</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-777-7777</field>
+        <field name="work_contact_id" ref="work_contact_rs" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_rs-image.jpg"
+        />
+        <field name="create_date">2023-04-04 04:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 456</field>
+        <field name="private_zip">45678</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-555-5555</field>
+        <field name="private_email">rudi.setiawan.private@example.com</field>
+    </record>
+
+    <record id="work_contact_bw" model="res.partner">
+        <field name="name">Bambang Wijaya</field>
+        <field name="email">bambang.wijaya@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_bw-image.jpg"
+        />
+    </record>
+
+    <record id="employee_bw" model="hr.employee">
+        <field name="name">Bambang Wijaya</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_kt" />
+        <field name="job_id" ref="job_position_harvest_clerk" />
+        <field name="job_title">Harvest Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-999-9999</field>
+        <field name="work_contact_id" ref="work_contact_bw" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_bw-image.jpg"
+        />
+        <field name="create_date">2023-02-02 02:00:00</field>
+        <field name="private_street">Jalan Gatot Subroto No. 456</field>
+        <field name="private_zip">45678</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-888-8888</field>
+        <field name="private_email">bambang.wijaya.private@example.com</field>
+    </record>
+
+    <record id="work_contact_rp" model="res.partner">
+        <field name="name">Rudi Pratama</field>
+        <field name="email">rudi.pratama@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_rp-image.jpg"
+        />
+    </record>
+
+    <record id="employee_rp" model="hr.employee">
+        <field name="name">Rudi Pratama</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_kt" />
+        <field name="job_id" ref="job_position_harvest_clerk" />
+        <field name="job_title">Harvest Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-888-8888</field>
+        <field name="work_contact_id" ref="work_contact_rp" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_rp-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 456</field>
+        <field name="private_zip">45678</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">rudi.pratama.private@example.com</field>
+    </record>
+
+    <record id="work_contact_is" model="res.partner">
+        <field name="name">Irfan Susanto</field>
+        <field name="email">irfan.susanto@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_is-image.jpg"
+        />
+    </record>
+
+    <record id="employee_is" model="hr.employee">
+        <field name="name">Irfan Susanto</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_kt" />
+        <field name="job_id" ref="job_position_recorded_clerk" />
+        <field name="job_title">Recorded Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-888-8888</field>
+        <field name="work_contact_id" ref="work_contact_is" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_is-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan Gatot Subroto No. 123</field>
+        <field name="private_zip">12345</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">irfan.susanto.private@example.com</field>
+    </record>
+
+    <record id="work_contact_dli" model="res.partner">
+        <field name="name">Dewi Lestari</field>
+        <field name="email">dewi.lestari@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_dli-image.jpg"
+        />
+    </record>
+
+    <record id="employee_dli" model="hr.employee">
+        <field name="name">Dewi Lestari</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_kt" />
+        <field name="job_id" ref="job_position_recorded_clerk" />
+        <field name="job_title">Recorded Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-888-8888</field>
+        <field name="work_contact_id" ref="work_contact_dl" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_dli-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 456</field>
+        <field name="private_zip">45678</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">dewi.lestari.private@example.com</field>
+    </record>
+
+
+    <record id="work_contact_mt" model="res.partner">
+        <field name="name">Michael Tan</field>
+        <field name="email">michael.tan@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_mt-image.jpg"
+        />
+    </record>
+
+    <record id="employee_mt" model="hr.employee">
+        <field name="name">Michael Tan</field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="parent_id" ref="employee_twl" />
+        <field name="job_id" ref="job_position_upkeep_manager" />
+        <field name="job_title">Estate Manager</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-123-4567</field>
+        <field name="work_contact_id" ref="work_contact_mt" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_mt-image.jpg"
+        />
+        <field name="create_date">2023-05-15 08:00:00</field>
+        <field name="private_street">Jalan Sudirman No. 123</field>
+        <field name="private_zip">12345</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-765-4321</field>
+        <field name="private_email">michael.tan.private@example.com</field>
+    </record>
+
+    <record id="work_contact_bso" model="res.partner">
+        <field name="name">Budi Santoso</field>
+        <field name="email">budi.santoso@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_bso-image.jpg"
+        />
+    </record>
+
+    <record id="employee_bso" model="hr.employee">
+        <field name="name">Budi Santoso</field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="parent_id" ref="employee_mt" />
+        <field name="job_id" ref="job_position_upkeep_foreman" />
+        <field name="job_title">Upkeep Foreman</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(555)-888-8888</field>
+        <field name="work_contact_id" ref="work_contact_bs" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_bso-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field name="private_street">Jalan Gatot Subroto No. 123</field>
+        <field name="private_zip">12345</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(555)-777-7777</field>
+        <field name="private_email">budi.santoso.private@example.com</field>
+    </record>
+
+    <record id="work_contact_arn" model="res.partner">
+        <field name="name">Anwar Rahman</field>
+        <field name="email">anwar.rahman@example.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ar-image.jpg"
+        />
+    </record>
+
+    <record id="employee_arn" model="hr.employee">
+        <field name="name">Anwar Rahman</field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="parent_id" ref="employee_bso" />
+        <field name="job_id" ref="job_position_upkeep_clerk" />
+        <field name="job_title">Upkeep Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(021)-624-4658</field>
+        <field name="work_contact_id" ref="work_contact_arn" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ar-image.jpg"
+        />
+        <field name="create_date">2023-01-01 01:00:00</field>
+        <field
+            name="private_street"
+        >Jl Taman Sari Psr Asem Reges Bl A/17, Dki Jakarta</field>
+        <field name="private_zip">11150</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(021)-624-4658</field>
+        <field name="private_email">anwar.rahman@example.com</field>
+    </record>
+
+    Kenji Yamamoto
+    <record id="work_contact_ky" model="res.partner">
+        <field name="name">Kenji Yamamoto</field>
+        <field name="email">kenji.yamamoto@gmail.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ky-image.jpg"
+        />
+    </record>
+
+    <record id="employee_ky" model="hr.employee">
+        <field name="name">Kenji Yamamoto</field>
+        <field name="department_id" ref="dep_estate_upkeep" />
+        <field name="parent_id" ref="employee_bso" />
+        <field name="job_id" ref="job_position_upkeep_clerk" />
+        <field name="job_title">Upkeep Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(022)-540-7710</field>
+        <field name="work_contact_id" ref="work_contact_ky" />
+        <field name="employee_type">freelance</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_ky-image.jpg"
+        />
+        <field name="create_date">2023-09-09 09:00:00</field>
+        <field
+            name="private_street"
+        >Kompl Margahayu Kencana Bl C-2/3 RT 08/14, Jawa Barat</field>
+        <field name="private_zip">40226</field>
+        <field name="private_city">Bandung</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(022)-540-7710</field>
+        <field name="private_email">kenji.yamamoto@gmail.com</field>
+    </record>
+
+    <record id="work_contact_cxy" model="res.partner">
+        <field name="name">Chen Xiao Ying</field>
+        <field name="email">xiao-ying.chen@gmail.com</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_cxy-image.jpg"
+        />
+    </record>
+
+    <record id="employee_cxy" model="hr.employee">
+        <field name="name">Chen Xiao Ying</field>
+        <field name="department_id" ref="dep_estate_harvest" />
+        <field name="parent_id" ref="employee_mt" />
+        <field name="job_id" ref="job_position_recorded_clerk" />
+        <field name="job_title">Recorded Clerk</field>
+        <field name="work_location_id" ref="hr.work_location_1" />
+        <field name="work_phone">(022)-540-7710</field>
+        <field name="work_contact_id" ref="work_contact_cxy" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_farm/static/img/employee_cxy-image.jpg"
+        />
+        <field name="create_date">2023-09-09 09:00:00</field>
+        <field
+            name="private_street"
+        >Bukit Golf Mediterania berada di 7 Pantai Indah Kapuk</field>
+        <field
+            name="private_street2"
+        >Jl. Pantai Indah Barat No.1, RT.7/RW.2, Kamal Muara, Kec. Penjaringan</field>
+        <field name="private_zip">14470</field>
+        <field name="private_city">Jakarta</field>
+        <field name="private_country_id" ref="base.id" />
+        <field name="private_phone">(022)-540-7710</field>
+        <field name="private_email">xiao-ying.chen@gmail.com</field>
+    </record>
+
+
+
+    <function model="hr.employee" name="generate_random_barcode">
+        <function
+            eval="[[('id', 'in', (ref('wi_base_farm.employee_twl'),
+                                  ref('wi_base_farm.employee_jt'),
+                                  ref('wi_base_farm.employee_dl'),
+                                  ref('wi_base_farm.employee_kt'),
+                                  ref('wi_base_farm.employee_ahmad'),
+                                  ref('wi_base_farm.employee_ts'),
+                                  ref('wi_base_farm.employee_ismail'),
+                                  ref('wi_base_farm.employee_bs'),
+                                  ref('wi_base_farm.employee_ap'),
+                                  ref('wi_base_farm.employee_rs'),
+                                  ref('wi_base_farm.employee_bw'),
+                                  ref('wi_base_farm.employee_rp'),
+                                  ref('wi_base_farm.employee_is'),
+                                  ref('wi_base_farm.employee_dli'),
+                                  ref('wi_base_farm.employee_mt'),
+                                  ref('wi_base_farm.employee_bso'),
+                                  ref('wi_base_farm.employee_arn'),
+                                  ref('wi_base_farm.employee_ky'),
+                                  ref('wi_base_farm.employee_cxy'),
+                ))]]"
+            model="hr.employee"
+            name="search"
+        />
+    </function>
+
+    <record id="hr_contract_twl" model="hr.contract">
+        <field name="name">Tan Wei Ling Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_twl" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_twl').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_twl').department_id.id"
+        />
+        <field eval="9500000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_jt" model="hr.contract">
+        <field name="name">Jessica Tan Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_jt" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_jt').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_jt').department_id.id"
+        />
+        <field eval="5000000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_dl" model="hr.contract">
+        <field name="name">Daniel Lim Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_dl" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_dl').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_dl').department_id.id"
+        />
+        <field eval="3500000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_kt" model="hr.contract">
+        <field name="name">Kevin Tan Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_kt" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_kt').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_kt').department_id.id"
+        />
+        <field eval="4200000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_ahmad" model="hr.contract">
+        <field name="name">Ahmad bin Ismail Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_ahmad" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_ahmad').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_ahmad').department_id.id"
+        />
+        <field eval="3500000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_ts" model="hr.contract">
+        <field name="name">Tanaka Satoshi Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_ts" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_ts').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_ts').department_id.id"
+        />
+        <field eval="3500000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_ismail" model="hr.contract">
+        <field name="name">Ismail bin Mail Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_ismail" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_ismail').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_ismail').department_id.id"
+        />
+        <field eval="2800000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_bs" model="hr.contract">
+        <field name="name">Budi Susanto Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_bs" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_bs').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_bs').department_id.id"
+        />
+        <field eval="2800000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_ap" model="hr.contract">
+        <field name="name">Adi Prasetyo Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_ap" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_ap').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_ap').department_id.id"
+        />
+        <field eval="2800000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_rs" model="hr.contract">
+        <field name="name">Rudi Setiawan Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_rs" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_rs').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_rs').department_id.id"
+        />
+        <field eval="2800000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_bw" model="hr.contract">
+        <field name="name">Bambang Wijaya Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_bw" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_bw').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_bw').department_id.id"
+        />
+        <field eval="3100000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_rp" model="hr.contract">
+        <field name="name">Rudi Pratama Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_rp" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_rp').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_rp').department_id.id"
+        />
+        <field eval="3100000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_is" model="hr.contract">
+        <field name="name">Irfan Susanto Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_is" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_is').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_is').department_id.id"
+        />
+        <field eval="3100000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_dli" model="hr.contract">
+        <field name="name">Dewi Lestari Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_dli" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_dli').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_dli').department_id.id"
+        />
+        <field eval="3100000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_mt" model="hr.contract">
+        <field name="name">Michael Tan Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_mt" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_mt').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_mt').department_id.id"
+        />
+        <field eval="4200000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_bso" model="hr.contract">
+        <field name="name">Budi Santoso Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_bso" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_bso').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_bso').department_id.id"
+        />
+        <field eval="3500000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_arn" model="hr.contract">
+        <field name="name">Anwar Rahman Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_arn" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_arn').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_arn').department_id.id"
+        />
+        <field eval="2800000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_ky" model="hr.contract">
+        <field name="name">Kenji Yamamoto Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_ky" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_ky').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_ky').department_id.id"
+        />
+        <field eval="2800000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+    <record id="hr_contract_cxy" model="hr.contract">
+        <field name="name">Chen Xiao Ying Contract</field>
+        <field name="date_start" eval="time.strftime('%Y')+'-1-1'" />
+        <field name="employee_id" ref="wi_base_farm.employee_cxy" />
+        <field
+            name="job_id"
+            model="hr.job"
+            eval="obj().env.ref('wi_base_farm.employee_cxy').job_id.id"
+        />
+        <field
+            name="department_id"
+            model="hr.department"
+            eval="obj().env.ref('wi_base_farm.employee_cxy').department_id.id"
+        />
+        <field eval="3500000.0" name="wage" />
+        <field name="state">open</field>
+        <field name="kanban_state">normal</field>
+        <field name="hr_responsible_id" ref="base.user_admin" />
+    </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

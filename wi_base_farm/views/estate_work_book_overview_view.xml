@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Estate Operation Type Kanban View -->
+    <record id="estate_work_book_view_kanban" model="ir.ui.view">
+        <field name="name">estate.operation.type.kanban.view</field>
+        <field name="model">estate.operation.type</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard" create="0" sample="1">
+                <field name="name" />
+                <field name="color" />
+                <field name="type_operation" />
+                <field name="count_draft" />
+                <field name="count_validate" />
+                <field name="required_validation" />
+                <templates>
+                    <t t-name="card_manage">
+                        <div class="container">
+                            <div class="row">
+                                <div
+                                    class="col-4 o_kanban_card_manage_section o_kanban_manage_view"
+                                >
+                                    <h5
+                                        role="menuitem"
+                                        class="o_kanban_card_manage_title"
+                                    >
+                                        <span>View</span>
+                                    </h5>
+                                    <div role="menuitem" name="operation_posted">
+                                        <a name="action_posted_operation" type="object">
+                                            Posted
+                                        </a>
+                                    </div>
+                                    <div role="menuitem" name="operation_done">
+                                        <a name="action_done_operation" type="object">
+                                            Locked
+                                        </a>
+                                    </div>
+                                    <div role="menuitem" name="operation_cancel">
+                                        <a name="action_cancel_operation" type="object">
+                                            Cancelled
+                                        </a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-4 o_kanban_card_manage_section o_kanban_manage_view"
+                                >
+                                    <h5
+                                        role="menuitem"
+                                        class="o_kanban_card_manage_title"
+                                    >
+                                        <span>New</span>
+                                    </h5>
+                                    <div role="menuitem" name="operation_new">
+                                        <a name="action_create_new" type="object">
+                                            <field name="name" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-4 o_kanban_card_manage_section o_kanban_manage_view"
+                                >
+                                    <h5
+                                        role="menuitem"
+                                        class="o_kanban_card_manage_title"
+                                    >
+                                        <span>Reporting</span>
+                                    </h5>
+                                    <t
+                                        t-if="record.type_operation.raw_value == 'harvest'"
+                                    >
+                                        <div role="menuitem" name="report_harvest">
+                                            <a
+                                                name="action_report_harvest"
+                                                type="object"
+                                            >
+                                                Harvest Report
+                                            </a>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div role="menuitem" name="report_upkeep">
+                                            <a
+                                                name="action_report_upkeep"
+                                                type="object"
+                                            >
+                                                Upkeep Report
+                                            </a>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <div
+                                t-if="widget.editable"
+                                class="o_kanban_card_manage_settings row"
+                            >
+                                <div role="menuitem" aria-haspopup="true" class="col-8">
+                                    <ul
+                                        role="menu"
+                                        class="oe_kanban_colorpicker"
+                                        data-field="color"
+                                    />
+                                </div>
+                                <div role="menuitem" class="col-4">
+                                    <a type="edit">Settings</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="card">
+                        <div
+                            t-attf-class="d-flex flex-column flex-fill #{!selection_mode ? kanban_color(record.color.raw_value) : ''}"
+                        >
+                            <t t-call="OperationTop" />
+                            <div class="container o_kanban_card_content">
+                                <div class="row g-0">
+                                    <t t-call="OperationBody" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="OperationTop">
+                        <div t-attf-class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <span class="o_primary">
+                                    <a type="object" name="action_operation">
+                                        <field name="name" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="OperationBody">
+                        <div
+                            id="overview_operation_left"
+                            class="col-12 col-sm-6 o_kanban_primary_left"
+                        >
+                            <button
+                                id="overview_operation_details"
+                                class="btn btn-primary"
+                                name="action_operation"
+                                type="object"
+                            >
+                                <span>Record Details</span>
+                            </button>
+                        </div>
+                        <div
+                            id="overview_operation_right"
+                            class="col-12 col-sm-6 o_kanban_primary_right"
+                        >
+                            <t t-if="record.count_draft.raw_value > 0">
+                                <div class="row">
+                                    <div
+                                        id="overview_operation_draft"
+                                        class="col overflow-hidden text-start"
+                                    >
+                                        <a type="object" name="action_draft_operation">
+                                            <t
+                                                t-if="record.required_validation.raw_value"
+                                            >
+                                                <span>To Validate</span>
+                                            </t>
+                                            <t t-else="">
+                                                <span>To Post</span>
+                                            </t>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto text-end">
+                                        <a type="object" name="action_draft_operation">
+                                            <span>
+                                                <field name="count_draft" />
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="record.count_validate.raw_value > 0">
+                                <div class="row">
+                                    <div
+                                        id="overview_operation_validate"
+                                        class="col overflow-hidden text-start"
+                                    >
+                                        <a
+                                            type="object"
+                                            name="action_validate_operation"
+                                        >
+                                            <span>To Post</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto text-end">
+                                        <a
+                                            type="object"
+                                            name="action_validate_operation"
+                                        >
+                                            <span>
+                                                <field name="count_validate" />
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Farm Overview Action -->
+    <record id="base_farm_estate_overview_action" model="ir.actions.act_window">
+        <field name="name">Farm Overview</field>
+        <field name="res_model">estate.operation.type</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Estate Operation
+            </p><p>
+                Use this menu to create a new Estate Operation.
+            </p>
+        </field>
+    </record>
+</odoo>

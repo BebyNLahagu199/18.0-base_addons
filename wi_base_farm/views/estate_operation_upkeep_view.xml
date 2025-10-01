@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="estate_labour_tree_view" model="ir.ui.view">
+        <field name="name">estate.labour.tree.view</field>
+        <field name="model">estate.upkeep.labour</field>
+        <field name="arch" type="xml">
+            <list editable="bottom" decoration-danger="not checkout" decoration-success="checkout">
+                <field name="state" column_invisible="1" />
+                <field name="afdeling_id" column_invisible="1" />
+                <field name="employee_type" column_invisible="1" />
+                <field name="member_id" string="Employee" options="{'no_open': True,'no_create_edit': True}"
+                    required='1' widget="many2one_avatar" />
+                <button icon="fa-id-card" title="Employee" invisible="employee_type != 'employee'" class="btn-success"
+                    groups="hr.group_hr_user" />
+                <field name="location_id" string="Location" options="{'no_open': True,'no_create_edit': True}"
+                    required="state != 'cancel'" />
+                <field name="quantity" string="Work Result" />
+                <field name="num_of_days" string="Work Day" />
+                <field name="calculation" optional="hide" />
+                <field name="price_amount" />
+                <field name="total_amount" />
+                <field name="planning_qty" optional="show" groups="wi_base_farm.farm_planning_operation" />
+                <field name="currency_id" optional="hide" />
+                <field name="checkout" optional="hide" />
+                <button name="action_open_wizard" type="object" icon="fa-external-link" class="oe_edit_only"
+                    title="Open Labour Task Form" />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_labour_form_view" model="ir.ui.view">
+        <field name="name">estate.labour.form</field>
+        <field name="model">estate.upkeep.labour</field>
+        <field name="arch" type="xml">
+            <form string="Labour">
+                <sheet>
+                    <div class="oe_title">
+                        <h3>
+                            <field name="name" readonly="1" />
+                        </h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="estate_operation_id" invisible="1" />
+                            <field name="member_id" readonly="planning_state != 'draft' or state != 'draft'" />
+                            <field name="location_id" readonly="planning_state != 'draft' or state != 'draft'" />
+                            <field name="afdeling_id" invisible="1" />
+                        </group>
+                        <group>
+                            <field name="operation_date" />
+                            <field name="account_activity_id" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="cost_information" string="Cost Information">
+                            <group>
+                                <group>
+                                    <field name="planning_state" invisible="1" />
+                                    <field name="state" invisible="1" />
+                                    <field name="planning_qty" groups="wi_base_farm.farm_planning_operation"
+                                        readonly="planning_state != 'draft' or state != 'draft'" />
+                                    <field name="quantity" readonly="state != 'draft'" />
+                                    <field name="num_of_days" readonly="state != 'draft'" />
+                                    <field name="calculation" invisible="1" />
+                                    <field name="price_amount" />
+                                    <field name="total_amount" readonly="1" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Proof of Work">
+                            <widget name="attach_document" string="Attach Document" invisible="state != 'draft'" />
+                            <field name="attachment_ids" class="mt-2"
+                                context="{'tree_view_ref': 'mail.view_document_file_kanban'}" readonly="1" />
+                        </page>
+                        <page string="Work Note">
+                            <field name="work_note" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="estate_upkeep_view_search" model="ir.ui.view">
+        <field name="name">estate.upkeep.labour.view.search</field>
+        <field name="model">estate.upkeep.labour</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="afdeling_id" string="Afdeling"
+                    filter_domain="['|', ('afdeling_id.name', 'ilike', self),('afdeling_id.code','ilike',self)]" />
+                <field name="location_id" string="Block"
+                    filter_domain="['|', ('location_id.name', 'ilike', self),('location_id.code','ilike',self)]" />
+                <field name="member_id" />
+                <filter name="filter_operation_date" date="operation_date" />
+                <separator />
+                <filter name="filter_salary" string="Salary" domain="[('calculation', '=', 'daily_salary')]" />
+                <filter name="filter_premi" string="Premi" domain="[('calculation', '=', 'premi')]" />
+                <group expand="1" string="Group By">
+                    <filter string="Operation Date" name="group_by_operation_date"
+                        context="{'group_by': 'operation_date'}" />
+                    <separator />
+                    <filter string="Afdeling" name="group_by_afdeling_id" context="{'group_by': 'afdeling_id'}" />
+                    <filter string="Block" name="group_by_location_id" context="{'group_by': 'location_id'}" />
+                    <filter string="Member" name="group_by_member_id" context="{'group_by': 'member_id'}" />
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="estate_labour_action_view">
+        <field name="name">Upkeep Labour</field>
+        <field name="res_model">estate.upkeep.labour</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="estate_labour_form_view" />
+    </record>
+</odoo>

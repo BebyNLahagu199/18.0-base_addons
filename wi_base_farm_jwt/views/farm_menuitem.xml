@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="menu_mobile_user"
+        name="Mobile Users"
+        action="action_mobile_user_view"
+        parent="wi_base_farm.menu_farm_config_management"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_mobile_menu"
+        name="Mobile Menu"
+        action="action_mobile_menu_view"
+        parent="wi_base_farm.menu_farm_config_management"
+        sequence="30"
+    />
+
+</odoo>

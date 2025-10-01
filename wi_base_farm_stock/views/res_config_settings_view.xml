@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.farm.stock</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="45" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//app[@name='wi_base_farm']/block[@name='farm_picking_setting_container']"
+                position="inside"
+            >
+                <setting
+                    id="module_wi_base_seal_number_farm"
+                    help="Activate this module to use seal number in picking operation"
+                    invisible="not module_wi_base_farm_stock"
+                >
+                    <field name="module_wi_base_seal_number_farm" />
+                </setting>
+                <setting
+                    string="Seal Number Digits"
+                    help="Seal number digits (excluding prefix and suffix)"
+                    id="farm_seal_digit"
+                    invisible="not module_wi_base_seal_number_farm"
+                >
+                    <field name="seal_digit" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

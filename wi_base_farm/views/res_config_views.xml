@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_farm" model="ir.ui.view">
+        <field name="name">res.config.settings.farm.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app
+                    string="Farm"
+                    data-string="Farm"
+                    name="wi_base_farm"
+                    groups="wi_base_farm.farm_manager_group"
+                >
+                    <block
+                        title="Operation Activity"
+                        name="farm_operation_setting_container"
+                    >
+                        <setting
+                            id="required_operation_validation"
+                            help="System will require validation for every operation before posted"
+                        >
+                            <field name="required_operation_validation" />
+                        </setting>
+                        <setting
+                            company_dependent="1"
+                            id="farm_planning_operation"
+                            help="Allow set planning quantity to harvest and upkeep operation"
+                        >
+                            <field name="group_planning_operation" />
+                        </setting>
+                    </block>
+                    <block title="Area Statement" name="farm_area_container">
+                        <setting
+                            id="area_uom_default"
+                            string="Default Area UoM"
+                            company_dependent="1"
+                            help="Default UoM for area statement"
+                        >
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label
+                                        for="area_uom_id"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="area_uom_id"
+                                        options="{'no_create_edit': True, 'no_open': True}"
+                                        context="{'active_test': False}"
+                                    />
+                                </div>
+                                <div class="mt8">
+                                    <button
+                                        type="action"
+                                        name="%(action_farm_area_type_view)d"
+                                        string="Area Types"
+                                        class="btn-link"
+                                        icon="oi-arrow-right"
+                                    />
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                    <block title="Picking" name="farm_picking_setting_container">
+                        <setting
+                            id="module_wi_base_farm_stock"
+                            help="Activate this module to manage picking operation in farm"
+                        >
+                            <field name="module_wi_base_farm_stock" />
+                        </setting>
+                        <setting
+                            id="module_wi_base_farm_weighbridge"
+                            help="Activate this module to manage weighbridge operation in farm"
+                        >
+                            <field name="module_wi_base_farm_weighbridge" />
+                        </setting>
+                    </block>
+                    <block title="Maps" name="farm_maps_container">
+                        <setting
+                            id="module_wi_base_web_maps_farm"
+                            help="Activate Maps view in farm"
+                        >
+                            <field name="module_wi_base_web_maps_farm" />
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_estate_configuration" model="ir.actions.act_window">
+        <field name="name">Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{"module":"wi_base_farm"}</field>
+    </record>
+
+    <menuitem
+        id="menu_estate_configuration"
+        name="Settings"
+        parent="wi_base_farm.menu_farm_config_parent"
+        sequence="05"
+        action="action_estate_configuration"
+        groups="base.group_system"
+    />
+</odoo>

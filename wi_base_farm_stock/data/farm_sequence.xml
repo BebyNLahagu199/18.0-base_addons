@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="seq_farm_estate_picking" model="ir.sequence">
+        <field name="name">Estate Picking</field>
+        <field name="code">estate.picking.seq</field>
+        <field name="prefix">DO/OUT/</field>
+        <field name="padding">5</field>
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_restan_logs" model="ir.sequence">
+        <field name="name">Farm Restan Log</field>
+        <field name="code">estate.restan.log.name</field>
+        <field name="prefix">RSTN/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+</odoo>

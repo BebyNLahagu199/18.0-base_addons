@@ -1,0 +1,143 @@
+<odoo>
+    <!-- TREE VIEW -->
+    <record id="estate_rain_log_tree_view" model="ir.ui.view">
+        <field name="name">estate.rain.logs.tree.view</field>
+        <field name="model">estate.rain.logs</field>
+        <field name="arch" type="xml">
+            <list editable="bottom" default_order="log_date desc">
+                <field name="name" />
+                <field name="afdeling" />
+                <field name="log_date" />
+                <field name="rain_start_t" widget="float_time" />
+                <field name="rain_end_t" widget="float_time" />
+                <field name="intensity" />
+                <field name="duration" widget="float_time" />
+            </list>
+        </field>
+    </record>
+
+    <!-- Search -->
+    <record id="estate_rain_log_search" model="ir.ui.view">
+        <field name="name">estate.rain.log.search</field>
+        <field name="model">estate.rain.logs</field>
+        <field name="arch" type="xml">
+            <search string="Rainfall Analysis">
+                <field name="afdeling" string="Afdeling" />
+                <filter name="log_date" string="Date" date="log_date" />
+                <group string="Group By">
+                    <filter
+                        name="group_by_afdeling"
+                        string="Afdeling"
+                        context="{'group_by': 'afdeling'}"
+                    />
+                    <filter
+                        name="group_by_company"
+                        string="Company"
+                        context="{'group_by': 'company_id'}"
+                    />
+                    <separator />
+                    <filter
+                        name="group_by_date"
+                        string="Date"
+                        context="{'group_by': 'log_date'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- GRAPH VIEW -->
+    <record id="estate_rain_log_graph_view" model="ir.ui.view">
+        <field name="name">estate.rain.logs.graph.view</field>
+        <field name="model">estate.rain.logs</field>
+        <field name="arch" type="xml">
+            <graph string="Rainfall Logs" type="line" stacked="0">
+                <field name="log_date" type="col" interval="day" />
+                <field name="duration" type="measure" />
+                <field name="afdeling" type="col" />
+            </graph>
+        </field>
+    </record>
+
+    <!-- PIVOT VIEW -->
+    <record id="estate_rain_log_pivot_view" model="ir.ui.view">
+        <field name="name">estate.rain.logs.pivot.view</field>
+        <field name="model">estate.rain.logs</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Rainfall Logs" sample="1" display_quantity="true">
+                <field name="log_date" type="row" interval="day" />
+                <field name="duration" type="measure" />
+                <field name="afdeling" type="col" />
+            </pivot>
+        </field>
+    </record>
+
+    <!-- KANBAN VIEW -->
+    <record id="weighbridge_scale_dashboard_kanban_view" model="ir.ui.view">
+        <field name="name">estate.rain.logs.kanban.view</field>
+        <field name="model">estate.rain.logs</field>
+        <field name="arch" type="xml">
+            <kanban create="false" class="o_kanban_dashboard o_scale_kanban">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>
+                                        <field name="log_date" />
+                                    </strong>
+                                </div>
+                                <div class="col-6">
+                                    <span class="float-right">
+                                        <field name="afdeling" />
+                                    </span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="row">
+                                    <span>Duration: <field name="duration" />
+ h</span>
+                                </div>
+                                <div class="row">
+                                    <span>Intensity: <field name="intensity" />
+ mm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <!-- Rainfall Logs views at Operation (tree, kanban) -->
+    <record id="action_farm_rainfall_log_view" model="ir.actions.act_window">
+        <field name="name">Rainfall Logs</field>
+        <field name="res_model">estate.rain.logs</field>
+        <field name="view_mode">list,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create Logs
+            </p>
+            <p>
+            Use this module to logs estate rainfall.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_farm_rainfall_log_report_view" model="ir.actions.act_window">
+        <field name="name">Rainfall Report</field>
+        <field name="res_model">estate.rain.logs</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            No data to display
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+</odoo>

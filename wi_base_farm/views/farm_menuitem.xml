@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="farm_menu_root"
+        name="Farm"
+        sequence="200"
+        web_icon="wi_base_farm,static/description/icon.png"
+    >
+
+        <menuitem
+            id="menu_estate_overview_action"
+            name="Overview"
+            sequence="10"
+            action="base_farm_estate_overview_action"
+        />
+        <menuitem id="menu_farm_operation_parent" name="Operation" sequence="20">
+            <menuitem
+                id="menu_farm_operation_rainfall"
+                name="Rainfall Log"
+                sequence="10"
+                action="action_farm_rainfall_log_view"
+            />
+            <menuitem id="menu_farm_operation_premi" name="Premi" sequence="20">
+                <menuitem
+                    id="menu_farm_operation_daily_premi"
+                    name="Daily Operation"
+                    sequence="10"
+                    action="action_estate_premi_operation_daily_view"
+                />
+                <menuitem
+                    id="menu_farm_operation_monthly_premi"
+                    name="Monthly Operation"
+                    sequence="10"
+                    action="estate_premi_operation_monthly_view_action"
+                />
+            </menuitem>
+            <menuitem id="menu_farm_operation_seed" name="Seeds" sequence="30">
+                <menuitem
+                    id="menu_farm_seed_mutation"
+                    name="Mutation"
+                    action="action_farm_seed_mutation_view"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_seed_batch"
+                    name="Batch"
+                    action="action_farm_seed_batch_view"
+                    sequence="20"
+                />
+            </menuitem>
+        </menuitem>
+        <menuitem id="menu_farm_product_parent" name="Product" sequence="40">
+            <menuitem
+                id="menu_farm_product"
+                name="Products"
+                action="action_farm_product_template_view"
+                sequence="10"
+            />
+            <menuitem
+                id="menu_farm_product_variant"
+                name="Product Variants"
+                action="action_farm_product_variant_view"
+                sequence="20"
+                groups="product.group_product_variant"
+            />
+        </menuitem>
+        <menuitem id="menu_farm_reporting_parent" name="Reporting" sequence="50">
+            <menuitem
+                id="menu_farm_reporting_harvest_parent"
+                name="Harvest"
+                sequence="10"
+            >
+                <menuitem
+                    id="menu_farm_reporting_harvest"
+                    name="Harvest Report"
+                    action="harvesting_report_action"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_bjr"
+                    name="Average Weight"
+                    action="action_farm_estate_bjr_view"
+                    sequence="20"
+                />
+            </menuitem>
+            <menuitem
+                id="menu_farm_reporting_upkeep_parent"
+                name="Upkeep"
+                sequence="20"
+            >
+                <menuitem
+                    id="menu_farm_reporting_upkeep"
+                    name="Upkeep Report "
+                    action="upkeeping_report_action"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_reporting_material_usage"
+                    name="Material Usage "
+                    action="material_usage_report_action"
+                    sequence="20"
+                />
+            </menuitem>
+            <menuitem
+                id="menu_farm_reporting_seeding_parent"
+                name="Seeding"
+                sequence="30"
+            >
+                <menuitem
+                    id="menu_farm_reporting_seeding_batch"
+                    name="Seed Stock Card"
+                    action="seed_batch_report_action"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_reporting_seeding_delivery"
+                    name="Seed Delivery Report"
+                    action="seed_delivery_report_action"
+                    sequence="20"
+                />
+            </menuitem>
+            <menuitem id="menu_farm_reporting_cost_parent" name="Cost" sequence="40">
+                <menuitem
+                    id="menu_farm_reporting_cost_production"
+                    name="Cost &amp; Production / Block"
+                    action="cost_production_report_action"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_reporting_blocks_cost"
+                    name="Cost / Block"
+                    action="blocks_cost_report_action"
+                    sequence="20"
+                />
+                <menuitem
+                    id="menu_farm_reporting_operating_cost"
+                    name="Cost / Operation Type"
+                    action="operating_cost_report_action"
+                    sequence="30"
+                />
+            </menuitem>
+            <menuitem
+                id="menu_farm_reporting_rainfall"
+                name="Rainfall"
+                action="action_farm_rainfall_log_report_view"
+                sequence="50"
+            />
+        </menuitem>
+        <menuitem id="menu_farm_config_parent" name="Configuration" sequence="60">
+            <menuitem id="menu_farm_config_management" name="Management" sequence="10">
+                <menuitem
+                    id="menu_farm_estate"
+                    name="Estate"
+                    action="action_farm_estate_estate_view"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_block"
+                    name="Block"
+                    action="action_farm_estate_block_view"
+                    sequence="20"
+                />
+                <menuitem
+                    id="menu_farm_product_category"
+                    name="Product Categories"
+                    action="action_farm_product_category_view"
+                    sequence="50"
+                />
+            </menuitem>
+            <menuitem id="menu_farm_config_estate" name="Estate" sequence="20">
+                <menuitem
+                    id="menu_farm_area_type"
+                    name="Area Type"
+                    action="action_farm_area_type_view"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_tree_type"
+                    name="Tree Type"
+                    action="action_farm_tree_type_view"
+                    sequence="20"
+                />
+                <menuitem
+                    id="menu_farm_type"
+                    name="Estate Type"
+                    action="action_estate_type_view"
+                    sequence="30"
+                />
+                <menuitem
+                    id="menu_farm_typography"
+                    name="Estate Typography"
+                    action="action_estate_typography_view"
+                    sequence="40"
+                />
+                <menuitem
+                    id="menu_farm_planting_state"
+                    name="Planting State"
+                    action="action_farm_planting_state_view"
+                    sequence="50"
+                />
+                <menuitem
+                    id="menu_farm_land"
+                    name="Land"
+                    action="action_farm_land_view"
+                    sequence="60"
+                />
+                <menuitem
+                    id="menu_farm_standard_production"
+                    name="Standard Production"
+                    action="action_farm_standard_production_view"
+                    sequence="70"
+                />
+            </menuitem>
+            <menuitem id="menu_harvest_operation_type" name="Harvest" sequence="30">
+                <menuitem
+                    id="harvest_operation_type"
+                    name="Operation Type"
+                    action="estate_harvest_operation_type"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_harvest_penalty"
+                    name="Penalty"
+                    action="estate_harvest_penalty_type"
+                    sequence="20"
+                />
+                <menuitem
+                    id="menu_harvest_team"
+                    name="Harvest Team"
+                    action="action_estate_harvest_team"
+                    sequence="30"
+                />
+            </menuitem>
+            <menuitem id="menu_farm_premi" name="Premi" sequence="40">
+                <menuitem
+                    id="menu_farm_non_harvest"
+                    name="Non Harvest"
+                    action="action_estate_non_harvest_premi_view"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_loaded"
+                    name="Loaded"
+                    action="action_estate_loaded_premi_view"
+                    sequence="20"
+                />
+                <menuitem
+                    id="menu_farm_harvest"
+                    name="Harvest"
+                    action="action_estate_harvest_premi_view"
+                    sequence="30"
+                />
+            </menuitem>
+            <menuitem id="menu_farm_analytic" name="Analytic" sequence="50">
+                <menuitem
+                    id="menu_farm_analytic_account"
+                    name="Analytic Account"
+                    action="wi_base_farm.action_account_analytic_account_form"
+                    sequence="10"
+                />
+                <menuitem
+                    id="menu_farm_analytic_plan"
+                    name="Analytic Plan"
+                    action="analytic.account_analytic_plan_action"
+                    sequence="20"
+                />
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

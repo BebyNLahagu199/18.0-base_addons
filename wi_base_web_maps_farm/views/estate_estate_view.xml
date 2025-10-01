@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Estate Estate Maps View -->
+    <record id="estate_estate_view_maps" model="ir.ui.view">
+        <field name="name">estate.estate.view.maps</field>
+        <field name="model">estate.estate</field>
+        <field name="arch" type="xml">
+            <maps location="id">
+             </maps>
+        </field>
+    </record>
+
+    <!-- Estate Estate Form View -->
+    <record id="estate_estate_view_form" model="ir.ui.view">
+        <field name="name">estate.estate.view.form.inherit.maps</field>
+        <field name="model">estate.estate</field>
+        <field name="inherit_id" ref="wi_base_farm.estate_estate_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='location']/group" position="inside">
+                <group name="geolocation" string="Geolocation">
+                    <label for="date_localization" string="Geo Location" />
+                    <div>
+                        <span>Lat : <field
+                                name="location_latitude"
+                                nolabel="1"
+                                class="oe_inline"
+                            /></span>
+                        <br />
+                        <span>Long: <field
+                                name="location_longitude"
+                                nolabel="1"
+                                class="oe_inline"
+                            /></span>
+                        <br />
+                        <span invisible="not date_localization">Updated on:
+                            <field
+                                name="date_localization"
+                                nolabel="1"
+                                readonly="1"
+                                class="oe_inline"
+                            />
+                            <br />
+                        </span>
+                        <div name="update_coordinate_button">
+                        <button
+                                invisible="location_latitude != 0 or location_longitude != 0"
+                                icon="fa-gear"
+                                string="Compute based on address"
+                                title="Compute Localization"
+                                name="update_coordinate"
+                                type="object"
+                                class="btn btn-link p-0"
+                            />
+                        <button
+                                invisible="location_latitude == 0 and location_longitude == 0"
+                                icon="fa-refresh"
+                                string="Refresh"
+                                title="Refresh Localization"
+                                name="update_coordinate"
+                                type="object"
+                                class="btn btn-link p-0"
+                            />
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record
+        id="wi_base_farm.action_farm_estate_estate_view"
+        model="ir.actions.act_window"
+    >
+        <field name="view_mode">kanban,list,form,map</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="farm_inspection_reporting_action" model="ir.actions.client">
+        <field name="name">Farm Inspection Reporting</field>
+        <field name="tag">map_inspection_action</field>
+    </record>
+
+    <menuitem
+        name="Report Inspection"
+        id="menu_report_inspection"
+        action="farm_inspection_reporting_action"
+        parent="wi_base_farm.menu_farm_reporting_parent"
+        sequence="60"
+    />
+</odoo>

@@ -1,0 +1,311 @@
+<odoo noupdate="1">
+
+    <record id="mutation_seeding_1" model="estate.seed.mutation">
+        <field name="mutation_type">seeding</field>
+        <field name="block_id" ref="estate_block_01_03_01" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_id" ref="product_seed_01" />
+        <field name="receipt_number">RC/2024/02/0001</field>
+        <field
+            name="production_date"
+            eval="(DateTime.today() - relativedelta(years=5, months=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">970</field>
+        <field name="accepted_qty">1000</field>
+        <field name="rejected_qty">30</field>
+    </record>
+
+    <function
+        model="estate.seed.mutation"
+        name="action_post"
+        eval="[[
+            ref('mutation_seeding_1'),
+        ]]"
+    />
+
+    <record id="mutation_doubletone_1" model="estate.seed.mutation">
+        <field name="mutation_type">doubletone</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_1').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_01" />
+        <field name="seed_id" ref="product_seed_01" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=4, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">165</field>
+    </record>
+
+    <record id="mutation_seeding_2" model="estate.seed.mutation">
+        <field name="mutation_type">seeding</field>
+        <field name="block_id" ref="estate_block_01_03_02" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_id" ref="product_seed_02" />
+        <field name="receipt_number">RC/2024/02/0002</field>
+        <field
+            name="production_date"
+            eval="(DateTime.today() - relativedelta(years=4, months=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">880</field>
+        <field name="accepted_qty">900</field>
+        <field name="rejected_qty">20</field>
+    </record>
+
+    <function
+        model="estate.seed.mutation"
+        name="action_post"
+        eval="[[
+            ref('mutation_seeding_2'),
+        ]]"
+    />
+
+    <record id="mutation_doubletone_2" model="estate.seed.mutation">
+        <field name="mutation_type">doubletone</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_2').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_02" />
+        <field name="seed_id" ref="product_seed_02" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=3, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">135</field>
+    </record>
+
+    <record id="mutation_seeding_3" model="estate.seed.mutation">
+        <field name="mutation_type">seeding</field>
+        <field name="block_id" ref="estate_block_01_03_03" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_id" ref="product_seed_03" />
+        <field name="receipt_number">RC/2024/02/0003</field>
+        <field
+            name="production_date"
+            eval="(DateTime.today() - relativedelta(years=3, months=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">1090</field>
+        <field name="accepted_qty">1100</field>
+        <field name="rejected_qty">10</field>
+    </record>
+
+    <function
+        model="estate.seed.mutation"
+        name="action_post"
+        eval="[[
+            ref('mutation_seeding_3'),
+        ]]"
+    />
+
+    <record id="mutation_afkir_1" model="estate.seed.mutation">
+        <field name="mutation_type">afkir</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_1').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_01" />
+        <field name="seed_id" ref="product_seed_01" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=2, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">95</field>
+    </record>
+
+    <record id="mutation_afkir_2" model="estate.seed.mutation">
+        <field name="mutation_type">afkir</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_2').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_02" />
+        <field name="seed_id" ref="product_seed_02" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=2, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">85</field>
+    </record>
+
+    <record id="mutation_doubletone_3" model="estate.seed.mutation">
+        <field name="mutation_type">doubletone</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_3').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_03" />
+        <field name="seed_id" ref="product_seed_03" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=2, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">195</field>
+    </record>
+
+    <record id="mutation_afkir_3" model="estate.seed.mutation">
+        <field name="mutation_type">afkir</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_3').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_03" />
+        <field name="seed_id" ref="product_seed_03" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=2, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">90</field>
+    </record>
+
+    <record id="mutation_transplant_1" model="estate.seed.mutation">
+        <field name="mutation_type">transplant</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_1').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_01" />
+        <field name="seed_id" ref="product_seed_01" />
+        <field name="dest_block_id" ref="estate_block_01_01_01" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=1, months=11)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">570</field>
+    </record>
+
+    <record id="mutation_transplant_2" model="estate.seed.mutation">
+        <field name="mutation_type">transplant</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_2').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_02" />
+        <field name="seed_id" ref="product_seed_02" />
+        <field name="dest_block_id" ref="estate_block_01_01_02" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=1, months=10)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">680</field>
+    </record>
+
+    <record id="mutation_transplant_3" model="estate.seed.mutation">
+        <field name="mutation_type">transplant</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_3').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_03" />
+        <field name="seed_id" ref="product_seed_03" />
+        <field name="dest_block_id" ref="estate_block_01_01_03" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(years=1, months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">390</field>
+    </record>
+
+    <record id="mutation_delivery_1" model="estate.seed.mutation">
+        <field name="mutation_type">delivery</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_1').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_01" />
+        <field name="seed_id" ref="product_seed_01" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(months=9)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">390</field>
+        <field name="delivery_number">DL/2024/02/0001</field>
+        <field name="licence_plate">BK 123 AB</field>
+        <field name="driver_name">Louis Mante</field>
+        <field name="delivery_type">internal</field>
+        <field name="dest_block_id" ref="estate_block_02_01_01" />
+        <field name="dest_note">Moved to Block D2</field>
+    </record>
+
+    <record id="mutation_delivery_2" model="estate.seed.mutation">
+        <field name="mutation_type">delivery</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_2').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_02" />
+        <field name="seed_id" ref="product_seed_02" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(months=8)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">250</field>
+        <field name="delivery_number">DL/2024/02/0002</field>
+        <field name="licence_plate">BK 456 CD</field>
+        <field name="driver_name">Hendry Keanu</field>
+        <field name="delivery_type">external</field>
+        <field name="dest_partner_id" ref="work_contact_dl" />
+    </record>
+
+    <record id="mutation_delivery_3" model="estate.seed.mutation">
+        <field name="mutation_type">delivery</field>
+        <field
+            name="batch_id"
+            model="estate.seed.batch"
+            eval="obj().env.ref('wi_base_farm.mutation_seeding_3').batch_id"
+        />
+        <field name="block_id" ref="estate_block_01_03_03" />
+        <field name="seed_id" ref="product_seed_03" />
+        <field
+            name="operation_date"
+            eval="(DateTime.today() - relativedelta(months=7)).strftime('%Y-%m-%d')"
+        />
+        <field name="seed_qty">500</field>
+        <field name="delivery_number">DL/2024/02/0003</field>
+        <field name="licence_plate">BK 789 EF</field>
+        <field name="driver_name">Ahmad Sutejo</field>
+        <field name="delivery_type">affiliate</field>
+        <field name="dest_partner_id" ref="stock.res_partner_company_1" />
+    </record>
+
+    <function
+        model="estate.seed.mutation"
+        name="action_post"
+        eval="[[
+            ref('mutation_doubletone_1'),
+            ref('mutation_doubletone_2'),
+            ref('mutation_doubletone_3'),
+            ref('mutation_afkir_1'),
+            ref('mutation_afkir_2'),
+            ref('mutation_afkir_3'),
+            ref('mutation_transplant_1'),
+            ref('mutation_transplant_2'),
+            ref('mutation_transplant_3'),
+            ref('mutation_delivery_1'),
+            ref('mutation_delivery_2'),
+            ref('mutation_delivery_3'),
+        ]]"
+    />
+
+</odoo>

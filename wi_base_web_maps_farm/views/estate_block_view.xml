@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Estate Block Maps View -->
+    <record id="estate_block_view_maps" model="ir.ui.view">
+        <field name="name">estate.block.view.maps</field>
+        <field name="model">estate.block</field>
+        <field name="arch" type="xml">
+            <maps location="id" hide_address="1" />
+        </field>
+    </record>
+
+    <!-- Estate Block Form View -->
+    <record id="estate_block_view_form" model="ir.ui.view">
+        <field name="name">estate.block.view.form.inherit.maps</field>
+        <field name="model">estate.block</field>
+        <field name="inherit_id" ref="wi_base_farm.estate_block_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page name="location" string="Location">
+                    <group>
+                        <group name="geolocation" string="Geolocation">
+                            <field name="location_latitude" />
+                            <field name="location_longitude" />
+                            <field name="coordinate" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record
+        id="wi_base_farm.action_farm_estate_block_view"
+        model="ir.actions.act_window"
+    >
+        <field name="view_mode">kanban,list,form,map</field>
+    </record>
+</odoo>

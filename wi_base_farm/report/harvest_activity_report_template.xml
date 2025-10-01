@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_harvest_operation_document">
+        <t t-call="web.external_layout">
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                div.page{
+                    font-size:13px;
+                }
+                th {
+                    padding: 2px;
+                    text-align: center;
+                    width: auto;
+                }
+                td {
+                    padding: 2px;
+                    width: auto;
+                }
+                #data td {
+                    padding: 2px;
+                    width: auto;
+                    text-align: right;
+                }
+            </style>
+            <t t-if="doc.operation_type_id.type_operation == 'harvest'">
+                <t t-call="wi_base_farm.harvest_template" />
+            </t>
+            <t t-else="">
+                <t t-call="wi_base_farm.upkeep_template" />
+            </t>
+        </t>
+    </template>
+
+    <template id="harvest_template">
+        <div class="page">
+            <h5>Harvest Report #<t t-out="doc.name" /></h5>
+            <div class="row">
+                <table>
+                    <tr>
+                        <td><b>Date :</b></td><td><t
+                                t-esc="doc.operation_date.strftime('%d %B %Y')"
+                            /></td>
+                        <td><b>Harvest Foreman :</b></td><td><t
+                                t-esc="doc.foreman_id.name"
+                            /></td>
+                        <td><b>Harvest Clerk :</b></td><td><t
+                                t-esc="doc.clerk_id.name"
+                            /></td>
+                        <td><b>Foreman I :</b></td><td><t
+                                t-esc="doc.foreman_extra_id.name"
+                            /></td>
+                        <td><b>Division :</b></td><td><t
+                                t-esc="doc.afdeling_id.name"
+                            /></td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <div class="row">
+                <table
+                    class="table table-bordered"
+                    style="table-layout: fixed"
+                    id="data"
+                >
+                    <thead style="display: table-row-group">
+                        <tr>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                                style="width: 3em;"
+                            >No</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                            >Employee</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                                style="width: 5em;"
+                            >Block</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                            >Planted Year</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                            >Base Weight</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                colspan="4"
+                            >Harvest Result</th>
+                            <th class="d-table-cell align-middle" colspan="5">Premi</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                            >Daily Wage</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                            >Penalty</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="3"
+                            >Net Wage</th>
+                        </tr>
+                        <tr>
+                            <th
+                                class="d-table-cell align-middle"
+                                colspan="2"
+                            >Fresh Fruit Bunch</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                colspan="2"
+                            >Brondolan</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                colspan="2"
+                            >Extra Weight</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                colspan="2"
+                            >Other Premi</th>
+                            <th
+                                class="d-table-cell align-middle"
+                                rowspan="2"
+                            >Total Premi</th>
+                        </tr>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Weight</th>
+                            <th>Qty</th>
+                            <th>Weight</th>
+                            <th>Weight</th>
+                            <th>Premi</th>
+                            <th>Attendance</th>
+                            <th>Other Harvest</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="rec_id" t-value="str(doc.id)" />
+                        <t t-set="data_tot" t-value="tot_data[rec_id]" />
+                        <t t-set="ind" t-value="0" />
+                        <t t-foreach="doc.estate_harvest_ids" t-as="harvest_obj">
+                            <tr>
+                                <t t-set="ind" t-value="ind + 1" />
+                                <td style="text-align: center;"><t t-out="ind" /></td>
+                                <td style="text-align: left;"><t
+                                        t-out="harvest_obj.member_id.name"
+                                    /></td>
+                                <td style="text-align: left;"><t
+                                        t-out="harvest_obj.block_id.name"
+                                    /></td>
+                                <td><t t-out="harvest_obj.planted_year" /></td>
+                                <td><t
+                                        t-out="'{:.2f}'.format(harvest_obj.base_weight)"
+                                    /></td>
+                                <td><t t-out="harvest_obj.harvest_qty_unit" /></td>
+                                <td><t
+                                        t-out="'{:.2f}'.format(harvest_obj.harvest_qty_weight)"
+                                    /></td>
+                                <td><t t-out="harvest_obj.other_harvest_qty" /></td>
+                                <td><t
+                                        t-out="harvest_obj.other_harvest_stock_qty"
+                                    /></td>
+                                <td><t
+                                        t-out="'{:.2f}'.format(harvest_obj.base_extra_weight)"
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.premi_base_extra"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.attendance_premi"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.other_harvest_premi"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.total_premi"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.daily_wages"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.penalty_total"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                                <td><t
+                                        t-out="harvest_obj.total_include_penalty"
+                                        t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                    /></td>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td class="text-center" colspan="5">Total</td>
+                            <td><t t-out="data_tot['h_qty']" /></td>
+                            <td><t t-out="'{:.2f}'.format(data_tot['h_qty_w'])" /></td>
+                            <td><t t-out="data_tot['o_qty']" /></td>
+                            <td><t t-out="data_tot['o_h_stock_qty']" /></td>
+                            <td><t t-out="'{:.2f}'.format(data_tot['h_qtyx_w'])" /></td>
+                            <td><t
+                                    t-out="data_tot['h_premix_w']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                            <td><t
+                                    t-out="data_tot['h_att_premi']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                            <td><t
+                                    t-out="data_tot['o_premi_tot']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                            <td><t
+                                    t-out="data_tot['premi_tot']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                            <td><t
+                                    t-out="data_tot['d_wages']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                            <td><t
+                                    t-out="data_tot['penalty_tot']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                            <td><t
+                                    t-out="data_tot['wages_tot_in_penalty']"
+                                    t-options='{"widget": "monetary", "display_currency": harvest_obj.currency_id}'
+                                /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+            <!-- <div class="row">
+                <table>
+                    <tr>
+                        <td>Average Harvest Per Employee</td>
+                        <td>37,5</td>
+                        <td>=</td>
+                        <td>830,625</td>
+                        <td colspan="5" />
+                        <td class="text-center">Date:</td>
+                        <td class="text-center"><t
+                                t-esc="doc.operation_date.strftime('%d %B %Y')"
+                            /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" />
+                        <td>Foreman Premi</td>
+                        <td><t t-out="harvest_obj.currency_id.symbol" /></td>
+                        <td>18,161.46 X 150%</td>
+                        <td>=</td>
+                        <td><t
+                                t-out="harvest_obj.currency_id.symbol"
+                            />27,242.19</td>
+                        <td class="text-center" colspan="2">Acknowledge by,</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" />
+                        <td>Clerk Premi</td>
+                        <td><t t-out="harvest_obj.currency_id.symbol" /></td>
+                        <td>18,161.46 X 100%</td>
+                        <td>=</td>
+                        <td><t
+                                t-out="harvest_obj.currency_id.symbol"
+                            />18,161.46</td>
+                        <td colspan="2" />
+                    </tr>
+                    <tr>
+                        <td colspan="4" />
+                        <td>Foreman 1 Premi</td>
+                        <td><t t-out="harvest_obj.currency_id.symbol" /></td>
+                        <td>13,780.00 X 150%</td>
+                        <td>=</td>
+                        <td><t
+                                t-out="harvest_obj.currency_id.symbol"
+                            />20,670.00</td>
+                        <td colspan="2" />
+                    </tr>
+                    <tr class="text-center">
+                        <td colspan="9" />
+                        <td colspan="2">(_______________________)</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td colspan="9" />
+                        <td colspan="2">Assistant</td>
+                    </tr>
+                </table>
+            </div> -->
+            <div name="signature" class="align-right">
+                <div class="offset-10 text-center">
+                    <b>Date: </b><span
+                        t-esc="doc.operation_date.strftime('%d %B %Y')"
+                    />
+                </div>
+                <div class="offset-10 text-center">
+                    Acknowledged by,
+                </div>
+                <br /><br /><br /><br />
+                <div class="offset-10 text-center">
+                    Assistant
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="upkeep_template">
+        <div class="page">
+            <div class="row mt-4">
+                <div class="col-8">
+                    <h7><u><b>Upkeep Report #<span t-field="doc.name" /></b></u></h7>
+                </div>
+                <div class="col-4" name="right_box">
+                    <div
+                        t-field="doc.name"
+                        t-options="{'widget': 'barcode', 'width': 600, 'height': 100, 'img_style': 'width:300px;height:50px;'}"
+                    >
+                        <div
+                            class="bg-light border-1 rounded d-flex flex-column align-items-center justify-content-center p-3 opacity-75 text-muted text-center"
+                        >
+                            (document barcode)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <table>
+                    <tr>
+                        <td><b>Date :</b></td><td><t
+                                t-esc="doc.operation_date.strftime('%d %B %Y')"
+                            /></td>
+                        <td><b>Upkeep Foreman :</b></td><td><t
+                                t-esc="doc.foreman_id.name"
+                            /></td>
+                        <td><b>Upkeep Recorder :</b></td><td><t
+                                t-esc="doc.recorder_id.name"
+                            /></td>
+                        <td><b>Upkeep Extra Foreman :</b></td><td><t
+                                t-esc="doc.foreman_extra_id.name"
+                            /></td>
+                        <td><b>Afdeling :</b></td><td><t
+                                t-esc="doc.afdeling_id.name"
+                            /></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="row mt-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">Employee</th>
+                            <th rowspan="2">Block</th>
+                            <th colspan="2">Activity</th>
+                            <th colspan="3">Work Result</th>
+                            <th colspan="3">Cost</th>
+                        </tr>
+                        <tr>
+                            <th>Code</th>
+                            <th>Description</th>
+                            <th>Qty</th>
+                            <th>UoM</th>
+                            <th>Work Day</th>
+                            <th>Wages</th>
+                            <th>Premi</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="rec_id" t-value="str(doc.id)" />
+                        <t t-set="upkeep_data" t-value="upkeep[rec_id]" />
+                        <t t-set="counter" t-value="1" />
+                        <t t-set="default_value" t-value="0" />
+                        <t t-foreach="doc.labour_line_ids" t-as="upkeep">
+                            <tr>
+                                <td name="number" class="text-center">
+                                    <span t-esc="counter" />
+                                </td>
+                                <td name="employee">
+                                    <span t-esc="upkeep.member_id.name" />
+                                </td>
+                                <td name="block">
+                                    <span t-esc="upkeep.location_id.name" />
+                                </td>
+                                <td name="code">
+                                    <span t-esc="upkeep.account_activity_id.code" />
+                                </td>
+                                <td name="desc">
+                                    <span t-esc="upkeep.account_activity_id.name" />
+                                </td>
+                                <td name="qty" class="text-center">
+                                    <span t-esc="upkeep.quantity" />
+                                </td>
+                                <td name="uom" class="text-center">
+                                    <span t-esc="upkeep.uom_id.name" />
+                                </td>
+                                <td name="hk" class="text-center">
+                                    <span t-esc="upkeep.num_of_days" />
+                                </td>
+                                <td name="wage" class="text-center">
+                                    <t t-if="upkeep.calculation == 'daily_salary'">
+                                        <span
+                                            t-esc="upkeep.price_amount"
+                                            t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <span
+                                            t-esc="default_value"
+                                            t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                        />
+                                    </t>
+                                </td>
+                                <td name="premi" class="text-center">
+                                    <t t-if="upkeep.calculation == 'premi'">
+                                        <span
+                                            t-esc="upkeep.price_amount"
+                                            t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <span
+                                            t-esc="default_value"
+                                            t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                        />
+                                    </t>
+                                </td>
+                                <td name="total" class="text-center">
+                                    <span
+                                        t-esc="upkeep.price_amount"
+                                        t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                    />
+                                </td>
+                            </tr>
+                            <t t-set="counter" t-value="counter + 1" />
+                        </t>
+                        <tr name="total" style="font-weight: bold;">
+                            <td colspan="5" class="text-center"><span>Total</span></td>
+                            <td name="total_qty" class="text-center">
+                                <span t-esc="upkeep_data['qty']" />
+                            </td>
+                            <td />
+                            <td name="total_hk" class="text-center">
+                                <span t-esc="upkeep_data['hk']" />
+                            </td>
+                            <td name="total_wage" class="text-center">
+                                <span
+                                    t-esc="upkeep_data['wage']"
+                                    t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                />
+                            </td>
+                            <td name="total_premi" class="text-center">
+                                <span
+                                    t-esc="upkeep_data['premi']"
+                                    t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                />
+                            </td>
+                            <td name="total_total" class="text-center">
+                                <span
+                                    t-esc="upkeep_data['total']"
+                                    t-options="{'widget': 'monetary', 'display_currency': upkeep.currency_id}"
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div name="signature" class="align-right">
+                <div class="offset-10 text-center">
+                    <b>Date: </b><span
+                        t-esc="doc.operation_date.strftime('%d %B %Y')"
+                    />
+                </div>
+                <div class="offset-10 text-center">
+                    Acknowledged by,
+                </div>
+                <br /><br /><br /><br />
+                <div class="offset-10 text-center">
+                    Assistant
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_harvest_operation">
+        <t t-set="data_report_landscape" t-value="True" />
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t
+                    t-call="wi_base_farm.report_harvest_operation_document"
+                    t-lang="doc.env.lang"
+                />
+            </t>
+        </t>
+    </template>
+</odoo>

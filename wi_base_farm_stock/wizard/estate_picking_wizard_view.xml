@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="estate_picking_update_unload_wizard_view" model="ir.ui.view">
+        <field name="name">estate.picking.unload</field>
+        <field name="model">estate.picking.wizard.unload</field>
+        <field name="arch" type="xml">
+            <form string="Update Unload">
+                <h1>
+                    <field
+                        name="picking_id"
+                        readonly="1"
+                        force_save="1"
+                        options="{'no_open': True, 'no_create': True}"
+                    />
+                </h1>
+                <group>
+                    <field name="unload_date" />
+                    <field name="net_unload" />
+                    <field name="additional_weight" />
+                </group>
+                <footer>
+                    <button
+                        name="action_update_unload"
+                        id="action_update_unload"
+                        string="Update Unload"
+                        class="btn-primary oe-highlight"
+                        type="object"
+                    />
+
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

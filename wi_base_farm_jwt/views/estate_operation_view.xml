@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="estate_work_book_view_form_inherit_jwt" model="ir.ui.view">
+        <field name="name">estate.operation.view.form.inherit</field>
+        <field name="model">estate.operation</field>
+        <field name="inherit_id" ref="wi_base_farm.estate_work_book_view_form" />
+        <field name="arch" type="xml">
+            <field name="clerk_user_id" position="before">
+                <field name="mobile_user_ids" invisible="1" />
+                <!-- <field name="assigned_to" widget="many2many_tags" domain="[('id', 'in', mobile_user_ids)]"/> -->
+                <field
+                    name="assigned_to"
+                    widget="many2many_tags"
+                    readonly="state in ['posted', 'done', 'cancel']"
+                    domain="[('id', 'in', mobile_user_ids)]"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

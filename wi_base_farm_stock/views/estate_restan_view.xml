@@ -1,0 +1,88 @@
+<odoo>
+    <record id="estate_restan_log_tree_view" model="ir.ui.view">
+        <field name="name">estate.restan.tree</field>
+        <field name="model">estate.restan.log</field>
+        <field name="arch" type="xml">
+            <list create="0" delete="0">
+                <field name="name" />
+                <field name="restan_date" />
+                <field name="afdeling_id" />
+                <field name="harvest_product_id" />
+                <field name="harvest_qty" sum="Total" />
+                <field name="other_product_id" />
+                <field name="other_hrvst_qty" sum="Total" />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_restan_log_search_view" model="ir.ui.view">
+        <field name="name">estate.restan.search.view</field>
+        <field name="model">estate.restan.log</field>
+        <field name="arch" type="xml">
+            <search string="Restan Log">
+                <field name="name" string="Name" />
+                <filter name="restan_date" string="Date" date="restan_date" />
+                <group string="Group by">
+                 <filter
+                        name="group_by_afdeling"
+                        string="Afdeling"
+                        context="{'group_by': 'afdeling_id'}"
+                    />
+                <filter
+                        name="group_by_date"
+                        string="Restan Date"
+                        context="{'group_by':'restan_date'}"
+                    />
+                <filter
+                        name="group_by_block"
+                        string="Block"
+                        context="{'group_by':'block_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="estate_restan_log_pivot_view" model="ir.ui.view">
+        <field name="name">estate.restan.log.view.pivot</field>
+        <field name="model">estate.restan.log</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="restan_date" type="col" />
+                <field name="harvest_qty" type="measure" />
+                <field name="other_hrvst_qty" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="estate_restan_graph_view" model="ir.ui.view">
+       <field name="name">estate.restan.log.view.graph</field>
+       <field name="model">estate.restan.log</field>
+       <field name="arch" type="xml">
+            <graph string="Restan Log" sample="1" type="line" stacked="0">
+                <field name="restan_date" type="col" interval="day" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_farm_restan_log_view" model="ir.actions.act_window">
+        <field name="name">Restan Logs</field>
+        <field name="res_model">estate.restan.log</field>
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="search_view_id" ref="estate_restan_log_search_view" />
+        <field name="context">
+            {
+                'search_default_group_by_afdeling':1,
+                'search_default_group_by_date':1,
+                'search_default_group_by_block':1
+            }
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Restan Logs
+            </p><p>
+            This module use to logs estate restan.
+            </p>
+        </field>
+    </record>
+</odoo>

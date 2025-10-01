@@ -1,0 +1,970 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_farm_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 02:56+0000\n"
+"PO-Revision-Date: 2025-10-01 02:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Date: </b>"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Estate: </b>"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Monitoring BJR Report</b>"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Product: </b>"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "<span class=\"o_stat_text\">Detailed Operations</span>"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "<span class=\"o_stat_text\">Product Move</span>"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Acknowledged by,"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.res_config_settings_view_form
+msgid "Activate this module to use seal number in picking operation"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Additional Information"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__additional_weight
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__additional_weight
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__additional_weight
+msgid "Additional Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__additional_weight
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking_wizard_unload__additional_weight
+msgid "Additional weight for the unload"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__afdeling_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Afdeling"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Assistant"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Average Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__block_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__block_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Block"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_update_unload_wizard_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.monitoring_bjr_report_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__cancel
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Cancelled"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__company_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__company_id
+msgid "Company"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__confirm
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Confirmed"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.actions.act_window,help:wi_base_farm_stock.estate_picking_action_view
+msgid "Create a new picking operation."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__scheduled_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__restan_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__date
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Date"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__date_done
+msgid "Date Done"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/models/estate_picking.py:0
+msgid "Delivery Orders: %s"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Demand"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Description"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.action_picking_move
+msgid "Detailed Operations"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__done
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Done"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__draft
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__driver
+msgid "Driver"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__estate_ids
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__estate_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Estate"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_picking
+msgid "Estate Picking"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_picking_report
+msgid "Estate Picking Report"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_restan_log
+msgid "Estate Restan Record"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__exclude_from_bjr
+msgid "Exclude From Bjr"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_harvest__exclude_from_bjr
+msgid "Exclude from BJR"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_res_config_settings__module_wi_base_seal_number_farm
+msgid "Farm Seal Number"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_harvest
+msgid "Farm activity harvest"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Forecast"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__gross_weight
+msgid "Gross Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Group by"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__ticket_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+msgid "Harvest"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_product_id
+msgid "Harvest Product"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__harvest_qty_unit
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Harvest Qty"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_qty
+msgid "Harvest Quantity"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Harvest Stock"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__harvest_ids
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Harvest Ticket"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_uom_id
+msgid "Harvest Uom"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__harvest_qty_weight
+msgid "Harvest Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Harvest Yield"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__id
+msgid "ID"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_has_error
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_harvest__exclude_from_bjr
+msgid "If checked, this activity will not be included in BJR"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Internal Note..."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Internal Notes"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__vehicle
+msgid "Licence Plate"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__loader_ids
+msgid "Loader"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__locked
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Locked"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "MTD"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_monitoring_bjr
+msgid "Monitoring Average Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.report,name:wi_base_farm_stock.monitoring_bjr_print_report
+msgid "Monitoring BJR"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.monitoring_bjr_report_action
+#: model:ir.model,name:wi_base_farm_stock.model_monitoring_bjr_report
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.monitoring_bjr_report_view_form
+msgid "Monitoring BJR Report"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_report_wi_base_farm_stock_report_monitoring_bjr
+msgid "Monitoring BJR Summary Report"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__name
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Name"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__net_unload
+msgid "Net Unload"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__net_weight
+msgid "Net Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__unload_weight
+msgid "Net weight of the unload"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/models/estate_restan_logs.py:0
+msgid "New"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/wizard/monitoring_bjr_report.py:0
+msgid "No data to print."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "No."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__priority__0
+msgid "Normal"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__note
+msgid "Note"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Open Harvest Form"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Operations"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__other_product_id
+msgid "Other Harvest Product"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__other_harvest_qty
+msgid "Other Harvest Qty"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__other_hrvst_qty
+msgid "Other Harvest Quantity"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__other_harvest_stock_qty
+msgid "Other Harvest Stock Qty"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__other_hrvst_uom_id
+msgid "Other Hrvst Uom"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Other Information"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__partner_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Partner"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.estate_picking_action_view
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_harvest__picking_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__picking_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__picking_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_stock_move__estate_picking_id
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_estate_picking
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Picking"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.estate_picking_report_action
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_reporting_picking
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_graph
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_pivot
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+msgid "Picking Report"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_harvest__picking_id
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking_wizard_unload__picking_id
+#: model:ir.model.fields,help:wi_base_farm_stock.field_stock_move__estate_picking_id
+msgid "Picking for this activity"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Planting Year"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__vehicle
+msgid "Plate Number"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.monitoring_bjr_report_view_form
+msgid "Print"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__priority
+msgid "Priority"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__product_id
+msgid "Product"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.action_picking_move_line
+msgid "Product Move"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Quantity"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Remnant"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_delivery_restan
+msgid "Remnant Report"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.server,name:wi_base_farm_stock.restan_check_cron_ir_actions_server
+msgid "Restan Check: Check Restan Log"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Restan Date"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_graph_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Restan Log"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.action_farm_restan_log_view
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_harvest__restan_log_id
+#: model_terms:ir.actions.act_window,help:wi_base_farm_stock.action_farm_restan_log_view
+msgid "Restan Logs"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__scheduled_date
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Scheduled Date"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_res_company__seal_digit
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_res_config_settings__seal_digit
+msgid "Seal Digit"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.res_config_settings_view_form
+msgid "Seal Number Digits"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.res_config_settings_view_form
+msgid "Seal number digits (excluding prefix and suffix)"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Shipped Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Shipped Yield"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__origin
+msgid "Source Document"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__state
+msgid "Status"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__move_ids
+msgid "Stock Moves"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_tree
+msgid "Sum Unload Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Sum of Harvest Qty Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Sum of Other Harvest Qty Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__tare_weight
+msgid "Tare Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_res_company__seal_digit
+#: model:ir.model.fields,help:wi_base_farm_stock.field_res_config_settings__seal_digit
+msgid "This field is used to set the number of digits for the seal number"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_res_config_settings__module_wi_base_seal_number_farm
+msgid "This module is used to integrate picking with seal number"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.actions.act_window,help:wi_base_farm_stock.action_farm_restan_log_view
+msgid "This module use to logs estate restan."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Today"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_tree
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_tree_view
+msgid "Total"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Total Area"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_harvest_qty
+msgid "Total Fruit Qty"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__total_harvest_qty
+msgid "Total Harvest Qty"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_harvest_stock
+msgid "Total Harvest Stock"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_other_harvest_qty
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__total_other_harvest_qty
+msgid "Total Other Harvest Qty"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_other_harvest_stock
+msgid "Total Other Harvest Stock"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Total Tree"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Unit"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__unload_date
+msgid "Unload Date"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__unload_weight
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__unload_weight
+msgid "Unload Weight"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/wizard/estate_picking_wizard.py:0
+msgid ""
+"Unload updated by %(user_name)s with net unload: %(net_unload)s and "
+"additional weight: %(additional_weight)s"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/models/estate_picking.py:0
+#: model:ir.model,name:wi_base_farm_stock.model_estate_picking_wizard_unload
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_update_unload_wizard_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Update Unload"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__priority__1
+msgid "Urgent"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Vehicle Information"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "YTD"
+msgstr ""

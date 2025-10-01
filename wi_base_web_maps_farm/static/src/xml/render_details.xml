@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="render_detail_template" xml:space="preserve">
+
+    <t
+        t-name="wi_base_web_maps.MapsRendererInherit"
+        t-inherit="wi_base_web_maps.MapsRenderer"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[@id=('content-maps')]" position="inside">
+            <t
+                t-call="wi_base_web_maps.DetailLocation"
+                t-as="detail"
+                t-props="props.detail"
+            />
+        </xpath>
+    </t>
+    <t t-name="wi_base_web_maps.DetailLocation">
+        <div
+            class="o-maps-renderer--pin-list-container col-12 col-md-4 bg-view border-start cursor-default h-100 d-none"
+            id="detail-coordinate"
+        >
+            <header
+                class="o_pin_list_header text-uppercase px-0 py-md-2 d-flex align-items-baseline justify-content-between"
+            >
+                <span class="fs-6 fw-bold text-truncate">
+                    <i class="fa fa-info-circle me-2 text-primary" />
+                    Detail Location
+                </span>
+                <button class="btn btn-secondary bt-sm p-1 detail-close-btn">
+                    x
+                </button>
+            </header>
+            <div>
+                <table class="o-maps-renderer--popup-table align-top col-12">
+                    <tr class="d-flex row">
+                        <td class="d-flex col">
+                            <div class="fw-bold text-wrap">
+                                Address
+                            </div>
+                            <div class="px-2"> : </div>
+                            <div>
+                                <span class="text-muted" id="location-address" />
+                            </div>
+                        </td>
+                    </tr>
+                    <hr />
+                    <tr class="d-flex row">
+                        <td class="col-12 fw-bold">Today</td>
+                    </tr>
+                    <br id="today-line" />
+                    <tr class="d-flex row d-no-data">
+                        <td class="d-flex col">
+                            <div class="fw-bold text-wrap">
+                                Data
+                            </div>
+                            <div class="px-2"> : </div>
+                            <div>
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <hr />
+                    <tr class="d-flex row">
+                        <td
+                            class="col-12 fw-bold"
+                        >Main Harvest Product (In 6 Months)</td>
+                    </tr>
+                    <br />
+                    <tr class="d-flex row">
+                        <td class="d-flex col">
+                            <div class="fw-bold text-wrap col-5">
+                                Total Area
+                            </div>
+                            <div class="px-2"> : </div>
+                            <div>
+                                <span class="text-muted" id="tot-a" />
+                            </div>
+                        </td>
+                        <td class="d-flex col">
+                            <div class="fw-bold text-wrap col-5">
+                                Production
+                            </div>
+                            <div class="px-2"> : </div>
+                            <div>
+                                <span class="text-muted" id="tot-p" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="d-flex row">
+                        <td class="d-flex col">
+                            <div class="fw-bold text-wrap col-5">
+                                Average Weight
+                            </div>
+                            <div class="px-2"> : </div>
+                            <div>
+                                <span class="text-muted" id="tot-aw" />
+                            </div>
+                        </td>
+                        <td class="d-flex col">
+                            <div class="fw-bold text-wrap col-5">
+                                Trees
+                            </div>
+                            <div class="px-2"> : </div>
+                            <div>
+                                <span class="text-muted" id="tot-t">0</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <hr />
+                </table>
+                <br />
+            </div>
+            <div
+                t-att-class="'o_graph_renderer o_renderer h-100 ' + props.class"
+                id="root-canvas"
+            >
+                <div
+                    class="o_graph_canvas_container position-relative"
+                    id="container-canvas"
+                >
+
+                </div>
+                <div
+                    class="o_graph_canvas_container position-relative"
+                    id="analytic-balance-canvas"
+                >
+
+                </div>
+            </div>
+        </div>
+    </t>
+
+
+</templates>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Resources: UoM data -->
+    <record id="product_uom_hectare" model="uom.uom">
+        <field name="name">ha</field>
+        <field name="category_id" ref="uom.uom_categ_surface" />
+        <field name="factor">10000</field>
+        <field name="uom_type">bigger</field>
+    </record>
+
+    <record id="product_uom_jjg" model="uom.uom">
+        <field name="name">Bunch</field>
+        <field name="category_id" ref="uom.product_uom_categ_kgm" />
+        <field name="factor">1</field>
+        <field name="uom_type">bigger</field>
+    </record>
+
+
+    <record id="product_uom_sack" model="uom.uom">
+        <field name="name">Sack (20 Kg)</field>
+        <field name="category_id" ref="uom.product_uom_categ_kgm" />
+        <field name="ratio">20</field>
+        <field name="uom_type">bigger</field>
+    </record>
+
+    <!-- Resources: Estate Type -->
+    <record id="estate_type_00" model="estate.type">
+        <field name="name">Core</field>
+        <field name="code">CORE</field>
+    </record>
+
+    <record id="estate_type_01" model="estate.type">
+        <field name="name">Plasma</field>
+        <field name="code">PLASMA</field>
+    </record>
+
+    <!-- Resources: Estate Typography -->
+    <record id="estate_typography_00" model="estate.typography">
+        <field name="name">Flat</field>
+        <field name="code">FLAT</field>
+    </record>
+
+    <record id="estate_typography_01" model="estate.typography">
+        <field name="name">Hill</field>
+        <field name="code">HILL</field>
+    </record>
+
+    <record id="estate_typography_02" model="estate.typography">
+        <field name="name">Wavy</field>
+        <field name="code">WAVY</field>
+    </record>
+
+
+    <!-- Resources: Area Statement Type-->
+    <record id="estate_area_00" model="estate.area.type">
+        <field name="name">Planted Area</field>
+        <field name="code">PLNT</field>
+        <field name="uom_id" ref="wi_base_farm.product_uom_hectare" />
+    </record>
+
+    <record id="estate_area_01" model="estate.area.type">
+        <field name="name">Reserve Area</field>
+        <field name="code">RSVA</field>
+        <field name="uom_id" ref="wi_base_farm.product_uom_hectare" />
+    </record>
+
+    <record id="estate_area_02" model="estate.area.type">
+        <field name="name">Occupation Area</field>
+        <field name="code">OCPA</field>
+        <field name="uom_id" ref="wi_base_farm.product_uom_hectare" />
+    </record>
+
+    <record id="estate_area_03" model="estate.area.type">
+        <field name="name">River area</field>
+        <field name="code">RVRA</field>
+        <field name="uom_id" ref="wi_base_farm.product_uom_hectare" />
+    </record>
+
+    <record id="estate_area_04" model="estate.area.type">
+        <field name="name">Office area</field>
+        <field name="code">OFCA</field>
+        <field name="uom_id" ref="wi_base_farm.product_uom_hectare" />
+    </record>
+
+    <record id="estate_area_05" model="estate.area.type">
+        <field name="name">Factory area</field>
+        <field name="code">FCTA</field>
+        <field name="uom_id" ref="wi_base_farm.product_uom_hectare" />
+    </record>
+
+    <!-- Resources: Estate Tree Type-->
+    <record id="estate_tree_00" model="estate.tree.type">
+        <field name="name">Immature Tree</field>
+        <field name="code">IMTR</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+    </record>
+
+    <record id="estate_tree_01" model="estate.tree.type">
+        <field name="name">Normal Mature Tree</field>
+        <field name="code">NRTR</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+    </record>
+
+    <record id="estate_tree_02" model="estate.tree.type">
+        <field name="name">Abnormal Mature Tree</field>
+        <field name="code">ANTR</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+    </record>
+
+    <record id="estate_tree_03" model="estate.tree.type">
+        <field name="name">Tree Without Fruit</field>
+        <field name="code">NFRT</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+    </record>
+
+    <record id="estate_tree_04" model="estate.tree.type">
+        <field name="name">Dead Tree</field>
+        <field name="code">DEAD</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+    </record>
+
+    <!-- Resources: Planting State-->
+    <record id="estate_planting_state_00" model="estate.planting.state">
+        <field name="name">Nursery</field>
+        <field name="code">NRS</field>
+    </record>
+
+    <record id="estate_planting_state_01" model="estate.planting.state">
+        <field name="name">Land Clearing</field>
+        <field name="code">LCR</field>
+    </record>
+
+    <record id="estate_planting_state_02" model="estate.planting.state">
+        <field name="name">Immature Plants</field>
+        <field name="code">IMP</field>
+    </record>
+
+    <record id="estate_planting_state_03" model="estate.planting.state">
+        <field name="name">Plants Produce</field>
+        <field name="code">PPR</field>
+    </record>
+
+    <!-- Resources: State Land Clasification -->
+    <record id="estate_land_00" model="estate.land">
+        <field name="name">Clay Soil</field>
+        <field name="code">CS</field>
+    </record>
+
+    <record id="estate_land_01" model="estate.land">
+        <field name="name">Sandy Soil</field>
+        <field name="code">SS</field>
+    </record>
+
+    <record id="estate_land_02" model="estate.land">
+        <field name="name">Humus Soil</field>
+        <field name="code">HS</field>
+    </record>
+
+    <record id="estate_land_03" model="estate.land">
+        <field name="name">Rocky Soil</field>
+        <field name="code">RS</field>
+    </record>
+
+    <record id="estate_land_04" model="estate.land">
+        <field name="name">Peat Soil</field>
+        <field name="code">PS</field>
+    </record>
+
+    <record id="estate_land_05" model="estate.land">
+        <field name="name">Sandy Loam Soil</field>
+        <field name="code">SLS</field>
+    </record>
+
+    <record id="estate_land_06" model="estate.land">
+        <field name="name">Clay Loam Soil</field>
+        <field name="code">CLS</field>
+    </record>
+
+    <record id="estate_land_07" model="estate.land">
+        <field name="name">Volcanic Soil</field>
+        <field name="code">VS</field>
+    </record>
+
+    <!-- Resources: Farm Operation Type -->
+    <record id="estate_operation_harvest" model="estate.operation.type">
+        <field name="name">Harvesting</field>
+        <field name="code">HRVS</field>
+        <field name="type_operation">harvest</field>
+    </record>
+
+    <record id="estate_operation_land_clearing" model="estate.operation.type">
+        <field name="name">Land Clearing</field>
+        <field name="code">LCR</field>
+        <field name="type_operation">upkeep</field>
+    </record>
+
+    <record id="estate_operation_seeding" model="estate.operation.type">
+        <field name="name">Seeding</field>
+        <field name="code">SDG</field>
+        <field name="type_operation">upkeep</field>
+    </record>
+
+    <record id="estate_operation_immature" model="estate.operation.type">
+        <field name="name">Immature Plants</field>
+        <field name="code">IMP</field>
+        <field name="type_operation">upkeep</field>
+    </record>
+
+    <record id="estate_operation_mature" model="estate.operation.type">
+        <field name="name">Mature Plants</field>
+        <field name="code">MP</field>
+        <field name="type_operation">upkeep</field>
+    </record>
+
+</odoo>

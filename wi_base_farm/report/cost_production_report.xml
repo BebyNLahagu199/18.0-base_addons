@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="paperformat_farm_report" model="report.paperformat">
+        <field name="name">Farm Report</field>
+        <field name="default" eval="True" />
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">210</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">30</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="cost_production_print_report" model="ir.actions.report">
+        <field name="name">Cost &amp; Production</field>
+        <field name="model">cost.production.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wi_base_farm.report_cost_production</field>
+        <field name="report_file">wi_base_farm.report_cost_production</field>
+        <field name="paperformat_id" ref="wi_base_farm.paperformat_farm_report" />
+    </record>
+
+    <template id="report_cost_production">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <style>
+                    th, td {
+                        vertical-align: middle;
+                        padding: 5px;
+                    }
+                </style>
+                <div class="page w-100" style="font-size: 12px;">
+                    <div class="row mt-4">
+                        <div class="mt-4 col-12">
+                            <b>Cost &amp; Production Report</b>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <b>Date: </b><span
+                                t-esc="date"
+                                t-options="{'widget': 'date','format': 'dd MMMM yyyy'}"
+                            />
+                        </div>
+                        <div class="col-6">
+                            <b>Estate: </b><span t-esc="estate" />
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <table style="font-size: 10px; width: 100%">
+                            <thead>
+                                <tr>
+                                    <th rowspan="3">No.</th>
+                                    <th rowspan="3">Block</th>
+                                    <th rowspan="3">Planting Year</th>
+                                    <th rowspan="3">Total Area</th>
+                                    <th rowspan="3">Planting State</th>
+                                    <th colspan="3">Production</th>
+                                    <th colspan="9">Cost</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">Today</th>
+                                    <th rowspan="2">MTD</th>
+                                    <th rowspan="2">YTD</th>
+                                    <th colspan="3">Today</th>
+                                    <th colspan="3">MTD</th>
+                                    <th colspan="3">YTD</th>
+                                </tr>
+                                <tr>
+                                    <th>Harvest</th>
+                                    <th>Upkeep</th>
+                                    <th>Total</th>
+                                    <th>Harvest</th>
+                                    <th>Upkeep</th>
+                                    <th>Total</th>
+                                    <th>Harvest</th>
+                                    <th>Upkeep</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="1" />
+                                <t t-foreach="datas" t-as="data">
+                                    <tr>
+                                        <td style="text-align: right;"><t
+                                                t-esc="counter"
+                                            /></td>
+                                        <td><t t-esc="data['code']" /></td>
+                                        <td style="text-align: right;"><t
+                                                t-esc="data['planting_year']"
+                                            /></td>
+                                        <td style="text-align: right;"><t
+                                                t-esc="data['total_area']"
+                                            /></td>
+                                        <td><t t-esc="data['planting_state']" /></td>
+                                        <td style="text-align: right;"><t
+                                                t-out="'{:,.2f}'.format(data['production_ttd'])"
+                                            /></td>
+                                        <td style="text-align: right;"><t
+                                                t-out="'{:,.2f}'.format(data['production_mtd'])"
+                                            /></td>
+                                        <td style="text-align: right;"><t
+                                                t-out="'{:,.2f}'.format(data['production_ytd'])"
+                                            /></td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['harvest_ttd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['upkeep_ttd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['total_ttd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['harvest_mtd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['upkeep_mtd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['total_mtd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['harvest_ytd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['upkeep_ytd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-esc="data['total_ytd']"
+                                                t-options="{'widget': 'monetary', 'display_currency': currency}"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <t t-set="counter" t-value="counter + 1" />
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div name="signature" class="align-right mt-4">
+                        <div class="offset-10 text-center">
+                            <b>Date: </b><span
+                                t-esc="datetime.datetime.now().date()"
+                                t-options='{"widget": "date","format": "dd MMMM yyyy"}'
+                            />
+                        </div>
+                        <div class="offset-10 text-center">
+                            Acknowledged by,
+                        </div>
+                        <br /><br /><br /><br />
+                        <div class="offset-10 text-center">
+                            Assistant
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="mobile_user_rp" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_harvesting')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff'))
+            ]"
+        />
+        <field name="login">Clerk001</field>
+        <field name="password">RudiPratama</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_rp" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="company_ids" eval="[(4, ref('base.main_company'))]" />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Rudi Pratama</span>]]></field>
+    </record>
+
+    <record id="mobile_user_bw" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_harvesting')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff'))
+            ]"
+        />
+        <field name="login">Clerk002</field>
+        <field name="password">BambangWijaya</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_bw" />
+        <field name="company_id" ref="stock.res_company_1" />
+        <field name="company_ids" eval="[(4, ref('stock.res_company_1'))]" />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Bambang Wijaya</span>]]></field>
+    </record>
+
+    <record id="mobile_user_arn" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_upkeeping')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff'))
+            ]"
+        />
+        <field name="login">Clerk003</field>
+        <field name="password">AnwarRahman</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_arn" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="company_ids"
+            eval="[(4, ref('base.main_company')),(4, ref('stock.res_company_1'))]"
+        />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Anwar Rahman</span>]]></field>
+    </record>
+
+    <record id="mobile_user_ky" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_upkeeping')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_sortation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_transportation'))
+            ]"
+        />
+        <field name="login">Clerk004</field>
+        <field name="password">KenjiYamamoto</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_ky" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="company_ids" eval="[(4, ref('base.main_company'))]" />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Kenji Yamamoto</span>]]></field>
+    </record>
+
+    <record id="mobile_user_jt" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_harvesting')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_upkeeping')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_planning')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_sortation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_transportation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance'))
+            ]"
+        />
+        <field name="login">Assist001</field>
+        <field name="password">JessicaTan</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_jt" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="company_ids"
+            eval="[(4, ref('base.main_company')),(4, ref('stock.res_company_1'))]"
+        />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Jessica Tan</span>]]></field>
+    </record>
+
+    <record id="mobile_user_ahmad" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_harvesting')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_planning')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_sortation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_transportation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance'))
+            ]"
+        />
+        <field name="login">Foreman001</field>
+        <field name="password">AhmadbinIsmail</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_ahmad" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="company_ids" eval="[(4, ref('base.main_company'))]" />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field
+            name="signature"
+        ><![CDATA[<span>-- <br/>
+Ahmad bin Ismail</span>]]></field>
+    </record>
+
+    <record id="mobile_user_ts" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_harvesting')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_planning')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_sortation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_transportation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance'))
+            ]"
+        />
+        <field name="login">Foreman002</field>
+        <field name="password">TanakaSatoshi</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_ts" />
+        <field name="company_id" ref="stock.res_company_1" />
+        <field name="company_ids" eval="[(4, ref('stock.res_company_1'))]" />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Tanaka Satoshi</span>]]></field>
+    </record>
+
+    <record id="mobile_user_bso" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_upkeeping')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_planning')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_sortation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_transportation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance'))
+            ]"
+        />
+        <field name="login">Foreman003</field>
+        <field name="password">BudiSantoso</field>
+        <field name="partner_id" ref="wi_base_farm.work_contact_bso" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="company_ids"
+            eval="[(4, ref('base.main_company')),(4, ref('stock.res_company_1'))]"
+        />
+        <field name="groups_id" eval="[(4, ref('base.group_portal'))]" />
+        <field name="signature"><![CDATA[<span>-- <br/>
+Budi Santoso</span>]]></field>
+    </record>
+
+</odoo>

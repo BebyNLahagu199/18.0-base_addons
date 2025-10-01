@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <record id="mobile_menu_inspection" model="mobile.menu">
+        <field name="name">Inspection</field>
+        <field name="code">INSPECTION</field>
+    </record>
+
+    <record id="base.user_admin" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_inspection_jwt.mobile_menu_inspection')),
+            ]"
+        />
+    </record>
+</odoo>

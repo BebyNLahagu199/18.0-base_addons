@@ -1,0 +1,177 @@
+<odoo>
+
+    <record id="farm_validator" model="auth.jwt.validator">
+        <field name="name">farm</field>
+        <field name="audience">auth_jwt_farm_api</field>
+        <field name="issuer">odooconnector</field>
+        <field name="signature_type">secret</field>
+        <field name="secret_algorithm">HS256</field>
+        <field
+            name="secret_key"
+        >d2VpZ2hicmlkZ2Utb2Rvb2Nvbm5lY3Rvci13aXRlY2hlbnRlcnByaXNl</field>
+        <field name="user_id_strategy">email</field>
+        <field name="static_user_id" ref="base.public_user" />
+        <field name="partner_id_strategy">email</field>
+        <field name="partner_id_required" eval="True" />
+    </record>
+
+    <record id="farm_partner_route" model="auth.jwt.route">
+        <field name="name">Partner</field>
+        <field name="route">/api/farm/partners</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="employee_route" model="auth.jwt.route">
+        <field name="name">Employee</field>
+        <field name="route">/api/farm/employee</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="estate_route" model="auth.jwt.route">
+        <field name="name">Estate</field>
+        <field name="route">/api/farm/estate</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+    </record>
+
+    <record id="afdeling_route" model="auth.jwt.route">
+        <field name="name">Afdeling</field>
+        <field name="route">/api/farm/afdeling</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="block_route" model="auth.jwt.route">
+        <field name="name">Block</field>
+        <field name="route">/api/farm/block</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="farm_product_category_route" model="auth.jwt.route">
+        <field name="name">Product Category</field>
+        <field name="route">/api/farm/product/category</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="farm_product_items_route" model="auth.jwt.route">
+        <field name="name">Product</field>
+        <field name="route">/api/farm/product/items</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="penalty_route" model="auth.jwt.route">
+        <field name="name">Penalty</field>
+        <field name="route">/api/farm/penalty</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="activity_route" model="auth.jwt.route">
+        <field name="name">Activity</field>
+        <field name="route">/api/farm/activity</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="teams_route" model="auth.jwt.route">
+        <field name="name">Harvest Team</field>
+        <field name="route">/api/farm/teams</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="users_route" model="auth.jwt.route">
+        <field name="name">User</field>
+        <field name="route">/api/farm/users</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="operation_type_route" model="auth.jwt.route">
+        <field name="name">Operation Type</field>
+        <field name="route">/api/farm/operation_type</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="planning_harvest_route" model="auth.jwt.route">
+        <field name="name">Planned Harvest</field>
+        <field name="route">/api/farm/planning/harvest</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="planning_upkeep_route" model="auth.jwt.route">
+        <field name="name">Planned Upkeep</field>
+        <field name="route">/api/farm/planning/upkeep</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="create_harvest_route" model="auth.jwt.route">
+        <field name="name">Harvest</field>
+        <field name="route">/api/farm/harvesting</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="edit_harvest_route" model="auth.jwt.route">
+        <field name="name">Harvest</field>
+        <field name="route">/api/farm/harvesting</field>
+        <field name="method">PUT</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="create_upkeep_route" model="auth.jwt.route">
+        <field name="name">Upkeep</field>
+        <field name="route">/api/farm/upkeeping</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="edit_upkeep_route" model="auth.jwt.route">
+        <field name="name">Upkeep</field>
+        <field name="route">/api/farm/upkeeping</field>
+        <field name="method">PUT</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="create_picking_route" model="auth.jwt.route">
+        <field name="name">Picking</field>
+        <field name="route">/api/farm/picking</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="edit_picking_route" model="auth.jwt.route">
+        <field name="name">Picking</field>
+        <field name="route">/api/farm/picking</field>
+        <field name="method">PUT</field>
+        <field name="validator_id" ref="farm_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+</odoo>

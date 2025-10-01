@@ -1,0 +1,1511 @@
+<odoo noupdate="1">
+
+    <!-- Harvesting -->
+    <record id="estate_harvesting_01" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-5)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_01'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_01_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_01').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_01').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_01').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_01" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">134</field>
+        <field name="other_harvest_qty">10.4</field>
+        <field name="harvest_area">0.7</field>
+        <field name="harvest_rates">0.5</field>
+        <field name="planning_qty">120</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_01_01')]"
+    />
+
+    <record id="estate_harvesting_01_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_01').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_01').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_01').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="code_TPH">TPH02</field>
+        <field name="harvest_qty_unit">157</field>
+        <field name="other_harvest_qty">11.3</field>
+        <field name="harvest_area">0.8</field>
+        <field name="harvest_rates">0.5</field>
+        <field name="planning_qty">120</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_01_02')]"
+    />
+
+    <record id="estate_harvesting_02" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_02'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_02_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_02').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_02').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_02').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_03" />
+        <field name="code_TPH">TPH03</field>
+        <field name="harvest_qty_unit">214</field>
+        <field name="other_harvest_qty">41.4</field>
+        <field name="harvest_area">2.7</field>
+        <field name="harvest_rates">0.5</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_02_01')]"
+    />
+
+    <record id="estate_harvesting_02_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_02').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_02').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_02').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="code_TPH">TPH04</field>
+        <field name="harvest_qty_unit">157</field>
+        <field name="other_harvest_qty">15.7</field>
+        <field name="harvest_area">1.1</field>
+        <field name="harvest_rates">0.5</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_02_02')]"
+    />
+
+    <record id="estate_harvesting_03" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_03'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_03_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_03').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_03').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_03').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_01" />
+        <field name="code_TPH">TPH03</field>
+        <field name="harvest_qty_unit">231</field>
+        <field name="other_harvest_qty">175.4</field>
+        <field name="harvest_area">2.2</field>
+        <field name="harvest_rates">0.5</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_03_01')]"
+    />
+
+    <record id="estate_harvesting_03_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_03').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_03').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_03').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">160</field>
+        <field name="other_harvest_qty">17.7</field>
+        <field name="harvest_area">1.7</field>
+        <field name="harvest_rates">0.5</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_03_02')]"
+    />
+
+    <record id="estate_harvesting_04" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_04'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_04_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_04').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_04').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_04').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_05" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">219</field>
+        <field name="other_harvest_qty">22.4</field>
+        <field name="harvest_area">1.1</field>
+        <field name="harvest_rates">0.5</field>
+        <field name="planning_qty">220</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_04_01')]"
+    />
+
+    <record id="estate_harvesting_04_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_04').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_04').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_04').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="code_TPH">TPH07</field>
+        <field name="harvest_qty_unit">111</field>
+        <field name="other_harvest_qty">10.5</field>
+        <field name="harvest_area">1.0</field>
+        <field name="harvest_rates">0.5</field>
+        <field name="planning_qty">100</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_04_02')]"
+    />
+
+    <record id="estate_harvesting_05" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-2)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_05'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_05_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_05').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_05').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_05').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="code_TPH">TPH02</field>
+        <field name="harvest_qty_unit">431</field>
+        <field name="other_harvest_qty">38.6</field>
+        <field name="harvest_area">2.4</field>
+        <field name="harvest_rates">0.5</field>
+        <field name="planning_qty">450</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_05_01')]"
+    />
+
+    <record id="estate_harvesting_05_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_05').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_05').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_05').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">269</field>
+        <field name="other_harvest_qty">10.7</field>
+        <field name="harvest_area">2.1</field>
+        <field name="harvest_rates">0.5</field>
+        <field name="planning_qty">250</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_05_02')]"
+    />
+
+    <record id="estate_harvesting_06" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-1)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-1)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_06'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_06_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_06').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_06').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_06').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="code_TPH">TPH03</field>
+        <field name="harvest_qty_unit">231</field>
+        <field name="other_harvest_qty">175.4</field>
+        <field name="harvest_area">2.2</field>
+        <field name="harvest_rates">0.5</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_06_01')]"
+    />
+
+    <record id="estate_harvesting_06_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_06').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_06').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_06').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_03" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">160</field>
+        <field name="other_harvest_qty">17.7</field>
+        <field name="harvest_area">1.7</field>
+        <field name="harvest_rates">0.5</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_06_02')]"
+    />
+
+    <record id="estate_harvesting_07" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field name="operation_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_07'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_07_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_07').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_07').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_07').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="code_TPH">TPH03</field>
+        <field name="harvest_qty_unit">0</field>
+        <field name="other_harvest_qty">0</field>
+        <field name="harvest_area">0</field>
+        <field name="harvest_rates">0</field>
+        <field name="planning_qty">200</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_07_01')]"
+    />
+
+    <record id="estate_harvesting_07_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_07').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_07').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_07').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_01" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">0</field>
+        <field name="other_harvest_qty">0</field>
+        <field name="harvest_area">0</field>
+        <field name="harvest_rates">0</field>
+        <field name="planning_qty">210</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_07_02')]"
+    />
+
+    <record id="estate_harvesting_08" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">harvest</field>
+        <field name="operation_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_harvest" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+        ref('estate_harvesting_08'),
+    ]]"
+    />
+
+    <record id="estate_harvesting_08_01" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_08').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_08').estate_harvest_ids[0].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_08').estate_harvest_ids[0].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="code_TPH">TPH01</field>
+        <field name="harvest_qty_unit">0</field>
+        <field name="other_harvest_qty">0</field>
+        <field name="harvest_area">0</field>
+        <field name="harvest_rates">0</field>
+        <field name="planning_qty">200</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_08_01')]"
+    />
+
+    <record id="estate_harvesting_08_02" model="harvest.labour.lines">
+        <field
+            name="harvest_operation"
+            model="estate.operation"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_08').id"
+        />
+        <field
+            name="harvest_id"
+            model="estate.harvest"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_08').estate_harvest_ids[1].id"
+        />
+        <field
+            name="team_member"
+            model="hr.employee"
+            eval="obj().env.ref('wi_base_farm.estate_harvesting_08').estate_harvest_ids[1].member_id.id"
+        />
+        <field name="block" ref="wi_base_farm.estate_block_01_01_03" />
+        <field name="code_TPH">TPH02</field>
+        <field name="harvest_qty_unit">0</field>
+        <field name="other_harvest_qty">0</field>
+        <field name="harvest_area">0</field>
+        <field name="harvest_rates">0</field>
+        <field name="planning_qty">210</field>
+    </record>
+
+    <function
+        model="harvest.labour.lines"
+        name="action_confirm"
+        eval="[ref('estate_harvesting_08_02')]"
+    />
+
+    <function
+        model="estate.operation"
+        name="action_confirm_plan"
+        eval="[[
+            ref('estate_harvesting_01'),
+            ref('estate_harvesting_04'),
+            ref('estate_harvesting_05'),
+            ref('estate_harvesting_07')
+        ]]"
+    />
+
+    <function
+        model="estate.operation"
+        name="action_post"
+        eval="[[
+            ref('estate_harvesting_01'),
+            ref('estate_harvesting_02'),
+            ref('estate_harvesting_03'),
+            ref('estate_harvesting_04'),
+            ref('estate_harvesting_05'),
+            ref('estate_harvesting_06')
+        ]]"
+    />
+
+    <!-- Land Clearing -->
+    <record id="estate_clearing_01" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_land_clearing" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-10)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-11)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_land_clearing_00" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_clearing_01'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_01')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_01').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_01')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_01').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <record id="estate_clearing_02" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_land_clearing" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-8)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-9)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_garden_gladiators" />
+        <field name="activity_id" ref="estate_activity_land_clearing_02" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_clearing_02'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_02')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_02').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_02')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_02').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <record id="estate_clearing_03" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_land_clearing" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-5)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-6)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_land_clearing_05" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_clearing_03'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_03')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_03').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_03')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_03').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <function
+        model="estate.operation"
+        name="action_confirm_plan"
+        eval="[[
+            ref('estate_clearing_01'),
+            ref('estate_clearing_02'),
+            ref('estate_clearing_03')
+        ]]"
+    />
+
+    <record id="estate_clearing_04" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_land_clearing" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_land_clearing_03" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_clearing_04'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_04')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_04').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'quantity': 0.8,
+            'uom_id': ref('wi_base_farm.product_uom_hectare')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_04')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_04').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'quantity': 1.3,
+            'uom_id': ref('wi_base_farm.product_uom_hectare')
+        }"
+        />
+    </function>
+
+    <record id="estate_clearing_05" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_land_clearing" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-2)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_land_clearing_04" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_clearing_05'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_05')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_05').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+            'quantity': 1.5,
+            'uom_id': ref('wi_base_farm.product_uom_hectare')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_clearing_05')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_clearing_05').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'quantity': 1.1,
+            'uom_id': ref('wi_base_farm.product_uom_hectare')
+        }"
+        />
+    </function>
+
+    <function
+        model="estate.operation"
+        name="action_post"
+        eval="[[
+            ref('estate_clearing_04'),
+            ref('estate_clearing_05')
+        ]]"
+    />
+
+    <!-- Seeding -->
+    <record id="estate_seeding_01" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_seeding" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-10)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_seeding_01" />
+        <field
+            name="material_line_ids"
+            eval="[
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+                'product_id': ref('product_seed_03'),
+                'product_qty': 500,
+                'product_standard_price': 4,
+            }),
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+                'product_id': ref('product_seed_03'),
+                'product_qty': 500,
+                'product_standard_price': 4,
+            }),
+        ]"
+        />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_seeding_01'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_01')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_01').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+            'quantity': 490,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_01')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_01').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'quantity': 487,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <record id="estate_seeding_02" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_seeding" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-9)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_garden_gladiators" />
+        <field name="activity_id" ref="estate_activity_seeding_02" />
+        <field
+            name="material_line_ids"
+            eval="[
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+                'product_id': ref('product_seed_01'),
+                'product_qty': 100,
+                'product_standard_price': 4,
+            }),
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+                'product_id': ref('product_seed_02'),
+                'product_qty': 105,
+                'product_standard_price': 4,
+            }),
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+                'product_id': ref('product_seed_02'),
+                'product_qty': 210,
+                'product_standard_price': 4,
+            }),
+        ]"
+        />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_seeding_02'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_02')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_02').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+            'quantity': 205,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_02')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_02').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+            'quantity': 210,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <record id="estate_seeding_03" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_seeding" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-7)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-8)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_seeding_03" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_seeding_03'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_03')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_03').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 1.2
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_03')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_03').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+            'uom_id': ref('wi_base_farm.product_uom_hectare'),
+            'planning_qty': 0.9
+        }"
+        />
+    </function>
+
+    <function
+        model="estate.operation"
+        name="action_confirm_plan"
+        eval="[[
+            ref('estate_seeding_03')
+        ]]"
+    />
+
+    <record id="estate_seeding_04" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_seeding" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_garden_gladiators" />
+        <field name="activity_id" ref="estate_activity_seeding_04" />
+        <field
+            name="material_line_ids"
+            eval="[
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+                'product_id': ref('product_fertilizer_01'),
+                'product_qty': 20,
+                'product_standard_price': 8,
+            }),
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+                'product_id': ref('product_fertilizer_01'),
+                'product_qty': 24,
+                'product_standard_price': 7,
+            }),
+        ]"
+        />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_seeding_04'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_04')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_04').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+            'quantity': 20,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_04')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_04').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_04'),
+            'quantity': 24,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <record id="estate_seeding_05" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_seeding" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-2)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_seeding_05" />
+        <field
+            name="material_line_ids"
+            eval="[
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+                'product_id': ref('product_fertilizer_03'),
+                'product_qty': 17,
+                'product_standard_price': 6.2,
+            }),
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+                'product_id': ref('product_fertilizer_02'),
+                'product_qty': 29,
+                'product_standard_price': 7.8,
+            }),
+        ]"
+        />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_seeding_05'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_05')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_05').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+            'quantity': 15,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_seeding_05')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_seeding_05').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_01'),
+            'quantity': 29,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function
+        model="estate.operation"
+        name="action_post"
+        eval="[[
+            ref('estate_seeding_01'),
+            ref('estate_seeding_02'),
+            ref('estate_seeding_04'),
+            ref('estate_seeding_05')
+        ]]"
+    />
+
+    <!-- Immature Plants -->
+    <record id="estate_immature_01" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_immature" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-8)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_supreme_harvesters" />
+        <field name="activity_id" ref="estate_activity_immature_plant_04" />
+        <field
+            name="material_line_ids"
+            eval="[
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+                'product_id': ref('product_fertilizer_03'),
+                'product_qty': 33,
+                'product_standard_price': 6.8,
+            }),
+            (0, 0, {
+                'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+                'product_id': ref('product_fertilizer_02'),
+                'product_qty': 29,
+                'product_standard_price': 6.2,
+            }),
+        ]"
+        />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_immature_01'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_immature_01')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_immature_01').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'quantity': 33,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_immature_01')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_immature_01').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+            'quantity': 29,
+            'uom_id': ref('uom.product_uom_unit')
+        }"
+        />
+    </function>
+
+    <function
+        model="estate.operation"
+        name="action_post"
+        eval="[[
+            ref('estate_immature_01')
+        ]]"
+    />
+    <record id="estate_immature_02" model="estate.operation">
+        <field name="operation_type_id" ref="estate_operation_immature" />
+        <field name="afdeling_id" ref="estate_afdeling_01_01" />
+        <field name="type_operation">upkeep</field>
+        <field
+            name="operation_date"
+            eval="(DateTime.today() + relativedelta(days=-5)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="planning_date"
+            eval="(DateTime.today() + relativedelta(days=-6)).strftime('%Y-%m-%d')"
+        />
+        <field name="team_id" ref="estate_harvest_elite_harvest_squad" />
+        <field name="activity_id" ref="estate_activity_immature_plant_05" />
+    </record>
+
+    <function
+        model="estate.operation"
+        name="_onchange_team_id"
+        eval="[[
+            ref('estate_immature_02'),
+        ]]"
+    />
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_immature_02')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_immature_02').labour_line_ids[0].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_02'),
+            'uom_id': ref('uom.product_uom_unit'),
+            'planning_qty': 30
+        }"
+        />
+    </function>
+
+    <function model="estate.upkeep.labour" name="write">
+        <value
+            model="estate.upkeep.labour"
+            search="[
+            ('estate_operation_id', '=', ref('wi_base_farm.estate_immature_02')),
+            ('member_id', '=', obj().env.ref('wi_base_farm.estate_immature_02').labour_line_ids[1].member_id.id)
+        ]"
+        />
+        <value
+            eval="{
+            'location_id': ref('wi_base_farm.estate_block_01_01_03'),
+            'uom_id': ref('uom.product_uom_unit'),
+            'planning_qty': 30
+        }"
+        />
+    </function>
+
+    <function
+        model="estate.operation"
+        name="action_confirm_plan"
+        eval="[[
+            ref('estate_immature_02')
+        ]]"
+    />
+
+</odoo>

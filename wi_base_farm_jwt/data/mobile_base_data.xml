@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Resources: Mobile Menu -->
+    <record id="mobile_menu_sortation" model="mobile.menu">
+        <field name="name">Sortation</field>
+        <field name="code">SORT</field>
+    </record>
+
+    <record id="mobile_menu_harvesting" model="mobile.menu">
+        <field name="name">Harvesting</field>
+        <field name="code">HARVEST</field>
+    </record>
+
+    <record id="mobile_menu_upkeeping" model="mobile.menu">
+        <field name="name">Upkeeping</field>
+        <field name="code">UPKEEP</field>
+    </record>
+
+    <record id="mobile_menu_planning" model="mobile.menu">
+        <field name="name">Planning</field>
+        <field name="code">PLAN</field>
+    </record>
+
+    <record id="mobile_menu_transportation" model="mobile.menu">
+        <field name="name">Transportation</field>
+        <field name="code">TRANSPORT</field>
+    </record>
+
+    <record id="mobile_menu_attendance" model="mobile.menu">
+        <field name="name">Attendance</field>
+        <field name="code">ATTEND</field>
+    </record>
+
+    <record id="mobile_menu_timeoff" model="mobile.menu">
+        <field name="name">Time Off</field>
+        <field name="code">TIMEOFF</field>
+    </record>
+
+    <!-- Resource: Mobile User -->
+    <record id="base.user_admin" model="res.users">
+        <field name="mobile_user" eval="True" />
+        <field
+            name="mobile_menu_ids"
+            eval="[
+                (4, ref('wi_base_farm_jwt.mobile_menu_harvesting')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_upkeeping')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_planning')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_sortation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_transportation')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_timeoff')),
+                (4, ref('wi_base_farm_jwt.mobile_menu_attendance'))
+            ]"
+        />
+    </record>
+
+    <record id="action_set_to_mobile" model="ir.actions.server">
+            <field name="name">Set to Mobile</field>
+            <field name="model_id" ref="base.model_res_users" />
+            <field name="binding_model_id" ref="base.model_res_users" />
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_set_to_mobile()
+            </field>
+        </record>
+
+</odoo>

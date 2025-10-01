@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates xml:space="preserve">
+    <t t-name="wi_base_farm_inspection.MapInspection">
+        <div
+            class="o_content"
+            style="height: 100%; display: flex; flex-direction: column;"
+        >
+            <div style="flex: 1; display: flex; height: 100%;">
+                <!-- Sidebar kiri -->
+                <div
+                    class="o_panel o_scrollable"
+                    style="width: 250px; padding: 10px; border-right: 1px solid #ccc; box-sizing: border-box;"
+                >
+                    <input
+                        t-ref="searchInput"
+                        type="text"
+                        placeholder="Search employee..."
+                        class="o_input"
+                    />
+                    <div
+                        style="margin-top:10px; cursor:pointer; font-weight:bold; coloer:black;"
+                        t-on-click="showAllEmployees"
+                    >
+                        All Employees
+                    </div>
+                    <div
+                        t-ref="searchResults"
+                        style="margin-top: 10px; max-height: calc(100% - 60px); overflow-y: auto;"
+                    />
+                </div>
+                <div t-ref="mapReport" style="flex:1; height: 100%;" />
+            </div>
+        </div>
+    </t>
+</templates>

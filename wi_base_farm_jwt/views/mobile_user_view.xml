@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="mobile_user_view_form" model="ir.ui.view">
+        <field name="name">mobile.user.view.form</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <form string="Mobile User">
+                <sheet>
+                    <field name="id" invisible="1" />
+                    <field name="active" invisible="1" />
+                    <field name="create_employee" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <field
+                        name="active_partner"
+                        required="0"
+                        readonly="1"
+                        invisible="1"
+                    />
+                    <field name="avatar_128" invisible="1" />
+                    <field
+                        name="image_1920"
+                        widget="image"
+                        class="oe_avatar"
+                        options="{'preview_image': 'avatar_128'}"
+                    />
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1><field
+                                name="name"
+                                placeholder="e.g. John Doe"
+                                required="1"
+                            /></h1>
+                    </div>
+                    <group>
+                        <group string="Security">
+                            <field name="login" required="1" />
+                            <field
+                                name="password"
+                                password="True"
+                                required="1"
+                                invisible="id"
+                            />
+                            <field name="email" required="1" />
+                        </group>
+                        <group string="Preferences">
+                            <field
+                                name="partner_id"
+                                groups="base.group_no_one"
+                                readonly="1"
+                                required="0"
+                                invisible="not id"
+                            />
+                            <field
+                                name="mobile_menu_ids"
+                                widget="many2many_tags"
+                                options="{'no_create': True}"
+                            />
+                            <field name="company_ids" widget="many2many_tags" />
+
+
+                        </group>
+                    </group>
+                    <separator string="Password Management" invisible="not id" />
+                    <div invisible="not id">
+                        <button
+                            name="%(base.change_password_wizard_action)s"
+                            type="action"
+                            string="Change Password"
+                        />
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mobile_user_view" model="ir.actions.act_window">
+        <field name="name">Mobile Users</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('mobile_user', '=', True)]</field>
+        <field
+            name="context"
+            eval="{'default_mobile_user': 1, 'default_create_employee': 1, 'default_groups_id': [(4, ref('base.group_portal'))]}"
+        />
+    </record>
+
+    <record id="action_mobile_user_tree_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="10" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="base.view_users_tree" />
+        <field name="act_window_id" ref="action_mobile_user_view" />
+    </record>
+
+    <record id="action_mobile_user_form_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="20" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="mobile_user_view_form" />
+        <field name="act_window_id" ref="action_mobile_user_view" />
+    </record>
+
+    <record id="view_users_search" model="ir.ui.view">
+        <field name="name">res.users.search.inherit.mobile</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_share']" position="after">
+                <filter
+                    name="filter_mobile"
+                    string="Mobile Users"
+                    domain="[('mobile_user', '=', True)]"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mobile_menu_view_tree" model="ir.ui.view">
+        <field name="name">mobile.menu.view.tree</field>
+        <field name="model">mobile.menu</field>
+        <field name="arch" type="xml">
+            <list name="Mobile Menus" editable="bottom">
+                <field name="name" />
+                <field name="code" />
+            </list>
+        </field>
+    </record>
+
+    <record id="action_mobile_menu_view" model="ir.actions.act_window">
+        <field name="name">Mobile Menu</field>
+        <field name="res_model">mobile.menu</field>
+        <field name="view_mode">list</field>
+    </record>
+</odoo>

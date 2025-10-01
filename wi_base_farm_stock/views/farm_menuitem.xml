@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="menu_farm_estate_picking"
+        name="Picking"
+        action="estate_picking_action_view"
+        parent="wi_base_farm.menu_farm_operation_parent"
+        sequence="9"
+    />
+
+    <menuitem
+        id="menu_farm_monitoring_bjr"
+        name="Monitoring Average Weight"
+        action="monitoring_bjr_report_action"
+        parent="wi_base_farm.menu_farm_reporting_harvest_parent"
+        sequence="25"
+    />
+
+    <menuitem
+        id="menu_farm_reporting_picking"
+        name="Picking Report"
+        action="estate_picking_report_action"
+        parent="wi_base_farm.menu_farm_reporting_harvest_parent"
+        sequence="30"
+    />
+
+    <menuitem
+        id="menu_farm_delivery_restan"
+        name="Remnant Report"
+        action="action_farm_restan_log_view"
+        parent="wi_base_farm.menu_farm_reporting_harvest_parent"
+        sequence="40"
+    />
+
+</odoo>

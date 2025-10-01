@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- ############################### Search View ############################### -->
+    <record id="estate_work_book_view_search" model="ir.ui.view">
+        <field name="name">estate.work.book.view.search</field>
+        <field name="model">estate.operation</field>
+        <field name="arch" type="xml">
+            <search string="Search Operation">
+                <field name="name" />
+                <field name="operation_type_id" />
+                <field name="state" />
+                <filter
+                    name="filter_planned"
+                    string="Planned"
+                    domain="[('is_planned', '=', True)]"
+                    groups="wi_base_farm.farm_planning_operation"
+                />
+                <filter
+                    name="filter_not_planned"
+                    string="Not Planned"
+                    domain="[('is_planned', '=', False)]"
+                    groups="wi_base_farm.farm_planning_operation"
+                />
+                <group expand='0' string="Group By...">
+                    <filter
+                        name="group_date"
+                        string="Operation Date"
+                        context="{'group_by': 'operation_date'}"
+                    />
+                    <filter
+                        name="group_user_id"
+                        string="Responsible"
+                        context="{'group_by': 'user_id'}"
+                    />
+                    <filter
+                        name="group_state"
+                        string="Status"
+                        context="{'group_by': 'state'}"
+                    />
+                    <separator />
+                    <filter
+                        name="group_operation_type_id"
+                        string="Operation"
+                        context="{'group_by': 'operation_type_id'}"
+                    />
+                    <filter
+                        name="group_company_id"
+                        string="Company"
+                        context="{'group_by': 'company_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ################################ Tree View ################################ -->
+    <record id="estate_work_book_view_tree" model="ir.ui.view">
+        <field name="name">estate.operation.view.tree</field>
+        <field name="model">estate.operation</field>
+        <field eval="1" name="priority" />
+        <field name="arch" type="xml">
+            <list
+                sample="1"
+                decoration-info="source_data == 'mobile'"
+                default_order="operation_date desc"
+            >
+                <field name="source_data" column_invisible="1" />
+                <field name="operation_date" />
+                <field name="type_operation" />
+                <field name="name" />
+                <field name="estate_id" />
+                <field name="foreman_id" widget="many2one_avatar" />
+                <field
+                    name="foreman_extra_id"
+                    widget="many2one_avatar"
+                    optional="hide"
+                />
+                <field name="recorder_id" widget="many2one_avatar" optional="hide" />
+                <field name="assistant_id" widget="many2one_avatar" optional="hide" />
+                <field name="clerk_id" optional="hide" />
+                <field name="validate_uid" widget="many2one_avatar" optional="hide" />
+                <field
+                    name="operation_type_id"
+                    decoration-success="type_operation == 'harvest'"
+                    decoration-warning="type_operation != 'harvest'"
+                    widget="badge"
+                    optional="show"
+                />
+                <field
+                    name="state"
+                    decoration-success="state == 'posted' or state == 'done'"
+                    decoration-info="state == 'draft'"
+                    decoration-danger="state =='cancel'"
+                    widget="badge"
+                />
+                <field
+                    name="harvest_uom_qty"
+                    column_invisible="not context.get('is_harvest')"
+                />
+                <field name="total_cost" widget="monetary" />
+                <field name="currency_id" column_invisible="1" />
+                <field name="clerk_user_id" column_invisible="1" />
+                <field name="required_validation" column_invisible="1" />
+            </list>
+        </field>
+    </record>
+
+    <!-- ################################ Form View ################################ -->
+    <record id="estate_work_book_view_form" model="ir.ui.view">
+        <field name="name">estate.operation.view.form</field>
+        <field name="model">estate.operation</field>
+        <field name="arch" type="xml">
+            <form string="Harvesting">
+                <header>
+                    <field name="required_validation" invisible="1" />
+
+                    <button
+                        name="action_post"
+                        string="Post"
+                        class="btn btn-primary"
+                        type="object"
+                        invisible="required_validation or state != 'draft'"
+                    />
+                    <button
+                        name="action_validate"
+                        string="Validate"
+                        class="btn btn-primary"
+                        type="object"
+                        invisible="not required_validation or state != 'draft'"
+                    />
+                    <button
+                        name="action_locked"
+                        string="Locked"
+                        class="btn"
+                        type="object"
+                        invisible="state != 'posted'"
+                    />
+
+                    <button
+                        name="action_cancel"
+                        string="Cancel"
+                        class="btn"
+                        type="object"
+                        invisible="state != 'posted'"
+                    />
+                    <button
+                        name="action_reset_draft"
+                        string="Reset to Draft"
+                        class="btn"
+                        type="object"
+                        invisible="state in ['draft', 'validate', 'posted']"
+                    />
+
+                    <button
+                        name="action_confirm_plan"
+                        string="Confirm Plan"
+                        class="btn btn-primary"
+                        type="object"
+                        groups="wi_base_farm.farm_planning_operation"
+                        invisible="not is_planned or planning_state != 'draft'"
+                    />
+                    <field name="is_planned" invisible="1" />
+                    <field name="planning_state" invisible="1" />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,posted"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="operation_type_id" invisible="1" />
+                            <field name="type_operation" invisible="1" />
+                            <field name="estate_id" invisible="1" />
+                            <field
+                                name="afdeling_id"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                                required="1"
+                                domain="[('company_id', '=', company_id),('location_type', '=', 'afdeling')]"
+                            />
+                            <field
+                                name="operation_date"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                            />
+                            <field
+                                name="harvest_product_id"
+                                invisible="type_operation != 'harvest'"
+                                required="type_operation == 'harvest'"
+                                readonly="1"
+                            />
+                            <field
+                                name="harvest_other_product_id"
+                                invisible="type_operation != 'harvest'"
+                            />
+                            <field name="total_abnormal_unit" invisible="1" />
+                            <field name="total_harvest_unit" invisible="1" />
+                            <field
+                                name="team_id"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                            />
+                            <field
+                                name="activity_id"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                                required="type_operation != 'harvest'"
+                                context="{'default_operation_type_id': operation_type_id}"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                name="planning_date"
+                                groups="wi_base_farm.farm_planning_operation"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                            />
+                            <field
+                                name="foreman_id"
+                                widget="many2one_avatar"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                                required="1"
+                            />
+                            <field
+                                name="foreman_extra_id"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                                widget="many2one_avatar"
+                                required="1"
+                            />
+                            <field
+                                name="clerk_id"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                                widget="many2one_avatar"
+                                required="type_operation == 'harvest'"
+                                invisible="type_operation != 'harvest'"
+                            />
+                            <field
+                                name="assistant_id"
+                                widget="many2one_avatar"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                                required="1"
+                            />
+                            <field
+                                name="recorder_id"
+                                widget="many2one_avatar"
+                                readonly="state != 'draft' or planning_state != 'draft'"
+                            />
+
+                            <field name="clerk_user_id" invisible="1" />
+
+                        </group>
+                    </group>
+                    <notebook id="notebook_harvesting">
+                        <page
+                            string="Harvest Activity"
+                            invisible="type_operation != 'harvest'"
+                        >
+                            <field
+                                name="estate_harvest_ids"
+                                readonly="state not in ['draft']"
+                                context="{'tree_view_ref': 'wi_base_farm.estate_harvest_view_tree'}"
+                            />
+                            <group>
+                                <button
+                                    type="object"
+                                    colspan="2"
+                                    name="action_add_harvest_labour"
+                                    string="Add Labour"
+                                    invisible="state != 'draft' or planning_state != 'draft'"
+                                />
+                            </group>
+                            <group
+                                class="oe_subtotal_footer oe_right"
+                                colspan="2"
+                                name="weight_total"
+                            >
+                                <label for="harvest_product_weight" />
+                                <field
+                                    name="harvest_product_weight"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                                <label for="other_harvest_product_weight" />
+                                <field
+                                    name="other_harvest_product_weight"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                                <label for="foreman_total_penalty" />
+                                <field
+                                    name="foreman_total_penalty"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                                <label for="extra_foreman_total_penalty" />
+                                <field
+                                    name="extra_foreman_total_penalty"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                                <label for="recorder_total_penalty" />
+                                <field
+                                    name="recorder_total_penalty"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                            </group>
+                        </page>
+
+                        <page
+                            name="labour"
+                            string="Task Details"
+                            invisible="type_operation == 'harvest'"
+                        >
+                            <field
+                                name="labour_line_ids"
+                                readonly="state not in ['draft'] or planning_state != 'draft'"
+                                context="{'tree_view_ref': 'wi_base_farm.estate_labour_tree_view_editable'}"
+                            />
+                            <group>
+                                <group
+                                    class="oe_subtotal_footer oe_right"
+                                    colspan="2"
+                                    name="total_cost"
+                                >
+                                    <field
+                                        name="labour_amount"
+                                        widget="monetary"
+                                        options="{'currency_field': 'currency_id'}"
+                                    />
+                                    <field
+                                        name="material_amount"
+                                        widget="monetary"
+                                        options="{'currency_field': 'currency_id'}"
+                                    />
+                                    <field
+                                        name="total_cost"
+                                        widget="monetary"
+                                        class="oe_subtotal_footer_separator"
+                                        options="{'currency_field': 'currency_id'}"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+
+                        <page
+                            string="Material"
+                            name="material"
+                            invisible="type_operation == 'harvest'"
+                        >
+                            <field
+                                name="material_line_ids"
+                                readonly="state not in ['draft']"
+                            >
+                                <list editable="bottom">
+                                    <field name="afdeling_id" column_invisible="1" />
+                                    <field
+                                        name="location_id"
+                                        string="Location"
+                                        options="{'no_open': True,'no_create_edit': True}"
+                                        required="state != 'cancel'"
+                                    />
+                                    <field name="state" column_invisible="1" />
+                                    <field
+                                        name="product_id"
+                                        options="{'no_open': True,'no_create_edit': True}"
+                                        required='1'
+                                    />
+                                    <field name="is_mto" column_invisible="True" />
+                                    <field
+                                        name="qty_delivered_method"
+                                        column_invisible="1"
+                                    />
+                                    <field
+                                        name="product_uom_readonly"
+                                        column_invisible="1"
+                                    />
+                                    <field
+                                        name="product_uom_category_id"
+                                        column_invisible="1"
+                                    />
+                                    <field name="product_qty" />
+                                    <field
+                                        name="product_uom_qty"
+                                        column_invisible="1"
+                                    />
+                                    <field name="product_standard_price" />
+                                    <field
+                                        name="product_uom"
+                                        force_save="1"
+                                        string="UoM"
+                                        readonly="product_uom_readonly == True"
+                                        groups="uom.group_uom"
+                                        options="{'no_open': True}"
+                                        optional="show"
+                                    />
+                                    <field name="price_total" />
+                                    <field name="currency_id" column_invisible="1" />
+                                </list>
+                            </field>
+                            <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                <group colspan="4">
+                                    <field
+                                        name="comment"
+                                        nolabel="1"
+                                        placeholder="Remark"
+                                    />
+                                </group>
+                                <group
+                                    class="oe_subtotal_footer oe_right"
+                                    colspan="2"
+                                    name="activity_cost"
+                                >
+                                    <field
+                                        name="material_amount"
+                                        widget="monetary"
+                                        options="{'currency_field': 'currency_id'}"
+                                    />
+                                </group>
+                                <div class="oe_clear" />
+                            </group>
+                        </page>
+
+
+
+                        <page name="other_info" string="Other Info">
+                            <group>
+                                <group>
+                                    <field name="user_id" readonly="state != 'draft'" />
+                                    <field
+                                        name="company_id"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field name="picking_policy" />
+                                    <field name="warehouse_id" />
+                                    <field name="stock_location_id" />
+                                    <field name="procurement_group_id" invisible="1" />
+                                    <field name="currency_id" invisible="1" />
+                                </group>
+                                <group invisible="type_operation == 'harvest'">
+                                    <field
+                                        name="block_location_ids"
+                                        readonly="state != 'draft'"
+                                        domain="[('estate_id', '=', afdeling_id)]"
+                                        widget="many2many_tags"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter reload_on_follower="True"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_estate_operation_view" model="ir.actions.act_window">
+        <field name="name">Farm Operation</field>
+        <field name="res_model">estate.operation</field>
+        <field name="context">{'search_default_group_operation_type_id':1}</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create a new Operation
+            </p>
+            <p>
+            Use this module to create a new Harvest Operation.
+            </p>
+        </field>
+    </record>
+</odoo>

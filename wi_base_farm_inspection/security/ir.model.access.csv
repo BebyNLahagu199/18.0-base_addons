@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_farm_inspection,access_farm_inspection,model_farm_inspection,base.group_user,1,1,1,1
+access_farm_issue,access_farm_issue,model_farm_issue,base.group_user,1,1,1,1
+access_farm_coordinate,access_farm_coordinate,model_farm_coordinate,base.group_user,1,1,1,1
+access_farm_issue_image_user,farm_issue_image_user,model_farm_issue_image,base.group_user,1,1,1,1
+access_farm_issue_stage_user,farm_issue_stage_user,model_farm_issue_stage,base.group_user,1,1,1,1

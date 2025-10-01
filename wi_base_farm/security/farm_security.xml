@@ -1,0 +1,155 @@
+<odoo>
+    <record model="ir.module.category" id="farm_parent">
+        <field name="name">Farm</field>
+        <field name="sequence">45</field>
+    </record>
+
+    <record model="ir.module.category" id="farm_category">
+        <field name="name">Farm</field>
+        <field name="sequence">10</field>
+        <field name="parent_id" ref="wi_base_farm.farm_parent" />
+    </record>
+
+    <record id="farm_planning_operation" model="res.groups">
+        <field name="name">Allow planning operation system in farm</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+
+    <record id="farm_user_group" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="farm_category" />
+        <field
+            name="implied_ids"
+            eval="[(4,ref('analytic.group_analytic_accounting'))]"
+        />
+    </record>
+
+    <record id="farm_manager_group" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="farm_category" />
+        <field name="implied_ids" eval="[(4,ref('wi_base_farm.farm_user_group'))]" />
+        <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+    </record>
+
+    <record model="ir.rule" id="blok_rule_muti_company">
+        <field name="name">Estate_Blok : multi_company</field>
+        <field name="model_id" ref="model_estate_block" />
+        <field name="domain_force">
+            ['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_rule_muti_company">
+        <field name="name">Estate : multi_company</field>
+        <field name="model_id" ref="model_estate_estate" />
+        <field name="domain_force">
+            ['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_operation_type_multi_company">
+        <field name="name">Estate_Operation_Type : multi_company</field>
+        <field name="model_id" ref="model_estate_operation_type" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_premi_multi_company">
+        <field name="name">estate_premi : multi_company</field>
+        <field name="model_id" ref="model_estate_premi" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_rain_logs_multi_company">
+        <field name="name">estate_rain_logs : multi_company</field>
+        <field name="model_id" ref="model_estate_rain_logs" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_bjr_multi_company">
+        <field name="name">estate_bjr : multi_company</field>
+        <field name="model_id" ref="model_estate_bjr" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_standard_production_multi_company">
+        <field name="name">estate_standard_production : multi_company</field>
+        <field name="model_id" ref="model_estate_standard_production" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_activity_penalty_multi_company">
+        <field name="name">estate_activity_penalty : multi_company</field>
+        <field name="model_id" ref="model_estate_activity_penalty" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_premi_operation_monthly_multi_company">
+        <field name="name">estate_premi_operation_monthly : multi_company</field>
+        <field name="model_id" ref="model_estate_premi_operation_monthly" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_harvest_team_multi_company">
+        <field name="name">estate_harvest_team : multi_company</field>
+        <field name="model_id" ref="model_estate_harvest_team" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_premi_operation_daily_multi_company">
+        <field name="name">estate_premi_operation_daily : multi_company</field>
+        <field name="model_id" ref="model_estate_premi_operation_daily" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_seed_batch_multi_company">
+        <field name="name">estate_seed_batch : multi_company</field>
+        <field name="model_id" ref="model_estate_seed_batch" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_upkeep_labour_multi_company">
+        <field name="name">estate_upkeep_labour : multi_company</field>
+        <field name="model_id" ref="model_estate_upkeep_labour" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="estate_harvest_multi_company">
+        <field name="name">estate_harvest : multi_company</field>
+        <field name="model_id" ref="model_estate_harvest" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+    <record model="ir.rule" id="material_usage_report_multi_company">
+        <field name="name">material_usage_report : multi_company</field>
+        <field name="model_id" ref="model_material_usage_report" />
+        <field name="domain_force">
+            ['|',('company_id', '=', False), ('company_id', 'in', company_ids)]
+        </field>
+    </record>
+</odoo>

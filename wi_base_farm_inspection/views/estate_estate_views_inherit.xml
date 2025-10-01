@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="estate_form_views_inherit" model="ir.ui.view">
+        <field name="name">estate.form.views.inherit</field>
+        <field name="model">estate.estate</field>
+        <field name="inherit_id" ref="wi_base_farm.estate_estate_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//form[1]/sheet[1]/notebook[1]/page[@name='location']/group[1]/group[@name='Address']/div[1]"
+                position="after"
+            >
+                <field
+                    name="geo_location"
+                    string="Location"
+                    invisible="location_type != 'estate'"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Estate upkeep Inherit -->
+    <record id="estate_upkeep_form_views_inherit" model="ir.ui.view">
+        <field name="name">estate.upkeep.form.views.inherit</field>
+        <field name="model">estate.upkeep.labour</field>
+        <field name="inherit_id" ref="wi_base_farm.estate_labour_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]/group[1]/group[1]" position="after">
+                <group>
+                    <field name="latitude" />
+                    <field name="longitude" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- estate harvest inherit -->
+    <record id="estate_harvest_form_views_inherit" model="ir.ui.view">
+        <field name="name">estate.harvest.form.views.inherit</field>
+        <field name="model">estate.harvest</field>
+        <field name="inherit_id" ref="wi_base_farm.estate_harvest_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Location">
+                    <group>
+                        <field name="latitude" />
+                        <field name="longitude" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

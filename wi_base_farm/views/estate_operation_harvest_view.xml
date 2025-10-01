@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="estate_harvest_view_tree" model="ir.ui.view">
+        <field name="name">estate.harvest.view.tree</field>
+        <field name="model">estate.harvest</field>
+        <field name="arch" type="xml">
+            <list editable="bottom" edit="0" create="0" delete="0">
+                <field name="name" />
+                <field name="estate_operation_id" column_invisible="1" />
+                <field name="operation_date" column_invisible="1" />
+                <field name="base_weight" column_invisible="1" />
+                <field name="member_id" required="1" />
+                <field name="block_id" />
+                <field name="tph_code" />
+                <field name="planted_year" optional="hide" />
+                <field name="harvest_rates" optional="hide" />
+                <field name="avg_weight" optional="show" />
+                <field name="harvest_qty_unit" optional="show" />
+                <field name="harvest_qty_weight" optional="show" />
+                <field name="base_extra_weight" optional="hide" />
+                <field
+                    name="planning_qty"
+                    optional="show"
+                    groups="wi_base_farm.farm_planning_operation"
+                />
+                <field
+                    name="planning_qty_uom"
+                    optional="show"
+                    groups="wi_base_farm.farm_planning_operation"
+                />
+                <field name="state" column_invisible="1" />
+                <button
+                    name="action_view_activity_hrvs"
+                    type="object"
+                    icon="fa-external-link"
+                    class="oe_edit_only text-success"
+                    title="Open Harvest Form"
+                />
+                <field name="planning_state" column_invisible="1" />
+                <button
+                    invisible="state != 'draft' or planning_state != 'draft'"
+                    type="object"
+                    name="action_edit_harvest_labour"
+                    title="Edit"
+                    icon="fa-pencil"
+                    class="oe_edit_only text-info"
+                />
+                <button
+                    invisible="state != 'draft' or planning_state != 'draft'"
+                    type="object"
+                    name="action_remove_harvest_labour"
+                    title="Delete"
+                    icon="fa-trash"
+                    class="oe_edit_only text-danger"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_harvest_view_form" model="ir.ui.view">
+        <field name="name">estate.harvest.view.form</field>
+        <field name="model">estate.harvest</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" edit="0">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="posted" />
+                </header>
+                <sheet>
+                    <div class="oe_title" invisible="name == False">
+                        <label for="name" string="Harvest Ticket" />
+                        <h1>
+                            <field name="name" readonly="1" />
+                        </h1>
+                        <label for="estate_operation_id" string="Operation Activity" />
+                        <h2>
+                            <field name="estate_operation_id" />
+                        </h2>
+                    </div>
+                    <group string="Base Information">
+                        <group>
+                            <field name="company_id" invisible="1" />
+                            <field name="afdeling_id" invisible="1" />
+                            <field name="premi_id" invisible="1" />
+                            <field name="member_id" required="1" />
+                            <field
+                                name="block_id"
+                                domain="[('estate_id','=',afdeling_id)]"
+                            />
+                            <field name="planted_year" readonly="1" force_save="1" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                        <group>
+                            <field name="tph_code" />
+                            <field name="base_weight" readonly="1" force_save="1" />
+                            <field name="abnormal_unit" invisible="1" />
+                            <field
+                                name="harvest_area"
+                                readonly="state != 'draft' or 1"
+                            />
+                            <field
+                                name="harvest_rates"
+                                readonly="state != 'draft' or 1"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="harvest" string="Harvest">
+                            <group>
+                                <group string="Main Product">
+                                    <field name="harvest_main_product_id" />
+                                    <label for="harvest_qty_unit" />
+                                    <div class="o_row">
+                                        <field
+                                            name="harvest_qty_unit"
+                                            class="oe_inline"
+                                            nolabel="1"
+                                        />
+                                        <field
+                                            name="harvest_uom_id"
+                                            nolabel="1"
+                                            class="pl-1 pl-sm-0"
+                                            required="1"
+                                        />
+                                    </div>
+                                    <label for="avg_weight" />
+                                    <div class="o_row">
+                                        <field
+                                            name="avg_weight"
+                                            class="oe_inline"
+                                            nolabel="1"
+                                        />
+                                        <field
+                                            name="harvest_stock_uom_id"
+                                            nolabel="1"
+                                            class="pl-1 pl-sm-0"
+                                            required="1"
+                                        />
+                                    </div>
+                                    <label for="harvest_qty_weight" />
+                                    <div class="o_row">
+                                        <field
+                                            name="harvest_qty_weight"
+                                            class="oe_inline"
+                                            nolabel="1"
+                                        />
+                                        <field
+                                            name="harvest_stock_uom_id"
+                                            nolabel="1"
+                                            class="pl-1 pl-sm-0"
+                                            required="1"
+                                        />
+                                    </div>
+                                    <field name="base_extra_weight" />
+                                </group>
+                                <group string="Other Product">
+                                    <field name="harvest_other_product_id" />
+                                    <label for="other_harvest_qty" />
+                                    <div class="o_row">
+                                        <field
+                                            name="other_harvest_qty"
+                                            class="oe_inline"
+                                            nolabel="1"
+                                        />
+                                        <field
+                                            name="other_harvest_uom_id"
+                                            nolabel="1"
+                                            class="pl-1 pl-sm-0"
+                                            required="1"
+                                        />
+                                    </div>
+                                    <label for="other_avg_weight" />
+                                    <div class="o_row">
+                                        <field
+                                            name="other_avg_weight"
+                                            class="oe_inline"
+                                            nolabel="1"
+                                        />
+                                        <field
+                                            name="other_harvest_stock_uom_id"
+                                            nolabel="1"
+                                            class="pl-1 pl-sm-0"
+                                            required="1"
+                                        />
+                                    </div>
+                                    <label for="other_harvest_stock_qty" />
+                                    <div class="o_row">
+                                        <field
+                                            name="other_harvest_stock_qty"
+                                            class="oe_inline"
+                                            nolabel="1"
+                                        />
+                                        <field
+                                            name="other_harvest_stock_uom_id"
+                                            nolabel="1"
+                                            class="pl-1 pl-sm-0"
+                                            required="1"
+                                        />
+                                    </div>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="penalty_list" string="Penalty">
+                            <field
+                                name="penalty_harvest_ids"
+                                readonly="state != 'draft'"
+                            >
+                                <list editable="bottom" edit="0" create="0" delete="0">
+                                    <field name="penalty_type_id" />
+                                    <field name="currency_id" column_invisible="1" />
+                                    <field name="company_id" column_invisible="1" />
+                                    <field name="penalty_qty" />
+                                    <field name="penalty_price" />
+                                    <field name="penalty_subtotal" />
+                                    <field
+                                        name="total_penalty_foreman"
+                                        optional="hide"
+                                    />
+                                    <field
+                                        name="total_penalty_extra_foreman"
+                                        optional="hide"
+                                    />
+                                    <field
+                                        name="total_penalty_recorder"
+                                        optional="hide"
+                                    />
+                                </list>
+                            </field>
+                        </page>
+                        <page name="wage" string="Cost">
+                            <group>
+                                <group string="wage">
+                                    <field
+                                        name="daily_wages"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                </group>
+                                <group string="Premi">
+                                    <field
+                                        name="premi_base_extra"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                    <field
+                                        name="attendance_premi"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                    <field
+                                        name="total_premi"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                    <field
+                                        name="other_harvest_premi"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Proof of Work">
+                            <widget name="attach_document" string="Attach Document" />
+                            <field
+                                name="attachment_ids"
+                                class="mt-2"
+                                context="{'tree_view_ref': 'mail.view_document_file_kanban'}"
+                                readonly="1"
+                            />
+                        </page>
+                        <page string="Work Note">
+                            <field name="work_note" />
+                        </page>
+                        <page
+                            name="penalty_logging"
+                            string="Penalty Logging"
+                            invisible="1"
+                        >
+                            <field name="penalty_logging">
+                                <list create="0" editable="bottom" edit="0">
+                                    <field name="estate_harvest_id" invisible="1" />
+                                    <field name="comment" />
+                                    <field name="old_amount" optional="show" />
+                                    <field name="new_amount" optional="show" />
+                                    <field name="adjustment_qty" optional="hide" />
+                                    <field name="adjustment_type" optional="hide" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group>
+                        <group
+                            class="oe_subtotal_footer oe_right"
+                            colspan="2"
+                            name="total_cost"
+                        >
+                            <field
+                                name="total_exclude_penalty"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                            />
+                            <field
+                                name="penalty_total"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                            />
+                            <field
+                                name="total_include_penalty"
+                                widget="monetary"
+                                class="oe_subtotal_footer_separator"
+                                options="{'currency_field': 'currency_id'}"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="estate_harvest_view_search" model="ir.ui.view">
+        <field name="name">estate.harvest.view.search</field>
+        <field name="model">estate.harvest</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field
+                    name="afdeling_id"
+                    string="Afdeling"
+                    filter_domain="['|', ('afdeling_id.name', 'ilike', self),('afdeling_id.code','ilike',self)]"
+                />
+                <field
+                    name="block_id"
+                    string="Block"
+                    filter_domain="['|', ('block_id.name', 'ilike', self),('block_id.code','ilike',self)]"
+                />
+                <field name="member_id" />
+                <filter name="filter_operation_date" date="operation_date" />
+                <separator />
+                <filter
+                    name="filter_posted"
+                    string="Posted"
+                    domain="[('is_posted', '=', True)]"
+                />
+                <filter
+                    name="filter_cancelled"
+                    string="Cancelled"
+                    domain="[('is_canceled', '=', True)]"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="Operation Date"
+                        name="group_by_operation_date"
+                        context="{'group_by': 'operation_date'}"
+                    />
+                    <separator />
+                    <filter
+                        string="Afdeling"
+                        name="group_by_afdeling_id"
+                        context="{'group_by': 'afdeling_id'}"
+                    />
+                    <filter
+                        string="Block"
+                        name="group_by_block_id"
+                        context="{'group_by': 'block_id'}"
+                    />
+                    <filter
+                        string="Member"
+                        name="group_by_member_id"
+                        context="{'group_by': 'member_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

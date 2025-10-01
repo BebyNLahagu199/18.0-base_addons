@@ -1,0 +1,11 @@
+<odoo>
+    <record id="action_report_harvest_activity" model="ir.actions.report">
+        <field name="name">Harvest Operation Report</field>
+        <field name="model">estate.operation</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="model_estate_operation" />
+        <field name="report_name">wi_base_farm.report_harvest_operation</field>
+        <field name="report_file">wi_base_farm.report_harvest_operation</field>
+        <field name="print_report_name">'Harvest Activity report'</field>
+    </record>
+</odoo>

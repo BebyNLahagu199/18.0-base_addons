@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="odoo_version" />
+    <orderEntry type="module" module-name="base_addons" />
+    <orderEntry type="module" module-name="Odoo-Version" />
+    <orderEntry type="module" module-name="enterprise" />
+    <orderEntry type="module" module-name="addons-custom" />
+    <orderEntry type="module" module-name="hr_addons" />
+    <orderEntry type="module" module-name="flintink" />
+    <orderEntry type="module" module-name="sales_tracking" />
+  </component>
+</module>

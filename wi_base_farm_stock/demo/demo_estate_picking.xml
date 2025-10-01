@@ -1,0 +1,141 @@
+<odoo>
+
+    <record id="picking_01" model="estate.picking">
+        <field
+            name="scheduled_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_id" ref="wi_base_farm.work_contact_twl" />
+        <field name="driver">Lucas Chen</field>
+        <field name="vehicle">XYZ 789</field>
+        <field
+            name="harvest_ids"
+            model="estate.harvest"
+            eval="[(6, 0, [
+                obj().env.ref('wi_base_farm.estate_harvesting_01').estate_harvest_ids[0].id,
+                obj().env.ref('wi_base_farm.estate_harvesting_01').estate_harvest_ids[1].id,
+                obj().env.ref('wi_base_farm.estate_harvesting_02').estate_harvest_ids[0].id
+            ])]"
+        />
+    </record>
+
+    <record id="wiz_picking_01" model="estate.picking.wizard.unload">
+        <field name="picking_id" ref="wi_base_farm_stock.picking_01" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"
+        />
+        <field name="net_unload" eval="12884.5" />
+        <field name="additional_weight" eval="614.7" />
+    </record>
+
+    <function
+        model="estate.picking.wizard.unload"
+        name="action_update_unload"
+        eval="[ref('wiz_picking_01')]"
+    />
+
+    <record id="picking_02" model="estate.picking">
+        <field
+            name="scheduled_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_id" ref="wi_base_farm.work_contact_dl" />
+        <field name="driver">Liam Patel</field>
+        <field name="vehicle">DEF 456</field>
+        <field
+            name="harvest_ids"
+            model="estate.harvest"
+            eval="[(6, 0, [
+                obj().env.ref('wi_base_farm.estate_harvesting_03').estate_harvest_ids[0].id,
+                obj().env.ref('wi_base_farm.estate_harvesting_03').estate_harvest_ids[1].id,
+                obj().env.ref('wi_base_farm.estate_harvesting_04').estate_harvest_ids[0].id,
+                obj().env.ref('wi_base_farm.estate_harvesting_04').estate_harvest_ids[1].id
+            ])]"
+        />
+    </record>
+
+    <record id="wiz_picking_02" model="estate.picking.wizard.unload">
+        <field name="picking_id" ref="wi_base_farm_stock.picking_02" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"
+        />
+        <field name="net_unload" eval="21348.5" />
+        <field name="additional_weight" eval="1241" />
+    </record>
+
+    <function
+        model="estate.picking.wizard.unload"
+        name="action_update_unload"
+        eval="[ref('wiz_picking_02')]"
+    />
+
+    <record id="picking_03" model="estate.picking">
+        <field
+            name="scheduled_date"
+            eval="(DateTime.today() + relativedelta(days=-2)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_id" ref="wi_base_farm.work_contact_kt" />
+        <field name="driver">Ethan Wong</field>
+        <field name="vehicle">VWX 567</field>
+        <field
+            name="harvest_ids"
+            model="estate.harvest"
+            eval="[(6, 0, [
+                obj().env.ref('wi_base_farm.estate_harvesting_05').estate_harvest_ids[1].id
+            ])]"
+        />
+    </record>
+
+    <record id="wiz_picking_03" model="estate.picking.wizard.unload">
+        <field name="picking_id" ref="wi_base_farm_stock.picking_03" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() + relativedelta(days=-2)).strftime('%Y-%m-%d')"
+        />
+        <field name="net_unload" eval="5834.15" />
+        <field name="additional_weight" eval="104.1" />
+    </record>
+
+    <function
+        model="estate.picking.wizard.unload"
+        name="action_update_unload"
+        eval="[ref('wiz_picking_03')]"
+    />
+
+    <record id="picking_04" model="estate.picking">
+        <field
+            name="scheduled_date"
+            eval="(DateTime.today() + relativedelta(days=-1)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_id" ref="wi_base_farm.work_contact_ts" />
+        <field name="driver">Noah Nguyen</field>
+        <field name="vehicle">JKL 987</field>
+        <field
+            name="harvest_ids"
+            model="estate.harvest"
+            eval="[(6, 0, [
+                obj().env.ref('wi_base_farm.estate_harvesting_06').estate_harvest_ids[0].id,
+                obj().env.ref('wi_base_farm.estate_harvesting_06').estate_harvest_ids[1].id
+            ])]"
+        />
+    </record>
+
+    <record id="wiz_picking_04" model="estate.picking.wizard.unload">
+        <field name="picking_id" ref="wi_base_farm_stock.picking_04" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() + relativedelta(days=-1)).strftime('%Y-%m-%d')"
+        />
+        <field name="net_unload" eval="12374.1" />
+        <field name="additional_weight" eval="412.4" />
+    </record>
+
+    <function
+        model="estate.picking.wizard.unload"
+        name="action_update_unload"
+        eval="[ref('wiz_picking_04')]"
+    />
+
+</odoo>

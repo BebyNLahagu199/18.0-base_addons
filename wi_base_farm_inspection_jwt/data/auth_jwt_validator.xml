@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="farm_inspection" model="auth.jwt.validator">
+        <field name="name">inspection</field>
+        <field name="audience">auth_jwt_inspection_api</field>
+        <field name="issuer">odooconnector</field>
+        <field name="signature_type">secret</field>
+        <field name="secret_algorithm">HS256</field>
+        <field
+            name="secret_key"
+        >d2VpZ2hicmlkZ2Utb2Rvb2Nvbm5lY3Rvci13aXRlY2hlbnRlcnByaXNl</field>
+        <field name="user_id_strategy">email</field>
+        <field name="static_user_id" ref="base.public_user" />
+        <field name="partner_id_strategy">email</field>
+        <field name="partner_id_required" eval="True" />
+    </record>
+
+     <record id="create_inspection_route" model="auth.jwt.route">
+        <field name="name">Inspection</field>
+        <field name="route">/api/farm/inspection</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="farm_inspection" />
+        <field name="farm_data" eval="True" />
+    </record>
+</odoo>

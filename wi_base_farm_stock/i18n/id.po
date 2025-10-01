@@ -1,0 +1,976 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_farm_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wi_base_farm_stock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 02:56+0000\n"
+"PO-Revision-Date: 2025-10-01 02:56+0000\n"
+"Last-Translator: Beby N Lahagu 2025\n"
+"Language-Team: Indonesia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Date: </b>"
+msgstr "<b>Tanggal: </b>"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Estate: </b>"
+msgstr "<b>Perkebunan: </b>"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Monitoring BJR Report</b>"
+msgstr "<b>Laporan Monitoring BJR</b>"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "<b>Product: </b>"
+msgstr "<b>Produk: </b>"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "<span class=\"o_stat_text\">Detailed Operations</span>"
+msgstr "<span class=\"o_stat_text\">Operasi Terperinci</span>"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "<span class=\"o_stat_text\">Product Move</span>"
+msgstr "<span class=\"o_stat_text\">Pindah Produk</span>"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Acknowledged by,"
+msgstr "Diketahui oleh,"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_needaction
+msgid "Action Needed"
+msgstr "Membutuhkan Tindakan"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.res_config_settings_view_form
+msgid "Activate this module to use seal number in picking operation"
+msgstr "Aktifkan modul ini untuk menggunakan nomor segel dalam operasi pemilihan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Aktivitas Dekorasi Pengecualian"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_state
+msgid "Activity State"
+msgstr "Status Aktivitas"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ikon Jenis Aktivitas"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Additional Information"
+msgstr "Informasi Tambahan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__additional_weight
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__additional_weight
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__additional_weight
+msgid "Additional Weight"
+msgstr "Berat Tambahan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__additional_weight
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking_wizard_unload__additional_weight
+msgid "Additional weight for the unload"
+msgstr "Berat tambahan untuk bongkar muat"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__afdeling_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Afdeling"
+msgstr "Afdeling"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Assistant"
+msgstr "Asisten"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_attachment_count
+msgid "Attachment Count"
+msgstr "Jumlah Lampiran"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Average Weight"
+msgstr "Berat Rata-rata"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__block_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__block_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Block"
+msgstr "Blok"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_update_unload_wizard_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.monitoring_bjr_report_view_form
+msgid "Cancel"
+msgstr "Batal"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__cancel
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Cancelled"
+msgstr "Dibatalkan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_res_company
+msgid "Companies"
+msgstr "Perusahaan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__company_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__company_id
+msgid "Company"
+msgstr "Perusahaan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_res_config_settings
+msgid "Config Settings"
+msgstr "Pengaturan Konfigurasi"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Confirm"
+msgstr "Konfirmasi"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__confirm
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Confirmed"
+msgstr "Dikonfirmasi"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.actions.act_window,help:wi_base_farm_stock.estate_picking_action_view
+msgid "Create a new picking operation."
+msgstr "Buat operasi pemilihan baru."
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__scheduled_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__restan_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__date
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Date"
+msgstr "Tanggal"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__date_done
+msgid "Date Done"
+msgstr "Tanggal Selesai"
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/models/estate_picking.py:0
+msgid "Delivery Orders: %s"
+msgstr "Order Pengiriman: %s"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Demand"
+msgstr "Permintaan"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Description"
+msgstr "Deskripsi"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.action_picking_move
+msgid "Detailed Operations"
+msgstr "Detail Operasi"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__display_name
+msgid "Display Name"
+msgstr "Nama Tampilan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__done
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Done"
+msgstr "Selesai"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__draft
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Draft"
+msgstr "Draf"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__driver
+msgid "Driver"
+msgstr "Supir"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__estate_ids
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__estate_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Estate"
+msgstr "Perkebunan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_picking
+msgid "Estate Picking"
+msgstr ""
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_picking_report
+msgid "Estate Picking Report"
+msgstr "Pengambilan Perkebunan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_restan_log
+msgid "Estate Restan Record"
+msgstr "Catatan Restan Perkebunan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__exclude_from_bjr
+msgid "Exclude From Bjr"
+msgstr "Kecualikan dari Bjr"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_harvest__exclude_from_bjr
+msgid "Exclude from BJR"
+msgstr "Kecualikan dari BJR"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_res_config_settings__module_wi_base_seal_number_farm
+msgid "Farm Seal Number"
+msgstr "Nomor Segel Perkebunan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_estate_harvest
+msgid "Farm activity harvest"
+msgstr "Aktivitas panen perkebunan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_follower_ids
+msgid "Followers"
+msgstr "Pengikut"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Pengikut (Mitra)"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ikon font awesome misalnya fa-tasks"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Forecast"
+msgstr "Perkiraan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__gross_weight
+msgid "Gross Weight"
+msgstr "Berat Kotor"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Group By"
+msgstr "Grupkan Berdasarkan"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Group by"
+msgstr "Grup berdasarkan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__ticket_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+msgid "Harvest"
+msgstr "Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_product_id
+msgid "Harvest Product"
+msgstr "Produk Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__harvest_qty_unit
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Harvest Qty"
+msgstr "QTY Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_qty
+msgid "Harvest Quantity"
+msgstr "Quntitas Panen"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Harvest Stock"
+msgstr "Stok Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__harvest_ids
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Harvest Ticket"
+msgstr "Tiket Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__harvest_uom_id
+msgid "Harvest Uom"
+msgstr "Uom Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__harvest_qty_weight
+msgid "Harvest Weight"
+msgstr "Berat Panen"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Harvest Yield"
+msgstr "Hasil Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__has_message
+msgid "Has Message"
+msgstr "Memiliki Pesan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__id
+msgid "ID"
+msgstr "ID"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_exception_icon
+msgid "Icon"
+msgstr "Ikon"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ikon untuk menunjukkan aktivitas pengecualian."
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Jika dicentang, pesan baru memerlukan perhatian Anda."
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_has_error
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Jika dicentang, beberapa pesan memiliki kesalahan pengiriman."
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_harvest__exclude_from_bjr
+msgid "If checked, this activity will not be included in BJR"
+msgstr "Jika dicentang, aktivitas ini tidak akan dimasukkan dalam BJR"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Internal Note..."
+msgstr "catanan internal..."
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Internal Notes"
+msgstr "Catanan Internal"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_is_follower
+msgid "Is Follower"
+msgstr "Pengikut"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir diperbarui oleh"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__write_date
+msgid "Last Updated on"
+msgstr "Terakhir diperbarui pada"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__vehicle
+msgid "Licence Plate"
+msgstr "Plat Nomor"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__loader_ids
+msgid "Loader"
+msgstr "Loader"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__state__locked
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Locked"
+msgstr "Dikunci"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "MTD"
+msgstr "MTD"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_has_error
+msgid "Message Delivery error"
+msgstr "Pesan Kesalahan Pengiriman"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_ids
+msgid "Messages"
+msgstr "Pesan"
+
+#. module: wi_base_farm_stock
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_monitoring_bjr
+msgid "Monitoring Average Weight"
+msgstr "Monitoring Berat Rata-rata"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.report,name:wi_base_farm_stock.monitoring_bjr_print_report
+msgid "Monitoring BJR"
+msgstr "Monitoring BJR"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.monitoring_bjr_report_action
+#: model:ir.model,name:wi_base_farm_stock.model_monitoring_bjr_report
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.monitoring_bjr_report_view_form
+msgid "Monitoring BJR Report"
+msgstr "Monitoring Laporan BJR"
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_report_wi_base_farm_stock_report_monitoring_bjr
+msgid "Monitoring BJR Summary Report"
+msgstr "Monitoring Laporan Ringkasan BJR"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Aktivitas Tenggat Waktu Saya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__name
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__name
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Name"
+msgstr "Nama"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__net_unload
+msgid "Net Unload"
+msgstr "Bongkar Bersih"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__net_weight
+msgid "Net Weight"
+msgstr "Berat Bersih"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__unload_weight
+msgid "Net weight of the unload"
+msgstr "Berat bersih dari bongkar muat"
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/models/estate_restan_logs.py:0
+msgid "New"
+msgstr "Baru"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Kalender Kegiatan Berikutnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Aktifitas Tenggat Waktu Berikutnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_summary
+msgid "Next Activity Summary"
+msgstr "Aktifitas Ringkasan Berikutnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_type_id
+msgid "Next Activity Type"
+msgstr "Jenis Aktivitas Berikutnya"
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/wizard/monitoring_bjr_report.py:0
+msgid "No data to print."
+msgstr "Tidak ada data untuk dicetak."
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "No."
+msgstr "No."
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__priority__0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__note
+msgid "Note"
+msgstr "Catatan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nomor Tindakan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nomor kesalahan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nomor pesan yang memerlukan tindakan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nomor pesan dengan kesalahan pengiriman"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Open Harvest Form"
+msgstr "Form Panen Terbuka"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Operations"
+msgstr "Operasi"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__other_product_id
+msgid "Other Harvest Product"
+msgstr "Produk Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__other_harvest_qty
+msgid "Other Harvest Qty"
+msgstr "QTY Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__other_hrvst_qty
+msgid "Other Harvest Quantity"
+msgstr "Quantitas Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__other_harvest_stock_qty
+msgid "Other Harvest Stock Qty"
+msgstr "Stock QTY Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_restan_log__other_hrvst_uom_id
+msgid "Other Hrvst Uom"
+msgstr "Uom Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Other Information"
+msgstr "Informasi Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__partner_id
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Partner"
+msgstr "Mitra"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.estate_picking_action_view
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_harvest__picking_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__picking_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__picking_id
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_stock_move__estate_picking_id
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_estate_picking
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Picking"
+msgstr "Pemilihan"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.estate_picking_report_action
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_reporting_picking
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_graph
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_pivot
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+msgid "Picking Report"
+msgstr "Laporan Pemilihan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_harvest__picking_id
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking_wizard_unload__picking_id
+#: model:ir.model.fields,help:wi_base_farm_stock.field_stock_move__estate_picking_id
+msgid "Picking for this activity"
+msgstr "Aktifitas pemilihan ini"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Planting Year"
+msgstr "Tahun Penanaman"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__vehicle
+msgid "Plate Number"
+msgstr "Nomor Plat"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.monitoring_bjr_report_view_form
+msgid "Print"
+msgstr "Cetak"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__priority
+msgid "Priority"
+msgstr "Prioritas"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_monitoring_bjr_report__product_id
+msgid "Product"
+msgstr "Produk"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.action_picking_move_line
+msgid "Product Move"
+msgstr "Pergerakkan Produk"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Quantity"
+msgstr "Quantitas"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__rating_ids
+msgid "Ratings"
+msgstr "Penilaian"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Remnant"
+msgstr "sisa"
+
+#. module: wi_base_farm_stock
+#: model:ir.ui.menu,name:wi_base_farm_stock.menu_farm_delivery_restan
+msgid "Remnant Report"
+msgstr "Sisa Laporan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__user_id
+msgid "Responsible"
+msgstr "Tanggung Jawab"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__activity_user_id
+msgid "Responsible User"
+msgstr "Tanggung Jawab Pengguna"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.server,name:wi_base_farm_stock.restan_check_cron_ir_actions_server
+msgid "Restan Check: Check Restan Log"
+msgstr "Restan Cek: Cek Log Restan"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Restan Date"
+msgstr "Tanggal Restan"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_graph_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_search_view
+msgid "Restan Log"
+msgstr "Log Restan"
+
+#. module: wi_base_farm_stock
+#: model:ir.actions.act_window,name:wi_base_farm_stock.action_farm_restan_log_view
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_harvest__restan_log_id
+#: model_terms:ir.actions.act_window,help:wi_base_farm_stock.action_farm_restan_log_view
+msgid "Restan Logs"
+msgstr "Log Restan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Kesalahan Pengiriman SMS"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__scheduled_date
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_search
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_search
+msgid "Scheduled Date"
+msgstr "Tanggal Terjadwal"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_res_company__seal_digit
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_res_config_settings__seal_digit
+msgid "Seal Digit"
+msgstr "digit segel"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.res_config_settings_view_form
+msgid "Seal Number Digits"
+msgstr "Nomor Digit Segel"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.res_config_settings_view_form
+msgid "Seal number digits (excluding prefix and suffix)"
+msgstr "Nomor digit segel (tidak termasuk awalan dan akhiran)"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Set to Draft"
+msgstr "Setel ke Draf"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Shipped Weight"
+msgstr "Berat yang Dikirim"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Shipped Yield"
+msgstr "Hasil yang Dikirim"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__origin
+msgid "Source Document"
+msgstr "Sumber Dokumen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__state
+msgid "Status"
+msgstr "Status"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status berdasarkan aktivitas\n"
+"Terlambat: Tanggal jatuh tempo sudah lewat\n"
+"Hari ini: Tanggal aktivitas adalah hari ini\n"
+"Direncanakan: Aktivitas di masa depan."
+
+#. module: wi_base_farm_stock
+#: model:ir.model,name:wi_base_farm_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Pergerakkan Stok"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__move_ids
+msgid "Stock Moves"
+msgstr "Pergerakkan Stok"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_tree
+msgid "Sum Unload Weight"
+msgstr "Jumlah Berat Bongkar"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Sum of Harvest Qty Weight"
+msgstr "Jumlah Berat QTY Panen"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Sum of Other Harvest Qty Weight"
+msgstr "Jumlah Berat QTY Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__tare_weight
+msgid "Tare Weight"
+msgstr "Berat Tare"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_res_company__seal_digit
+#: model:ir.model.fields,help:wi_base_farm_stock.field_res_config_settings__seal_digit
+msgid "This field is used to set the number of digits for the seal number"
+msgstr "Field ini digunakan untuk mengatur jumlah digit untuk nomor segel"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_res_config_settings__module_wi_base_seal_number_farm
+msgid "This module is used to integrate picking with seal number"
+msgstr "Modul ini digunakan untuk mengintegrasikan pemilihan dengan nomor segel"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.actions.act_window,help:wi_base_farm_stock.action_farm_restan_log_view
+msgid "This module use to logs estate restan."
+msgstr "Modul ini digunakan untuk mencatat restan perkebunan."
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Today"
+msgstr "Hari ini"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_report_view_tree
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_restan_log_tree_view
+msgid "Total"
+msgstr "Total"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Total Area"
+msgstr "Total Wilayah"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_harvest_qty
+msgid "Total Fruit Qty"
+msgstr "Total QTY Buah"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__total_harvest_qty
+msgid "Total Harvest Qty"
+msgstr "Total QTY Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_harvest_stock
+msgid "Total Harvest Stock"
+msgstr "Total Stok Panen"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_other_harvest_qty
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__total_other_harvest_qty
+msgid "Total Other Harvest Qty"
+msgstr "Total QTY Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__total_other_harvest_stock
+msgid "Total Other Harvest Stock"
+msgstr "Total Stok Panen Lainnya"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "Total Tree"
+msgstr "Total Pohon"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Jenis aktivitas pengecualian pada catatan."
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Unit"
+msgstr "Unit"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_wizard_unload__unload_date
+msgid "Unload Date"
+msgstr "Tanggal Bongkar"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__unload_weight
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking_report__unload_weight
+msgid "Unload Weight"
+msgstr "Berat Bongkar"
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/wizard/estate_picking_wizard.py:0
+msgid ""
+"Unload updated by %(user_name)s with net unload: %(net_unload)s and "
+"additional weight: %(additional_weight)s"
+msgstr ""
+"Di bongkar oleh %(user_name)s dengan bongkar bersih: %(net_unload)s dan "
+"berat tambahan: %(additional_weight)s"
+
+#. module: wi_base_farm_stock
+#. odoo-python
+#: code:addons/wi_base_farm_stock/models/estate_picking.py:0
+#: model:ir.model,name:wi_base_farm_stock.model_estate_picking_wizard_unload
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_update_unload_wizard_view
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Update Unload"
+msgstr "Bongkar Diperbarui"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields.selection,name:wi_base_farm_stock.selection__estate_picking__priority__1
+msgid "Urgent"
+msgstr "Penting"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.estate_picking_view_form
+msgid "Vehicle Information"
+msgstr "Informasi Kendaraan"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,field_description:wi_base_farm_stock.field_estate_picking__website_message_ids
+msgid "Website Messages"
+msgstr "Pesan Situs Web"
+
+#. module: wi_base_farm_stock
+#: model:ir.model.fields,help:wi_base_farm_stock.field_estate_picking__website_message_ids
+msgid "Website communication history"
+msgstr "Riwayat komunikasi situs web"
+
+#. module: wi_base_farm_stock
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_stock.report_monitoring_bjr
+msgid "YTD"
+msgstr "YTD"

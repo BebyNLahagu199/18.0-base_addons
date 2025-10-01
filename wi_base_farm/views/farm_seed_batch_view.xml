@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="farm_seed_batch_view_tree" model="ir.ui.view">
+        <field name="name">estate.seed.batch.view.tree</field>
+        <field name="model">estate.seed.batch</field>
+        <field name="arch" type="xml">
+            <list default_order="planting_date desc">
+                <field name="name" />
+                <field name="block_id" />
+                <field name="planting_date" optional="show" />
+                <field name="seed_id" />
+                <field name="seed_qty" optional="show" />
+                <field name="seed_uom_id" groups="uom.group_uom" optional="hide" />
+                <field name="batch_age" optional="hide" />
+                <field name="batch_value" optional="show" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state == 'new'"
+                    decoration-success="state == 'active'"
+                    decoration-muted="state == 'out'"
+                />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="farm_seed_batch_view_form" model="ir.ui.view">
+        <field name="name">estate.seed.batch.view.form</field>
+        <field name="model">estate.seed.batch</field>
+        <field name="arch" type="xml">
+            <form string="Seed Batch">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="block_id" />
+                            <field name="seed_id" />
+                            <label for="seed_qty" />
+                            <div class="o_row">
+                                <field name="seed_qty" />
+                                <field
+                                    name="seed_uom_id"
+                                    readonly="True"
+                                    options="{'no_open': True}"
+                                />
+                            </div>
+                            <field name="production_date" />
+                        </group>
+                        <group>
+                            <field name="planting_date" />
+                            <field name="batch_age" />
+                            <field name="batch_value" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="operations" string="Operations">
+                            <field
+                                name="seed_mutation_ids"
+                                mode="list"
+                                context="{
+                                    'tree_view_ref': 'wi_base_farm.farm_seed_mutation_view_tree'
+                                }"
+                            />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="farm_seed_batch_view_search" model="ir.ui.view">
+        <field name="name">estate.seed.batch.view.search</field>
+        <field name="model">estate.seed.batch</field>
+        <field name="arch" type="xml">
+            <search string="Seed Batch">
+                <field name="name" />
+                <field
+                    name="block_id"
+                    filter_domain="['|', ('block_id.name', 'ilike', self), ('block_id.code','ilike',self)]"
+                />
+                <field name="seed_id" />
+                <filter
+                    name="filter_active"
+                    string="Active"
+                    domain="[('state', '=', 'active')]"
+                />
+                <filter
+                    name="filter_out"
+                    string="Out of Stock"
+                    domain="[('state', '=', 'out')]"
+                />
+                <separator />
+                <filter
+                    name="filter_planting_date"
+                    string="Planting Date"
+                    date="planting_date"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="Block"
+                        name="group_block_id"
+                        domain="[]"
+                        context="{'group_by': 'block_id'}"
+                    />
+                    <filter
+                        string="Seed"
+                        name="group_seed_id"
+                        domain="[]"
+                        context="{'group_by': 'seed_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_farm_seed_batch_view" model="ir.actions.act_window">
+        <field name="name">Seed Batch</field>
+        <field name="res_model">estate.seed.batch</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="farm_seed_batch_view_search" />
+        <field name="context">{'create': false, 'edit': false}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Click to add a new data.
+            </p>
+        </field>
+    </record>
+
+</odoo>

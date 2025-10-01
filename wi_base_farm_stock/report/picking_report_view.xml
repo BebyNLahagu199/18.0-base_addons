@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="estate_picking_report_view_tree" model="ir.ui.view">
+        <field name="name">estate.picking.report.view.tree</field>
+        <field name="model">estate.picking.report</field>
+        <field name="arch" type="xml">
+            <list name="Picking Report" default_order="scheduled_date desc">
+                <field name="scheduled_date" />
+                <field name="picking_id" />
+                <field name="block_id" />
+                <field name="vehicle" />
+                <field name="ticket_id" />
+                <field name="harvest_qty_unit" sum="Total" />
+                <field name="harvest_qty_weight" sum="Total" />
+                <field name="other_harvest_qty" sum="Total" />
+                <field name="other_harvest_stock_qty" sum="Total" />
+                <field name="unload_weight" sum="Total" />
+                <field name="additional_weight" sum="Total" />
+                <field name="total_harvest_qty" sum="Total" />
+                <field name="total_other_harvest_qty" sum="Total" />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_picking_report_view_pivot" model="ir.ui.view">
+        <field name="name">estate.picking.report.view.pivot</field>
+        <field name="model">estate.picking.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Picking Report" sample="1">
+                <field name="scheduled_date" type="row" interval="month" />
+                <field name="picking_id" type="row" />
+                <field name="ticket_id" type="row" />
+                <field name="harvest_qty_unit" type="measure" />
+                <field name="harvest_qty_weight" type="measure" />
+                <field name="other_harvest_qty" type="measure" />
+                <field name="other_harvest_stock_qty" type="measure" />
+                <field name="unload_weight" type="measure" />
+                <field name="additional_weight" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="estate_picking_report_view_graph" model="ir.ui.view">
+        <field name="name">estate.picking.report.view.graph</field>
+        <field name="model">estate.picking.report</field>
+        <field name="arch" type="xml">
+            <graph string="Picking Report" type="bar" stacked="False">
+                <field name="scheduled_date" type="row" interval="month" />
+                <field name="unload_weight" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="estate_picking_report_view_search" model="ir.ui.view">
+        <field name="name">estate.picking.report.view.search</field>
+        <field name="model">estate.picking.report</field>
+        <field name="arch" type="xml">
+            <search string="Picking Report">
+                <field name="picking_id" />
+                <field name="block_id" />
+                <field name="ticket_id" />
+                <filter
+                    name="filter_scheduled_date"
+                    string="Scheduled Date"
+                    date="scheduled_date"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="Block"
+                        name="group_block_id"
+                        domain="[]"
+                        context="{'group_by': 'block_id'}"
+                    />
+                    <filter
+                        string="Picking"
+                        name="group_picking_id"
+                        domain="[]"
+                        context="{'group_by': 'picking_id'}"
+                    />
+                    <filter
+                        string="Harvest"
+                        name="group_ticket_id"
+                        domain="[]"
+                        context="{'group_by': 'ticket_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="estate_picking_report_action" model="ir.actions.act_window">
+        <field name="name">Picking Report</field>
+        <field name="res_model">estate.picking.report</field>
+        <field name="view_mode">list,graph,pivot</field>
+        <field name="search_view_id" ref="estate_picking_report_view_search" />
+        <field name="context">{'create':False,'edit':False}</field>
+    </record>
+
+</odoo>

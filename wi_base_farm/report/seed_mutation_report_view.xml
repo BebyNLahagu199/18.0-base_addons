@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="seed_batch_report_view_tree" model="ir.ui.view">
+        <field name="name">seed.batch.report.tree</field>
+        <field name="model">seed.batch.report</field>
+        <field name="arch" type="xml">
+            <list name="Seed Batch Report" default_order="planting_date desc">
+                <field name="batch_id" />
+                <field name="planting_date" />
+                <field name="seed_id" />
+                <field name="accepted_qty" />
+                <field name="rejected_qty" />
+                <field name="seeding" />
+                <field name="afkir" />
+                <field name="transplant" />
+                <field name="doubletone" />
+                <field name="delivery" />
+                <field name="total" sum="Total" />
+                <field name="age" />
+            </list>
+        </field>
+    </record>
+
+    <record id="seed_batch_report_view_graph" model="ir.ui.view">
+        <field name="name">seed.batch.report.view.graph</field>
+        <field name="model">seed.batch.report</field>
+        <field name="arch" type="xml">
+            <graph string="Seed Batch Report" type="bar">
+                <field name="planting_date" interval="month" />
+                <field name="seed_id" type="row" />
+                <field name="seeding" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="seed_batch_report_view_pivot" model="ir.ui.view">
+        <field name="name">seed.batch.report.view.pivot</field>
+        <field name="model">seed.batch.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Seed Batch Report" disable_linking="true">
+                <field name="batch_id" type="row" />
+                <field name="accepted_qty" type="measure" />
+                <field name="rejected_qty" type="measure" />
+                <field name="seeding" type="measure" />
+                <field name="afkir" type="measure" />
+                <field name="transplant" type="measure" />
+                <field name="doubletone" type="measure" />
+                <field name="delivery" type="measure" />
+                <field name="total" type="measure" />
+                <field name="age" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="seed_batch_report_view_search" model="ir.ui.view">
+        <field name="name">seed.batch.report.view.search</field>
+        <field name="model">seed.batch.report</field>
+        <field name="arch" type="xml">
+            <search string="Seed Batch Report">
+                <field name="batch_id" />
+                <field name="seed_id" />
+                <filter
+                    name="filter_planting_date"
+                    string="Date"
+                    date="planting_date"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        name="group_batch_id"
+                        string="Batch"
+                        context="{'group_by':'batch_id'}"
+                    />
+                    <filter
+                        name="group_seed_id"
+                        string="Seed"
+                        context="{'group_by':'seed_id'}"
+                    />
+                    <filter
+                        name="group_planting_date"
+                        string="Date"
+                        context="{'group_by':'planting_date'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="seed_batch_report_action" model="ir.actions.act_window">
+        <field name="name">Seed Batch Report</field>
+        <field name="res_model">seed.batch.report</field>
+        <field name="view_mode">list,graph,pivot</field>
+        <field name="context">{'create':False,'edit':False}</field>
+    </record>
+
+</odoo>

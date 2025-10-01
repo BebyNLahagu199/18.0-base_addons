@@ -1,0 +1,97 @@
+<odoo noupdate="1">
+    <record id="rain_logs_01_01" model="estate.rain.logs">
+        <field name="log_date">2024-02-01</field>
+        <field name="afdeling" ref="estate_afdeling_01_01" />
+        <field name="rain_start_t" eval="13.30" />
+        <field name="rain_end_t" eval="15.30" />
+        <field name="intensity">23</field>
+        </record>
+
+    <record id="rain_logs_01_02" model="estate.rain.logs">
+        <field name="log_date">2024-02-02</field>
+        <field name="afdeling" ref="estate_afdeling_01_01" />
+        <field name="rain_start_t" eval="15.23" />
+        <field name="rain_end_t">16</field>
+        <field name="intensity">25</field>
+        </record>
+
+    <record id="rain_logs_01_03" model="estate.rain.logs">
+        <field name="log_date">2024-02-03</field>
+        <field name="afdeling" ref="estate_afdeling_01_01" />
+        <field name="rain_start_t" eval="17.30" />
+        <field name="rain_end_t">19</field>
+        <field name="intensity">20</field>
+        </record>
+
+     <record id="rain_logs_01_04" model="estate.rain.logs">
+        <field name="log_date">2024-02-04</field>
+        <field name="afdeling" ref="estate_afdeling_01_01" />
+        <field name="rain_start_t">21</field>
+        <field name="rain_end_t">22</field>
+        <field name="intensity">23</field>
+        </record>
+
+    <record id="rain_logs_01_05" model="estate.rain.logs">
+        <field name="log_date">2024-02-05</field>
+        <field name="afdeling" ref="estate_afdeling_01_01" />
+        <field name="rain_start_t" eval="19.30" />
+        <field name="rain_end_t">21</field>
+        <field name="intensity">21</field>
+        </record>
+
+    <record id="rain_logs_01_06" model="estate.rain.logs">
+        <field name="log_date">2024-02-06</field>
+        <field name="afdeling" ref="estate_afdeling_01_01" />
+        <field name="rain_start_t">13</field>
+        <field name="rain_end_t">15</field>
+        <field name="intensity">22</field>
+        </record>
+
+    <record id="rain_logs_02_01" model="estate.rain.logs">
+        <field name="log_date">2024-02-01</field>
+        <field name="afdeling" ref="estate_afdeling_01_02" />
+        <field name="rain_start_t" eval="14.30" />
+        <field name="rain_end_t">15</field>
+        <field name="intensity">28</field>
+        </record>
+
+    <record id="rain_logs_02_02" model="estate.rain.logs">
+        <field name="log_date">2024-02-02</field>
+        <field name="afdeling" ref="estate_afdeling_01_02" />
+        <field name="rain_start_t">15</field>
+        <field name="rain_end_t">18</field>
+        <field name="intensity">21</field>
+        </record>
+
+    <record id="rain_logs_02_03" model="estate.rain.logs">
+        <field name="log_date">2024-02-03</field>
+        <field name="afdeling" ref="estate_afdeling_01_02" />
+        <field name="rain_start_t" eval="12.30" />
+        <field name="rain_end_t">13</field>
+        <field name="intensity">29</field>
+        </record>
+
+     <record id="rain_logs_02_04" model="estate.rain.logs">
+        <field name="log_date">2024-02-04</field>
+        <field name="afdeling" ref="estate_afdeling_01_02" />
+        <field name="rain_start_t">20</field>
+        <field name="rain_end_t" eval="21.30" />
+        <field name="intensity">24</field>
+        </record>
+
+    <record id="rain_logs_02_05" model="estate.rain.logs">
+        <field name="log_date">2024-02-05</field>
+        <field name="afdeling" ref="estate_afdeling_01_02" />
+        <field name="rain_start_t">17</field>
+        <field name="rain_end_t">18</field>
+        <field name="intensity">25</field>
+        </record>
+
+    <record id="rain_logs_02_06" model="estate.rain.logs">
+        <field name="log_date">2024-02-06</field>
+        <field name="afdeling" ref="estate_afdeling_01_02" />
+        <field name="rain_start_t" eval="16.30" />
+        <field name="rain_end_t">17</field>
+        <field name="intensity">20</field>
+        </record>
+</odoo>

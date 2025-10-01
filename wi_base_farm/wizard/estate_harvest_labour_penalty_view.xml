@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_harvest_labour_penalty_line_form" model="ir.ui.view">
+        <field name="name">estate.harvest.labour.penalty.lines</field>
+        <field name="model">estate.harvest.labour.penalty.lines</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Harvest Labour Penalty Line">
+                <sheet>
+                    <group>
+                        <field name="penalty_id" />
+                        <field name="qty" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

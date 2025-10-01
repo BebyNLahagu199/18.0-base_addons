@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_auth_jwt_validator_admin,auth_jwt_validator admin,model_auth_jwt_validator,base.group_system,1,1,1,1
+access_auth_jwt_validator_log,auth_jwt_request_log,model_auth_jwt_request,base.group_system,1,1,1,1
+access_auth_jwt_route,auth_jwt_route,model_auth_jwt_route,base.group_system,1,1,1,1

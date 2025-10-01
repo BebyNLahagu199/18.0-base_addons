@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="seq_farm_seed_mutation" model="ir.sequence">
+        <field name="name">Farm Seed Mutation</field>
+        <field name="code">estate.seed.mutation</field>
+        <field name="prefix">DRAFT/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_mutation_seeding" model="ir.sequence">
+        <field name="name">Farm Seed Mutation Seeding</field>
+        <field name="code">estate.seed.mutation.seeding</field>
+        <field name="prefix">FSMSD/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_mutation_doubletone" model="ir.sequence">
+        <field name="name">Farm Seed Mutation Doubletone</field>
+        <field name="code">estate.seed.mutation.doubletone</field>
+        <field name="prefix">FSMDT/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_mutation_afkir" model="ir.sequence">
+        <field name="name">Farm Seed Mutation Afkir</field>
+        <field name="code">estate.seed.mutation.afkir</field>
+        <field name="prefix">FSMAF/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_mutation_transplant" model="ir.sequence">
+        <field name="name">Farm Seed Mutation Transplanting</field>
+        <field name="code">estate.seed.mutation.transplant</field>
+        <field name="prefix">FSMTP/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_mutation_delivery" model="ir.sequence">
+        <field name="name">Farm Seed Mutation Delivery</field>
+        <field name="code">estate.seed.mutation.delivery</field>
+        <field name="prefix">FSMDR/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_mutation_receipt" model="ir.sequence">
+        <field name="name">Farm Seed Mutation Receipt</field>
+        <field name="code">estate.seed.mutation.receipt</field>
+        <field name="prefix">FSMRC/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_seed_batch" model="ir.sequence">
+        <field name="name">Farm Seed Batch</field>
+        <field name="code">estate.seed.batch</field>
+        <field name="prefix">BATCH/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <!-- Name by Operation -->
+    <record id="operation_name_type" model="ir.sequence">
+        <field name="name">Estate Operation Name</field>
+        <field name="code">estate.operation.name</field>
+        <field name="prefix">/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <!-- Rainfall log name format -->
+    <record id="seq_farm_ranfall_logs" model="ir.sequence">
+        <field name="name">Farm Rainfall Logs</field>
+        <field name="code">estate.rainfall.logs.name</field>
+        <field name="prefix">RFL/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <!-- Premi -->
+    <record id="seq_farm_daily_premi" model="ir.sequence">
+        <field name="name">Farm Premi</field>
+        <field name="code">estate.daily.premi</field>
+        <field name="prefix">PRD/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+    <record id="seq_farm_monthly_premi" model="ir.sequence">
+        <field name="name">Farm Monthly Premi</field>
+        <field name="code">estate.monthly.premi</field>
+        <field name="prefix">PRM/%(year)s/%(range_month)s/</field>
+        <field name="padding">3</field>
+        <field eval="True" name="use_date_range" />
+        <field name="implementation">no_gap</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="analytic_plan_activities" model="account.analytic.plan">
+        <field name="name">Activity</field>
+        <field name="default_applicability">optional</field>
+    </record>
+
+    <record id="analytic_plan_block" model="account.analytic.plan">
+        <field name="name">Block</field>
+        <field name="default_applicability">optional</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,167 @@
+<odoo noupdate="1">
+
+    <!-- Resources: Estate - Product Category -->
+    <record id="product_category_estate" model="product.category">
+        <field name="parent_id" ref="product.product_category_all" />
+        <field name="name">Estate</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_category_seed" model="product.category">
+        <field name="parent_id" ref="product_category_estate" />
+        <field name="name">Seeds</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_category_fruit" model="product.category">
+        <field name="parent_id" ref="product_category_estate" />
+        <field name="name">Fruits</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_category_chemical" model="product.category">
+        <field name="parent_id" ref="product_category_estate" />
+        <field name="name">Chemical</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_category_fertilizer" model="product.category">
+        <field name="parent_id" ref="product_category_estate" />
+        <field name="name">Fertilizer</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <!-- Resources: Estate - Product Product -->
+    <record id="product_seed_01" model="product.product">
+        <field name="name">Costarica</field>
+        <field name="categ_id" ref="product_category_seed" />
+        <field name="standard_price">55.0</field>
+        <field name="list_price">70.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="uom_po_id" ref="uom.product_uom_unit" />
+        <field name="default_code">CSTRC01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_seed_02" model="product.product">
+        <field name="name">Socfindo</field>
+        <field name="categ_id" ref="product_category_seed" />
+        <field name="standard_price">52.5</field>
+        <field name="list_price">69.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="uom_po_id" ref="uom.product_uom_unit" />
+        <field name="default_code">SCFND01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_seed_03" model="product.product">
+        <field name="name">Damimas</field>
+        <field name="categ_id" ref="product_category_seed" />
+        <field name="standard_price">68.0</field>
+        <field name="list_price">75.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="uom_po_id" ref="uom.product_uom_unit" />
+        <field name="default_code">DAMMS01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_fruit_01" model="product.product">
+        <field name="name">Fruit Fresh Bunch</field>
+        <field name="categ_id" ref="product_category_fruit" />
+        <field name="standard_price">590</field>
+        <field name="list_price">2520</field>
+        <field name="detailed_type">product</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field
+            name="description"
+        >Fresh bunch of palm fruits harvested for processing.</field>
+        <field name="default_code">FFB_9876</field>
+        <field name="farm_data">1</field>
+        <field name="image_1920" type="base64" file="wi_base_farm/static/img/ffb.png" />
+    </record>
+
+    <record id="product_fruit_02" model="product.product">
+        <field name="name">Brondolan</field>
+        <field name="categ_id" ref="product_category_fruit" />
+        <field name="standard_price">590</field>
+        <field name="list_price">2520</field>
+        <field name="detailed_type">product</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field name="default_code">FFB_9877</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_fertilizer_01" model="product.product">
+        <field name="name">Mico Riza</field>
+        <field name="categ_id" ref="product_category_fertilizer" />
+        <field name="standard_price">25.0</field>
+        <field name="list_price">30.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field name="default_code">MCRZ01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_fertilizer_02" model="product.product">
+        <field name="name">Rhiza Gold Plus</field>
+        <field name="categ_id" ref="product_category_fertilizer" />
+        <field name="standard_price">22.0</field>
+        <field name="list_price">29.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field name="default_code">RZGP01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_fertilizer_03" model="product.product">
+        <field name="name">Zincorp</field>
+        <field name="categ_id" ref="product_category_fertilizer" />
+        <field name="standard_price">28.0</field>
+        <field name="list_price">32.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field name="default_code">ZNCR01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_chemical_01" model="product.product">
+        <field name="name">Bayfolan</field>
+        <field name="categ_id" ref="product_category_chemical" />
+        <field name="standard_price">50.0</field>
+        <field name="list_price">57.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_litre" />
+        <field name="uom_po_id" ref="uom.product_uom_litre" />
+        <field name="default_code">BYFL01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+    <record id="product_chemical_02" model="product.product">
+        <field name="name">Daimex</field>
+        <field name="categ_id" ref="product_category_chemical" />
+        <field name="standard_price">52.0</field>
+        <field name="list_price">71.0</field>
+        <field name="detailed_type">product</field>
+        <field name="weight">1</field>
+        <field name="uom_id" ref="uom.product_uom_litre" />
+        <field name="uom_po_id" ref="uom.product_uom_litre" />
+        <field name="default_code">DIMX01</field>
+        <field name="farm_data">1</field>
+    </record>
+
+</odoo>

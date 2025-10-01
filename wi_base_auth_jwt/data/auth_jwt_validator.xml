@@ -1,0 +1,26 @@
+<odoo>
+
+    <record id="base_module_validator" model="auth.jwt.validator">
+        <field name="name">base_module</field>
+        <field name="audience">auth_jwt_base_module_api</field>
+        <field name="issuer">odooconnector</field>
+        <field name="signature_type">secret</field>
+        <field name="secret_algorithm">HS256</field>
+        <field
+            name="secret_key"
+        >d2VpZ2hicmlkZ2Utb2Rvb2Nvbm5lY3Rvci13aXRlY2hlbnRlcnByaXNl</field>
+        <field name="user_id_strategy">static</field>
+        <field name="partner_id_strategy">email</field>
+        <field name="partner_id_required" eval="False" />
+    </record>
+
+    <record id="company_route" model="auth.jwt.route">
+        <field name="name">Company</field>
+        <field name="route">/api/base/company</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="base_module_validator" />
+        <field name="weighbridge_data" eval="True" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+</odoo>

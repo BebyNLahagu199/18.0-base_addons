@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_harvest_labour_line_form" model="ir.ui.view">
+        <field name="name">estate.harvest.labour.line.form</field>
+        <field name="model">harvest.labour.lines</field>
+        <field name="arch" type="xml">
+            <form string="Harvest Labour Line">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="harvest_id" invisible="1" />
+                            <field name="harvest_operation" readonly="1" />
+                            <field name="afdeling" invisible="1" />
+                            <field name="team_member" />
+                            <field name="block" domain="[('estate_id','=',afdeling)]" />
+                            <field name="code_TPH" />
+                            <field
+                                name="planning_qty"
+                                groups="wi_base_farm.farm_planning_operation"
+                            />
+                        </group>
+                        <group>
+                            <field name="harvest_qty_unit" />
+                            <field name="other_harvest_qty" />
+                            <field name="harvest_area" />
+                            <field name="harvest_rates" />
+                        </group>
+                    </group>
+                    <notebook id="notebook_harvest_labour_penalty_line">
+                        <page string="Penalty">
+                            <field name="penalty">
+                                <list>
+                                    <field name="penalty_id" />
+                                    <field name="qty" />
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Work Note">
+                            <field name="work_note" />
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button
+                            name="create_labour"
+                            string="Create Labour"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="harvest_id != False"
+                        />
+                        <button
+                            name="action_confirm"
+                            string="Confirm"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="harvest_id == False"
+                        />
+                        <button special="cancel" string="Cancel" class="oe_link" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_harvest_labour_line" model="ir.actions.act_window">
+        <field name="name">Harvest Labour Line</field>
+        <field name="res_model">harvest.labour.lines</field>
+        <field name="view_id" ref="view_harvest_labour_line_form" />
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

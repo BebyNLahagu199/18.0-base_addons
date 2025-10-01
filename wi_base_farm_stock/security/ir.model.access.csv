@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_estate_picking_user,access_estate_picking_user,model_estate_picking,base.group_user,1,1,1,1
+access_estate_picking_wizard_unload_user,access_estate_picking_wizard_unload_user,model_estate_picking_wizard_unload,base.group_user,1,1,1,1
+access_estate_restan_log_user,access_estate_restan_log_user,model_estate_restan_log,base.group_user,1,1,1,1
+access_estate_picking_report_user,access_estate_picking_report_user,model_estate_picking_report,base.group_user,1,1,1,1
+access_monitoring_bjr_report_user,access_monitoring_bjr_report_user,model_monitoring_bjr_report,base.group_user,1,1,1,1

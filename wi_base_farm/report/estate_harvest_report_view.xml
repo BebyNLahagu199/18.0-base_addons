@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="estate_harvest_report_view_tree" model="ir.ui.view">
+        <field name="name">estate.harvest.report.view.tree</field>
+        <field name="model">estate.harvest</field>
+        <field name="arch" type="xml">
+            <list name="Harvesting Analysis">
+                <field name="name" />
+                <field name="estate_operation_id" optional="hide" />
+                <field name="operation_date" optional="show" />
+                <field name="afdeling_id" optional="show" />
+                <field name="member_id" optional="show" />
+                <field name="block_id" optional="show" />
+                <field name="planted_year" optional="hide" />
+                <field name="harvest_main_product_id" optional="show" />
+                <field name="avg_weight" optional="show" />
+                <field name="harvest_other_product_id" optional="hide" />
+                <field name="harvest_qty_unit" sum="Total" optional="show" />
+                <field name="abnormal_unit" sum="Total" optional="hide" />
+                <field name="harvest_uom_id" groups="uom.group_uom" optional="hide" />
+                <field name="harvest_qty_weight" sum="Total" optional="show" />
+                <field name="harvest_rates" optional="hide" />
+                <field name="base_weight" sum="Total" optional="hide" />
+                <field name="premi_id" optional="hide" />
+                <field name="daily_wages" sum="Total" optional="hide" />
+                <field name="premi_base_extra" sum="Total" optional="hide" />
+                <field name="attendance_premi" sum="Total" optional="hide" />
+                <field name="other_harvest_premi" sum="Total" optional="hide" />
+                <field name="total_premi" sum="Total" optional="show" />
+                <field name="total_exclude_penalty" sum="Total" optional="hide" />
+                <field name="penalty_total" sum="Total" optional="show" />
+                <field name="total_include_penalty" sum="Total" optional="show" />
+                <field name="currency_id" column_invisible="1" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="hide"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_harvest_view_pivot" model="ir.ui.view">
+        <field name="name">estate.harvest.view.pivot</field>
+        <field name="model">estate.harvest</field>
+        <field name="arch" type="xml">
+            <pivot string="Harvesting Analysis" disable_linking="true">
+                <field name="afdeling_id" type="row" />
+                <field name="operation_date" interval="month" />
+                <field name="member_id" type="row" />
+                <field name="base_weight" type="measure" />
+                <field name="harvest_qty_unit" type="measure" />
+                <field name="harvest_qty_weight" type="measure" />
+                <field name="other_harvest_qty" type="measure" />
+                <field name="other_harvest_stock_qty" type="measure" />
+                <field name="daily_wages" type="measure" />
+                <field name="total_premi" type="measure" />
+                <field name="penalty_total" type="measure" />
+                <field name="total_include_penalty" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="estate_harvest_view_graph" model="ir.ui.view">
+        <field name="name">estate.harvest.view.graph</field>
+        <field name="model">estate.harvest</field>
+        <field name="arch" type="xml">
+            <graph string="Harvesting Analysis" stacked="0">
+                <field name="afdeling_id" type="row" />
+                <field name="harvest_qty_weight" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="harvesting_report_action" model="ir.actions.act_window">
+        <field name="name">Harvesting Report</field>
+        <field name="res_model">estate.harvest</field>
+        <field name="search_view_id" ref="wi_base_farm.estate_harvest_view_search" />
+        <field name="context">{
+                'create': False, 'edit': False,
+                'search_default_group_by_operation_date': 1,
+                'search_default_group_by_block_id': 1,
+                'search_default_group_by_member_id': 1
+            }</field>
+        <field name="domain">[('state', 'in', ('posted', 'done'))]</field>
+    </record>
+
+    <record id="harvesting_report_action_tree_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="estate_harvest_report_view_tree" />
+        <field name="act_window_id" ref="harvesting_report_action" />
+    </record>
+
+    <record id="harvesting_report_action_graph_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="estate_harvest_view_graph" />
+        <field name="act_window_id" ref="harvesting_report_action" />
+    </record>
+
+    <record id="harvesting_report_action_pivot_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3" />
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="estate_harvest_view_pivot" />
+        <field name="act_window_id" ref="harvesting_report_action" />
+    </record>
+
+</odoo>

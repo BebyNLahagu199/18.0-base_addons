@@ -1,0 +1,607 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_farm_inspection
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wi_base_farm_inspection\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 02:31+0000\n"
+"PO-Revision-Date: 2025-10-01 02:31+0000\n"
+"Last-Translator: Beby N Lahagu 2025\n"
+"Language-Team: Indonesian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__accuracy
+msgid "Accuracy"
+msgstr "Akurasi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_needaction
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_needaction
+msgid "Action Needed"
+msgstr "Tindakan Diperlukan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__activity_id
+msgid "Activity"
+msgstr "Kegiatan"
+
+#. module: wi_base_farm_inspection
+#. odoo-javascript
+#: code:addons/wi_base_farm_inspection/static/src/xml/map_reporting.xml:0
+msgid "All Employees"
+msgstr "Semua Karyawan"
+
+#. module: wi_base_farm_inspection
+#: model:res.groups,name:wi_base_farm_inspection.farm_planning_operation
+msgid "Allow planning operation system in farm inspection"
+msgstr "Sistem perencanaan operasi diizinkan dalam inspeksi perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_attachment_count
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_attachment_count
+msgid "Attachment Count"
+msgstr "Jumlah Lampiran"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_inspection_form
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_issue_form
+msgid "BKM"
+msgstr "BKM"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__block_id
+msgid "Block"
+msgstr "Blok"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__color
+msgid "Color"
+msgstr "Warna"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__company_id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__company_id
+msgid "Company"
+msgstr "Perusahaan"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_issue_form
+msgid "Confirm BKM"
+msgstr "Konfirmasi BKM"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields.selection,name:wi_base_farm_inspection.selection__farm_issue_stage__state__confirmed
+msgid "Confirmed"
+msgstr "Dikonfirmasi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__coordinate_ids
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_inspection_form
+msgid "Coordinate"
+msgstr "Koordinat"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__coordinate_map
+msgid "Coordinate Map"
+msgstr "Koordinat Peta"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.actions.act_window,help:wi_base_farm_inspection.base_farm_inspection_action
+msgid "Create a new Farm Inspection"
+msgstr "Buat Inspeksi Perkebunan baru"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.actions.act_window,help:wi_base_farm_inspection.base_farm_inspection_issue_action
+msgid "Create a new Farm Inspection Issue"
+msgstr "Buat Masalah Inspeksi Perkebunan baru"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__create_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__create_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__date
+msgid "Date"
+msgstr "Tanggal"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_farm_issue_stage
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__description
+msgid "Description"
+msgstr "Deskripsi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__detail_location
+msgid "Detail Location"
+msgstr "Detail Lokasi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__display_name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__display_name
+msgid "Display Name"
+msgstr "Nama Tampilan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__distance
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__distance_display
+msgid "Distance"
+msgstr "Jarak"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields.selection,name:wi_base_farm_inspection.selection__farm_issue_stage__state__done
+msgid "Done"
+msgstr "Selesai"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__duration_display
+msgid "Duration"
+msgstr "Durasi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__employee_id
+msgid "Employee"
+msgstr "Karyawan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__end_battery_percentage
+msgid "End Battery (%)"
+msgstr "Jumlah Baterai Akhir (%)"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_estate_estate
+msgid "Estate"
+msgstr "Kebun"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_estate_operation
+msgid "Estate Operation Activity"
+msgstr "Operasi Kegiatan Perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_farm_coordinate
+msgid "Farm Coordinate"
+msgstr "Koordinat Perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.actions.act_window,name:wi_base_farm_inspection.base_farm_inspection_action
+#: model:ir.model,name:wi_base_farm_inspection.model_farm_inspection
+msgid "Farm Inspection"
+msgstr "Inspeksi Perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.actions.client,name:wi_base_farm_inspection.farm_inspection_reporting_action
+msgid "Farm Inspection Reporting"
+msgstr "Pelaporan Inspeksi Perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.actions.act_window,name:wi_base_farm_inspection.base_farm_inspection_issue_action
+#: model:ir.model,name:wi_base_farm_inspection.model_farm_issue
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_operation__farm_issue_id
+msgid "Farm Issue"
+msgstr "Isu Perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_farm_issue_image
+msgid "Farm Issue Image"
+msgstr "Gambar Isu Perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_estate_harvest
+msgid "Farm activity harvest"
+msgstr "Aktivitas panen perkebunan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_follower_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_follower_ids
+msgid "Followers"
+msgstr "Pengikut"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_partner_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Pengikut (Mitra)"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__foto
+msgid "Foto"
+msgstr "Foto"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_estate__geo_location
+msgid "Geo Location"
+msgstr "Geo Lokasi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__has_message
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__has_message
+msgid "Has Message"
+msgstr "Memiliki Pesan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_inspection__message_needaction
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Jika dicentang, pesan baru memerlukan perhatian Anda."
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_inspection__message_has_error
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_inspection__message_has_sms_error
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__message_has_error
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Jika dicentang, beberapa pesan mengalami kesalahan pengiriman."
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__image_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__image
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_issue_form
+msgid "Image"
+msgstr "Gambar"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__image_count
+msgid "Image Count"
+msgstr "Jumlah Gambar"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_issue_form
+msgid "Images"
+msgstr "Gambar"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields.selection,name:wi_base_farm_inspection.selection__farm_coordinate__state__inc
+msgid "Include"
+msgstr "Sertakan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__inspection_id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__inspection_id
+#: model:ir.module.category,name:wi_base_farm_inspection.farm_inspection_category
+#: model:ir.module.category,name:wi_base_farm_inspection.farm_inspection_parent
+#: model:ir.ui.menu,name:wi_base_farm_inspection.menu_farm_inspection
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.farm_inspection_search_basic
+msgid "Inspection"
+msgstr "Inspeksi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__inspection_end
+msgid "Inspection End"
+msgstr "Akhir Inspeksi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__inspection_start
+msgid "Inspection Start"
+msgstr "Mulai Inspeksi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_is_follower
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_is_follower
+msgid "Is Follower"
+msgstr "Adalah Pengikut"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__issue_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__issue_id
+#: model:ir.ui.menu,name:wi_base_farm_inspection.menu_farm_inspection_issue
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_inspection_form
+msgid "Issue"
+msgstr "Isu"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__issue_all
+msgid "Issue All"
+msgstr "Semua Isu"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__issue_count
+msgid "Issue Count"
+msgstr "Jumlah Isu"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__duration_tracking
+msgid "JSON that maps ids from a many2one field to seconds spent"
+msgstr "JSON yang memetakan id dari bidang many2one ke detik yang dihabiskan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__kbm_count
+msgid "Kbm Count"
+msgstr "Jumlah Kbm"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__write_uid
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__write_date
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__write_date
+msgid "Last Updated on"
+msgstr "Terakhir Diperbarui pada"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_harvest__latitude
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_upkeep_labour__latitude
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__latitude
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__latitude
+msgid "Latitude"
+msgstr "Lintang"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.estate_form_views_inherit
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.estate_harvest_form_views_inherit
+msgid "Location"
+msgstr "Lokasi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_harvest__longitude
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_upkeep_labour__longitude
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__longitude
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__longitude
+msgid "Longitude"
+msgstr "Longitud"
+
+#. module: wi_base_farm_inspection
+#: model:res.groups,name:wi_base_farm_inspection.farm_manager_group
+msgid "Manager"
+msgstr "Manejer"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_has_error
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_has_error
+msgid "Message Delivery error"
+msgstr "Kesalahan Pengiriman Pesan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_ids
+msgid "Messages"
+msgstr "Pesan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_estate__name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_estate_operation__name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_image__name
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__name
+msgid "Name"
+msgstr "Nama"
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_inspection.py:0
+msgid "New"
+msgstr "Baru"
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_issue.py:0
+msgid "No Analytic Account found for the specified Operation Type."
+msgstr "Tidak ada Akun Analitik yang ditemukan untuk Jenis Operasi yang ditentukan."
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_inspection.py:0
+msgid "No Inspection Name"
+msgstr "Tidak Ada Nama Inspeksi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields.selection,name:wi_base_farm_inspection.selection__farm_issue_stage__state__not_bkm
+msgid "Not BKM"
+msgstr "Belum BKM"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields.selection,name:wi_base_farm_inspection.selection__farm_coordinate__state__not_include
+msgid "Not Include"
+msgstr "Tidak Include"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_needaction_counter
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nomor Tindakan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_has_error_counter
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nomor kesalahan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_inspection__message_needaction_counter
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nomor pesan yang memerlukan tindakan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_inspection__message_has_error_counter
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nomor pesan dengan kesalahan pengiriman"
+
+#. module: wi_base_farm_inspection
+#: model:ir.ui.menu,name:wi_base_farm_inspection.menu_farm_inspection_menu
+msgid "Operation"
+msgstr "Operasi"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_inspection.base_farm_inspection_form
+msgid "Overview"
+msgstr "Ringkasan"
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_issue.py:0
+msgid "Please define an Activity before confirming."
+msgstr "Silakan tentukan Kegiatan sebelum mengonfirmasi."
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_issue.py:0
+msgid "Please define an Operation Type for the selected Activity."
+msgstr "Silakan tentukan Jenis Operasi untuk Kegiatan yang dipilih."
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_issue.py:0
+msgid "Please, Clik button confirm BKM"
+msgstr "Silakan, Klik tombol konfirmasi BKM"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__rating_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__rating_ids
+msgid "Ratings"
+msgstr "Peringkat"
+
+#. module: wi_base_farm_inspection
+#: model:ir.ui.menu,name:wi_base_farm_inspection.menu_report_inspection
+msgid "Report Inspection"
+msgstr "Laporan Inspeksi"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__message_has_sms_error
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Kesalahan Pengiriman SMS"
+
+#. module: wi_base_farm_inspection
+#. odoo-javascript
+#: code:addons/wi_base_farm_inspection/static/src/xml/map_reporting.xml:0
+msgid "Search employee..."
+msgstr "Cari karyawan..."
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__sequence
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__sequence
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__sequence
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__sequence
+msgid "Sequence"
+msgstr "Urutan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__speed
+msgid "Speed"
+msgstr "kecepatan"
+
+#. module: wi_base_farm_inspection
+#. odoo-python
+#: code:addons/wi_base_farm_inspection/models/farm_issue.py:0
+msgid "Stage with state 'confirmed' not found."
+msgstr "Tahap dengan status 'dikonfirmasi' tidak ditemukan."
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__start_battery_percentage
+msgid "Start Battery (%)"
+msgstr "Jumlah Baterai Awal (%)"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_coordinate__state
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__states_id
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__states_state
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue_stage__state
+msgid "State"
+msgstr "Status"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__duration_tracking
+msgid "Status time"
+msgstr "Waktu status"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__step
+msgid "Step"
+msgstr "Langkah"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__subject
+msgid "Subject"
+msgstr "Subjek"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__time
+msgid "Time"
+msgstr "Waktu"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__upkeep_count
+msgid "Upkeep Count"
+msgstr "Jumlah Pemeliharaan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__upkeep_issue
+msgid "Upkeep Issue"
+msgstr "Isu Pemeliharaan"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model,name:wi_base_farm_inspection.model_estate_upkeep_labour
+msgid "Upkeep Labour"
+msgstr "Pekerja Pemeliharaan"
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.actions.act_window,help:wi_base_farm_inspection.base_farm_inspection_issue_action
+msgid "Use this menu to create a new Farm Inspection Issue."
+msgstr "Gunakan menu ini untuk membuat Masalah Inspeksi Perkebunan baru."
+
+#. module: wi_base_farm_inspection
+#: model_terms:ir.actions.act_window,help:wi_base_farm_inspection.base_farm_inspection_action
+msgid "Use this menu to create a new Farm Inspection."
+msgstr "Gunakan menu ini untuk membuat Inspeksi Perkebunan baru."
+
+#. module: wi_base_farm_inspection
+#: model:res.groups,name:wi_base_farm_inspection.farm_user_group
+msgid "User"
+msgstr "Pengguna"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_inspection__website_message_ids
+#: model:ir.model.fields,field_description:wi_base_farm_inspection.field_farm_issue__website_message_ids
+msgid "Website Messages"
+msgstr "Pesan Situs Web"
+
+#. module: wi_base_farm_inspection
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_inspection__website_message_ids
+#: model:ir.model.fields,help:wi_base_farm_inspection.field_farm_issue__website_message_ids
+msgid "Website communication history"
+msgstr "Riwayat komunikasi situs web"

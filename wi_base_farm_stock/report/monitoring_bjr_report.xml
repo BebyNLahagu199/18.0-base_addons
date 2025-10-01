@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="monitoring_bjr_print_report" model="ir.actions.report">
+        <field name="name">Monitoring BJR</field>
+        <field name="model">monitoring.bjr.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wi_base_farm_stock.report_monitoring_bjr</field>
+        <field name="report_file">wi_base_farm_stock.report_monitoring_bjr</field>
+        <field name="paperformat_id" ref="wi_base_farm.paperformat_farm_report" />
+    </record>
+
+    <template id="report_monitoring_bjr">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <style>
+                    th, td {
+                        vertical-align: middle;
+                        padding: 5px;
+                    }
+                </style>
+                <div class="page w-100" style="font-size: 12px;">
+                    <div class="row mt-4">
+                        <div class="mt-4 col-12">
+                            <b>Monitoring BJR Report</b>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-4">
+                            <b>Date: </b><span
+                                t-esc="date"
+                                t-options="{'widget': 'date','format': 'dd MMMM yyyy'}"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <b>Estate: </b><span t-esc="estate" />
+                        </div>
+                        <div class="col-4">
+                            <b>Product: </b><span t-esc="product" />
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <table style="font-size: 10px; width: 100%">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">No.</th>
+                                    <th rowspan="2">Block</th>
+                                    <th rowspan="2">Planting Year</th>
+                                    <th rowspan="2">Total Area</th>
+                                    <th rowspan="2">Total Tree</th>
+                                    <th colspan="3">Harvest Yield</th>
+                                    <th colspan="3">Shipped Yield</th>
+                                    <th colspan="3">Shipped Weight</th>
+                                    <th colspan="3">Average Weight</th>
+                                    <th rowspan="2">Remnant</th>
+                                </tr>
+                                <tr>
+                                    <th>Today</th>
+                                    <th>MTD</th>
+                                    <th>YTD</th>
+                                    <th>Today</th>
+                                    <th>MTD</th>
+                                    <th>YTD</th>
+                                    <th>Today</th>
+                                    <th>MTD</th>
+                                    <th>YTD</th>
+                                    <th>Today</th>
+                                    <th>MTD</th>
+                                    <th>YTD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="1" />
+                                <t t-foreach="records" t-as="record">
+                                    <tr>
+                                        <td style="text-align: right;">
+                                            <t t-esc="counter" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="record['code']" />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t t-esc="record['planting_year']" />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t t-esc="record['total_area']" />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t t-esc="record['total_tree']" />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['harvest_ttd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['harvest_mtd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['harvest_ytd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['picking_ttd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['picking_mtd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['picking_ytd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['kg_wb_ttd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['kg_wb_mtd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['kg_wb_ytd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['avg_factory_ttd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['avg_factory_mtd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['avg_factory_ytd'])"
+                                            />
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <t
+                                                t-out="'{:,.2f}'.format(record['remnant'])"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <t t-set="counter" t-value="counter + 1" />
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div name="signature" class="align-right mt-4">
+                        <div class="offset-10 text-center">
+                            <b>Date: </b><span
+                                t-esc="datetime.datetime.now().date()"
+                                t-options='{"widget": "date","format": "dd MMMM yyyy"}'
+                            />
+                        </div>
+                        <div class="offset-10 text-center">
+                            Acknowledged by,
+                        </div>
+                        <br /><br /><br /><br />
+                        <div class="offset-10 text-center">
+                            Assistant
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

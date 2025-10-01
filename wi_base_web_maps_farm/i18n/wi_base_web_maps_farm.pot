@@ -1,0 +1,209 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_web_maps_farm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 05:15+0000\n"
+"PO-Revision-Date: 2025-10-01 05:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Address"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Average Weight"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__city
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__city
+msgid "City"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Compute Localization"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Compute based on address"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__contact_address_complete
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__contact_address_complete
+msgid "Contact Address Complete"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__coordinate
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__coordinate
+msgid "Coordinate"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__country_id
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__country_id
+msgid "Country"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Data"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Detail Location"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model,name:wi_base_web_maps_farm.model_estate_estate
+msgid "Estate"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model,name:wi_base_web_maps_farm.model_estate_block
+msgid "Estate Block"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,help:wi_base_web_maps_farm.field_estate_block__coordinate
+#: model:ir.model.fields,help:wi_base_web_maps_farm.field_estate_estate__coordinate
+msgid "Fill in the format Latitude,Longitude"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__location_latitude
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__location_latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Geo Location"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__location_longitude
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__location_longitude
+msgid "Geo Longitude"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_block_view_form
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Geolocation"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__date_localization
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__date_localization
+msgid "Geolocation Date"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Lat :"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_block_view_form
+msgid "Location"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Long:"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Main Harvest Product (In 6 Months)"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Production"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Refresh"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Refresh Localization"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__state_id
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__state_id
+msgid "State"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__street
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__street
+msgid "Street"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__street2
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__street2
+msgid "Street2"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Today"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Total Area"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#. odoo-javascript
+#: code:addons/wi_base_web_maps_farm/static/src/xml/render_details.xml:0
+msgid "Trees"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps_farm.estate_estate_view_form
+msgid "Updated on:"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__web_maps_data
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__web_maps_data
+msgid "Web Maps Data"
+msgstr ""
+
+#. module: wi_base_web_maps_farm
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_block__zip
+#: model:ir.model.fields,field_description:wi_base_web_maps_farm.field_estate_estate__zip
+msgid "Zip"
+msgstr ""

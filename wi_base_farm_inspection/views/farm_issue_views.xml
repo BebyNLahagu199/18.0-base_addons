@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="base_farm_issue_tree" model="ir.ui.view">
+        <field name="name">base.farm.issue.tree</field>
+        <field name="model">farm.issue</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle" />
+                <field name="date" />
+                <field name="subject" />
+                <field name="description" />
+                <field name="block_id" widget="many2one" />
+                <field name="detail_location" />
+                <field name="states_state" invisible="1" string="" />
+                <field
+                    name="states_id"
+                    widget="badge"
+                    decoration-danger="states_state == 'not_bkm'"
+                    decoration-warning="states_state == 'confirmed'"
+                    decoration-success="states_state == 'done'"
+                />
+                <field name="latitude" />
+                <field name="longitude" />
+            </list>
+        </field>
+    </record>
+
+    <record id="base_farm_issue_form" model="ir.ui.view">
+        <field name="name">base.farm.issue.form</field>
+        <field name="model">farm.issue</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+               <header>
+                    <field name="states_id" widget="statusbar_duration" />
+               </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button
+                            class="oe_stat_button"
+                            icon="fa-folder-open"
+                            type="object"
+                            name="get_confirm_tbm"
+                            widget="statinfo"
+                            string="BKM"
+                            invisible="states_state != 'confirmed'"
+                        >
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="inspection_id" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="states_state" invisible="1" />
+                            <field name="date" readonly="1" />
+                            <field name="subject" readonly="1" />
+                            <field name="description" readonly="1" />
+                            <field name="activity_id" widget="many2one" />
+                        </group>
+                        <group>
+                            <field name="block_id" widget="many2one" />
+                            <field name="detail_location" readonly="1" />
+                            <field name="latitude" readonly="1" />
+                            <field name="longitude" readonly="1" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Images">
+                            <field name="image_ids" mode="kanban">
+                                <kanban quick_create="false" create="false">
+                                    <field name="name" />
+                                    <field name="image" />
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="o_kanban_image">
+                                                <img
+                                                    alt="Image"
+                                                    t-if="record.image.raw_value"
+                                                    t-att-src="kanban_image('farm.issue.image','image', record.id.raw_value)"
+                                                />
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                    </notebook>
+                    <button
+                        name="button_confirm_bkm"
+                        type="object"
+                        string="Confirm BKM"
+                        class="btn btn-primary mt-3"
+                        invisible="states_state != 'not_bkm'"
+                    />
+                    <footer>
+                        <button
+                            name="button_confirm_bkm"
+                            type="object"
+                            string="Confirm BKM"
+                            class="btn btn-primary mt-3"
+                            invisible="1"
+                        />
+                    </footer>
+                </sheet>
+                <chatter reload_on_follower="True"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="base_farm_inspection_issue_action" model="ir.actions.act_window">
+        <field name="name">Farm Issue</field>
+        <field name="res_model">farm.issue</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Farm Inspection Issue
+            </p>
+            <p>
+                Use this menu to create a new Farm Inspection Issue.
+            </p>
+        </field>
+    </record>
+</odoo>

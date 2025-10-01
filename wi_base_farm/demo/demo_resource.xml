@@ -1,0 +1,2421 @@
+<odoo noupdate="1">
+
+    <!-- Resources: Estate - Block - Analytic -->
+    <record id="estate_block_analytic_01_01_01" model="account.analytic.account">
+        <field name="name">Block A1</field>
+        <field name="code">51.00.0001.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_01_02" model="account.analytic.account">
+        <field name="name">Block A2</field>
+        <field name="code">51.00.0001.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_01_03" model="account.analytic.account">
+        <field name="name">Block A3</field>
+        <field name="code">51.00.0001.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_01_04" model="account.analytic.account">
+        <field name="name">Block A4</field>
+        <field name="code">51.00.0001.04</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_01_05" model="account.analytic.account">
+        <field name="name">Block A5</field>
+        <field name="code">51.00.0001.05</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_02_01" model="account.analytic.account">
+        <field name="name">Block B1</field>
+        <field name="code">51.00.0002.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_02_02" model="account.analytic.account">
+        <field name="name">Block B2</field>
+        <field name="code">51.00.0002.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_02_03" model="account.analytic.account">
+        <field name="name">Block B3</field>
+        <field name="code">51.00.0002.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_02_04" model="account.analytic.account">
+        <field name="name">Block B4</field>
+        <field name="code">51.00.0002.04</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_02_05" model="account.analytic.account">
+        <field name="name">Block B5</field>
+        <field name="code">51.00.0002.05</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_03_01" model="account.analytic.account">
+        <field name="name">Block C1</field>
+        <field name="code">51.00.0003.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_03_02" model="account.analytic.account">
+        <field name="name">Block C2</field>
+        <field name="code">51.00.0003.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_03_03" model="account.analytic.account">
+        <field name="name">Block C3</field>
+        <field name="code">51.00.0003.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_03_04" model="account.analytic.account">
+        <field name="name">Block C4</field>
+        <field name="code">51.00.0003.04</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_01_03_05" model="account.analytic.account">
+        <field name="name">Block C5</field>
+        <field name="code">51.00.0003.05</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_01_01" model="account.analytic.account">
+        <field name="name">Block D1</field>
+        <field name="code">51.01.0001.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_01_02" model="account.analytic.account">
+        <field name="name">Block D2</field>
+        <field name="code">51.01.0001.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_01_03" model="account.analytic.account">
+        <field name="name">Block D3</field>
+        <field name="code">51.01.0001.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_02_01" model="account.analytic.account">
+        <field name="name">Block E1</field>
+        <field name="code">51.01.0002.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_02_02" model="account.analytic.account">
+        <field name="name">Block E2</field>
+        <field name="code">51.01.0002.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_02_03" model="account.analytic.account">
+        <field name="name">Block E3</field>
+        <field name="code">51.01.0002.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_03_01" model="account.analytic.account">
+        <field name="name">Block F1</field>
+        <field name="code">51.01.0003.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_03_02" model="account.analytic.account">
+        <field name="name">Block F2</field>
+        <field name="code">51.01.0003.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_02_03_03" model="account.analytic.account">
+        <field name="name">Block F3</field>
+        <field name="code">51.01.0003.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_01_01" model="account.analytic.account">
+        <field name="name">Block G1</field>
+        <field name="code">51.02.0001.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_01_02" model="account.analytic.account">
+        <field name="name">Block G2</field>
+        <field name="code">51.02.0001.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_01_03" model="account.analytic.account">
+        <field name="name">Block G3</field>
+        <field name="code">51.02.0001.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_02_01" model="account.analytic.account">
+        <field name="name">Block H1</field>
+        <field name="code">51.02.0002.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_02_02" model="account.analytic.account">
+        <field name="name">Block H2</field>
+        <field name="code">51.02.0002.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_02_03" model="account.analytic.account">
+        <field name="name">Block H3</field>
+        <field name="code">51.02.0002.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_03_01" model="account.analytic.account">
+        <field name="name">Block I1</field>
+        <field name="code">51.02.0003.01</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_03_02" model="account.analytic.account">
+        <field name="name">Block I2</field>
+        <field name="code">51.02.0003.02</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <record id="estate_block_analytic_03_03_03" model="account.analytic.account">
+        <field name="name">Block I3</field>
+        <field name="code">51.02.0003.03</field>
+        <field name="plan_id" ref="analytic_plan_block" />
+    </record>
+
+    <!-- Resources: Estate - Estate -->
+    <record id="estate_estate_01" model="estate.estate">
+        <field name="name">Estate - 01</field>
+        <field name="code">EST/COMP/001</field>
+        <field name="location_type">estate</field>
+        <field name="street">Jl. Lintas Sumatera</field>
+        <field name="street2">Desa Sei Berombang, Kecamatan Tanjung Morawa</field>
+        <field name="zip_code">20362</field>
+        <field name="city">Deli Serdang</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="country_id" ref="base.id" />
+        <field
+            name="note"
+        >This estate has excellent soil quality and good access to water resources.</field>
+    </record>
+
+    <record id="estate_estate_02" model="estate.estate">
+        <field name="name">Estate - 02</field>
+        <field name="code">EST/COMP/002</field>
+        <field name="location_type">estate</field>
+        <field name="street">Jl. Tambusai Barat, Tambusai</field>
+        <field name="zip_code">28558</field>
+        <field name="city">Rokan Hilir</field>
+        <field name="state_id" ref="base.state_id_ri" />
+        <field name="country_id" ref="base.id" />
+        <field
+            name="note"
+        >This estate has undergone recent soil improvement measures.</field>
+    </record>
+
+    <record id="estate_estate_03" model="estate.estate">
+        <field name="name">Estate - 03</field>
+        <field name="code">EST/COMP/003</field>
+        <field name="location_type">estate</field>
+        <field name="street">Jalan Langat Lestari邮政编码</field>
+        <field name="street2" />
+        <field name="zip_code">43900</field>
+        <field name="city">Sepang</field>
+        <field name="state_id" ref="base.state_my_sgr" />
+        <field name="country_id" ref="base.my" />
+        <field
+            name="note"
+        >This estate is known for its sustainable farming practices.</field>
+    </record>
+
+    <!-- Resources: Estate - Afdeling -->
+    <record id="estate_afdeling_01_01" model="estate.estate">
+        <field name="name">Afdeling - 01</field>
+        <field name="code">EST/COMP/001/AFD/001</field>
+        <field name="parent_id" ref="estate_estate_01" />
+        <field name="street">Jl. Lintas Sumatera</field>
+        <field name="street2">Desa Sei Berombang, Kecamatan Tanjung Morawa</field>
+        <field name="zip_code">20362</field>
+        <field name="city">Deli Serdang</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="country_id" ref="base.id" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_01_02" model="estate.estate">
+        <field name="name">Afdeling - 02</field>
+        <field name="code">EST/COMP/001/AFD/002</field>
+        <field name="parent_id" ref="estate_estate_01" />
+        <field name="street">Jl. Lintas Sumatera</field>
+        <field name="street2">Desa Sei Berombang, Kecamatan Tanjung Morawa</field>
+        <field name="zip_code">20362</field>
+        <field name="city">Deli Serdang</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="country_id" ref="base.id" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_01_03" model="estate.estate">
+        <field name="name">Afdeling - Seedings</field>
+        <field name="code">EST/COMP/001/AFD/003</field>
+        <field name="parent_id" ref="estate_estate_01" />
+         <field name="street">Jl. Lintas Sumatera</field>
+        <field name="street2">Desa Sei Berombang, Kecamatan Tanjung Morawa</field>
+        <field name="zip_code">20362</field>
+        <field name="city">Deli Serdang</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="country_id" ref="base.id" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_02_01" model="estate.estate">
+        <field name="name">Afdeling - 01</field>
+        <field name="code">EST/COMP/002/AFD/001</field>
+        <field name="parent_id" ref="estate_estate_02" />
+         <field name="street">Jl. Tambusai Barat, Tambusai</field>
+        <field name="zip_code">28558</field>
+        <field name="city">Rokan Hilir</field>
+        <field name="state_id" ref="base.state_id_ri" />
+        <field name="country_id" ref="base.id" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_02_02" model="estate.estate">
+        <field name="name">Afdeling - 02</field>
+        <field name="code">EST/COMP/002/AFD/002</field>
+        <field name="parent_id" ref="estate_estate_02" />
+         <field name="street">Jl. Tambusai Barat, Tambusai</field>
+        <field name="zip_code">28558</field>
+        <field name="city">Rokan Hilir</field>
+        <field name="state_id" ref="base.state_id_ri" />
+        <field name="country_id" ref="base.id" />
+    </record>
+
+    <record id="estate_afdeling_02_03" model="estate.estate">
+        <field name="name">Afdeling - Seedings</field>
+        <field name="code">EST/COMP/002/AFD/003</field>
+        <field name="parent_id" ref="estate_estate_02" />
+         <field name="street">Jl. Tambusai Barat, Tambusai</field>
+        <field name="zip_code">28558</field>
+        <field name="city">Rokan Hilir</field>
+        <field name="state_id" ref="base.state_id_ri" />
+        <field name="country_id" ref="base.id" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_03_01" model="estate.estate">
+        <field name="name">Afdeling - 01</field>
+        <field name="code">EST/COMP/003/AFD/001</field>
+        <field name="parent_id" ref="estate_estate_03" />
+        <field name="street">Jalan Langat Lestari邮政编码</field>
+        <field name="zip_code">43900</field>
+        <field name="city">Sepang</field>
+        <field name="state_id" ref="base.state_my_sgr" />
+        <field name="country_id" ref="base.my" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_03_02" model="estate.estate">
+        <field name="name">Afdeling - 02</field>
+        <field name="code">EST/COMP/003/AFD/002</field>
+        <field name="parent_id" ref="estate_estate_03" />
+        <field name="street">Jalan Langat Lestari邮政编码</field>
+        <field name="zip_code">43900</field>
+        <field name="city">Sepang</field>
+        <field name="state_id" ref="base.state_my_sgr" />
+        <field name="country_id" ref="base.my" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <record id="estate_afdeling_03_03" model="estate.estate">
+        <field name="name">Afdeling - Seedings</field>
+        <field name="code">EST/COMP/003/AFD/003</field>
+        <field name="parent_id" ref="estate_estate_03" />
+        <field name="street">Jalan Langat Lestari邮政编码</field>
+        <field name="zip_code">43900</field>
+        <field name="city">Sepang</field>
+        <field name="state_id" ref="base.state_my_sgr" />
+        <field name="country_id" ref="base.my" />
+        <field name="harvest_product_id" ref="product_fruit_01" />
+        <field name="harvest_product_uom_id" ref="product_uom_jjg" />
+        <field name="harvest_other_product_id" ref="product_fruit_02" />
+        <field name="harvest_other_product_uom_id" ref="product_uom_sack" />
+    </record>
+
+    <!-- Resources: Estate - Block -->
+    <record id="estate_block_01_01_01" model="estate.block">
+        <field name="name">Block A1</field>
+        <field name="code">E01/A01-B.A1</field>
+        <field name="estate_id" ref="estate_afdeling_01_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_01_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+        <field
+            name="note"
+        >This block has been planted with a mix of 50% of normal mature trees and 50% of abnormal mature trees.</field>
+    </record>
+
+    <record id="estate_block_01_01_02" model="estate.block">
+        <field name="name">Block A2</field>
+        <field name="code">E01/A01-B.A2</field>
+        <field name="estate_id" ref="estate_afdeling_01_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_01_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_01_01_03" model="estate.block">
+        <field name="name">Block A3</field>
+        <field name="code">E01/A01-B.A3</field>
+        <field name="estate_id" ref="estate_afdeling_01_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_01_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_01_04" model="estate.block">
+        <field name="name">Block A4</field>
+        <field name="code">E01/A01-B.A4</field>
+        <field name="estate_id" ref="estate_afdeling_01_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_01_04" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_03" />
+        <field name="planting_state_id" ref="estate_planting_state_01" />
+    </record>
+
+    <record id="estate_block_01_01_05" model="estate.block">
+        <field name="name">Block A5</field>
+        <field name="code">E01/A01-B.A5</field>
+        <field name="estate_id" ref="estate_afdeling_01_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_01_05" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_04" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_02_01" model="estate.block">
+        <field name="name">Block B1</field>
+        <field name="code">E01/A02-B.B1</field>
+        <field name="estate_id" ref="estate_afdeling_01_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_02_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_01_02_02" model="estate.block">
+        <field name="name">Block B2</field>
+        <field name="code">E01/A02-B.B2</field>
+        <field name="estate_id" ref="estate_afdeling_01_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_02_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_01_02_03" model="estate.block">
+        <field name="name">Block B3</field>
+        <field name="code">E01/A02-B.B3</field>
+        <field name="estate_id" ref="estate_afdeling_01_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_02_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_02_04" model="estate.block">
+        <field name="name">Block B4</field>
+        <field name="code">E01/A02-B.B4</field>
+        <field name="estate_id" ref="estate_afdeling_01_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_02_04" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_03" />
+        <field name="planting_state_id" ref="estate_planting_state_01" />
+    </record>
+
+    <record id="estate_block_01_02_05" model="estate.block">
+        <field name="name">Block B5</field>
+        <field name="code">E01/A02-B.B5</field>
+        <field name="estate_id" ref="estate_afdeling_01_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_02_05" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_04" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_03_01" model="estate.block">
+        <field name="name">Block Seeding C1</field>
+        <field name="code">E01/A03-B.C1</field>
+        <field name="estate_id" ref="estate_afdeling_01_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_03_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_03_02" model="estate.block">
+        <field name="name">Block Seeding C2</field>
+        <field name="code">E01/A03-B.C2</field>
+        <field name="estate_id" ref="estate_afdeling_01_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_03_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_03_03" model="estate.block">
+        <field name="name">Block Seeding C3</field>
+        <field name="code">E01/A03-B.C3</field>
+        <field name="estate_id" ref="estate_afdeling_01_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_03_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_01_03_04" model="estate.block">
+        <field name="name">Block Seeding C4</field>
+        <field name="code">E01/A03-B.C4</field>
+        <field name="estate_id" ref="estate_afdeling_01_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_03_04" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_03" />
+        <field name="planting_state_id" ref="estate_planting_state_01" />
+    </record>
+
+    <record id="estate_block_01_03_05" model="estate.block">
+        <field name="name">Block Seeding C5</field>
+        <field name="code">E01/A03-B.C5</field>
+        <field name="estate_id" ref="estate_afdeling_01_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_01_03_05" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_04" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_02_01_01" model="estate.block">
+        <field name="name">Block D1</field>
+        <field name="code">EST/COMP/002/AFD/001-B.D1</field>
+        <field name="estate_id" ref="estate_afdeling_02_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_01_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_02_01_02" model="estate.block">
+        <field name="name">Block D2</field>
+        <field name="code">EST/COMP/002/AFD/001-B.D2</field>
+        <field name="estate_id" ref="estate_afdeling_02_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_01_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_02_01_03" model="estate.block">
+        <field name="name">Block D3</field>
+        <field name="code">EST/COMP/002/AFD/001-B.D3</field>
+        <field name="estate_id" ref="estate_afdeling_02_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_01_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_02_02_01" model="estate.block">
+        <field name="name">Block E1</field>
+        <field name="code">EST/COMP/002/AFD/002-B.E1</field>
+        <field name="estate_id" ref="estate_afdeling_02_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_02_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_02_02_02" model="estate.block">
+        <field name="name">Block E2</field>
+        <field name="code">EST/COMP/002/AFD/002-B.E2</field>
+        <field name="estate_id" ref="estate_afdeling_02_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_02_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_02_02_03" model="estate.block">
+        <field name="name">Block E3</field>
+        <field name="code">EST/COMP/002/AFD/002-B.E3</field>
+        <field name="estate_id" ref="estate_afdeling_02_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_02_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_02_03_01" model="estate.block">
+        <field name="name">Block Seeding F1</field>
+        <field name="code">EST/COMP/002/AFD/003-B.F1</field>
+        <field name="estate_id" ref="estate_afdeling_02_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_03_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_02_03_02" model="estate.block">
+        <field name="name">Block Seeding F2</field>
+        <field name="code">EST/COMP/002/AFD/003-B.F2</field>
+        <field name="estate_id" ref="estate_afdeling_02_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_03_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_02_03_03" model="estate.block">
+        <field name="name">Block Seeding F3</field>
+        <field name="code">EST/COMP/002/AFD/003-B.F3</field>
+        <field name="estate_id" ref="estate_afdeling_02_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_02_03_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_03_01_01" model="estate.block">
+        <field name="name">Block G1</field>
+        <field name="code">EST/COMP/003/AFD/001-B.G1</field>
+        <field name="estate_id" ref="estate_afdeling_03_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_01_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_03_01_02" model="estate.block">
+        <field name="name">Block G2</field>
+        <field name="code">EST/COMP/003/AFD/001-B.G2</field>
+        <field name="estate_id" ref="estate_afdeling_03_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_01_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_03_01_03" model="estate.block">
+        <field name="name">Block G3</field>
+        <field name="code">EST/COMP/003/AFD/001-B.G3</field>
+        <field name="estate_id" ref="estate_afdeling_03_01" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_01_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_03_02_01" model="estate.block">
+        <field name="name">Block H1</field>
+        <field name="code">EST/COMP/003/AFD/002-B.H1</field>
+        <field name="estate_id" ref="estate_afdeling_03_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_02_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_03_02_02" model="estate.block">
+        <field name="name">Block H2</field>
+        <field name="code">EST/COMP/003/AFD/002-B.H2</field>
+        <field name="estate_id" ref="estate_afdeling_03_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_02_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_03_02_03" model="estate.block">
+        <field name="name">Block H3</field>
+        <field name="code">EST/COMP/003/AFD/002-B.H3</field>
+        <field name="estate_id" ref="estate_afdeling_03_02" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_02_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <record id="estate_block_03_03_01" model="estate.block">
+        <field name="name">Block I1</field>
+        <field name="code">EST/COMP/003/AFD/003-B.I1</field>
+        <field name="estate_id" ref="estate_afdeling_03_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_00" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_03_01" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_00" />
+        <field name="planting_state_id" ref="estate_planting_state_02" />
+    </record>
+
+    <record id="estate_block_03_03_02" model="estate.block">
+        <field name="name">Block I2</field>
+        <field name="code">EST/COMP/003/AFD/003-B.I2</field>
+        <field name="estate_id" ref="estate_afdeling_03_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_01" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_03_02" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_01" />
+        <field name="planting_state_id" ref="estate_planting_state_03" />
+    </record>
+
+    <record id="estate_block_03_03_03" model="estate.block">
+        <field name="name">Block I3</field>
+        <field name="code">EST/COMP/003/AFD/003-B.I3</field>
+        <field name="estate_id" ref="estate_afdeling_03_03" />
+        <field name="type_id" ref="wi_base_farm.estate_type_00" />
+        <field name="typography_id" ref="wi_base_farm.estate_typography_02" />
+        <field name="analytic_account_id" ref="estate_block_analytic_03_03_03" />
+        <field
+            name="planting_year"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y')"
+        />
+        <field
+            name="planting_date"
+            eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"
+        />
+        <field name="harvesting_date" eval="(DateTime.today()).strftime('%Y-%m-%d')" />
+        <field name="land_id" ref="estate_land_02" />
+        <field name="planting_state_id" ref="estate_planting_state_00" />
+    </record>
+
+    <!-- Resources: Estate Penalty (Harvest) -->
+    <record id="estate_penalty_00" model="estate.activity.penalty">
+        <field name="name">Ripe Fruit not harvested</field>
+        <field name="code">RFNH-9432</field>
+        <field
+            name="note"
+        >This penalty is applied when ripe fruit is not harvested in time.</field>
+        <field
+            name="penalty_position_ids"
+            model="stock.move"
+            eval="[(0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvester'),
+                'amount': 5000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_foreman'),
+                'amount': 8000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_manager'),
+                'amount': 8000.0,
+            })]"
+        />
+    </record>
+
+    <record id="estate_penalty_01" model="estate.activity.penalty">
+        <field name="name">Unripe fruit harvested</field>
+        <field name="code">URFH-9433</field>
+        <field
+            name="note"
+        >This penalty is applied when unripe fruit is harvested.</field>
+        <field
+            name="penalty_position_ids"
+            model="stock.move"
+            eval="[(0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvester'),
+                'amount': 1000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_foreman'),
+                'amount': 2000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_manager'),
+                'amount': 2000.0,
+            })]"
+        />
+    </record>
+
+    <record id="estate_penalty_02" model="estate.activity.penalty">
+        <field name="name">Hanging fronds</field>
+        <field name="code">HGFD-9434</field>
+        <field
+            name="note"
+        >This penalty is applied when hanging fronds are not removed.</field>
+        <field
+            name="penalty_position_ids"
+            model="stock.move"
+            eval="[(0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvester'),
+                'amount': 1500.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_foreman'),
+                'amount': 3000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_manager'),
+                'amount': 3000.0,
+            })]"
+        />
+    </record>
+
+    <record id="estate_penalty_03" model="estate.activity.penalty">
+        <field name="name">Unsorted fronds</field>
+        <field name="code">USFD-9435</field>
+        <field
+            name="note"
+        >This penalty is applied when unsorted fronds are harvested.</field>
+        <field
+            name="penalty_position_ids"
+            model="stock.move"
+            eval="[(0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvester'),
+                'amount': 1500.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_foreman'),
+                'amount': 3000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_manager'),
+                'amount': 3000.0,
+            })]"
+        />
+    </record>
+
+    <record id="estate_penalty_04" model="estate.activity.penalty">
+        <field name="name">Long Stem</field>
+        <field name="code">LGST-9436</field>
+        <field name="note">This penalty is applied when long stem is harvested.</field>
+        <field
+            name="penalty_position_ids"
+            model="stock.move"
+            eval="[(0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvester'),
+                'amount': 1500.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_foreman'),
+                'amount': 3000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_manager'),
+                'amount': 3000.0,
+            })]"
+        />
+    </record>
+
+    <record id="estate_penalty_05" model="estate.activity.penalty">
+        <field name="name">Tree Damage Penalty</field>
+        <field name="code">TRDP-9437</field>
+        <field name="note">This penalty is applied when tree damage is detected.</field>
+        <field
+            name="penalty_position_ids"
+            model="stock.move"
+            eval="[(0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvester'),
+                'amount': 20500.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_foreman'),
+                'amount': 50000.0,
+            }),
+            (0, 0, {
+                'job_id': ref('wi_base_farm.job_position_harvest_manager'),
+                'amount': 50000.0,
+            })]"
+        />
+    </record>
+
+    <!-- Resources: Estate Team -->
+    <record id="estate_harvest_elite_harvest_squad" model="estate.harvest.team">
+        <field name="name">Elite Harvest Squad</field>
+        <field name="manager_id" ref="employee_kt" />
+        <field name="foreman_id" ref="employee_ahmad" />
+        <field name="clerk_id" ref="employee_bw" />
+        <field name="assistant_id" ref="employee_jt" />
+        <field name="recorder_id" ref="employee_is" />
+        <field
+            name="labour_ids"
+            eval="[
+                (6, 0, [ref('employee_ap'), ref('employee_bs')])
+            ]"
+        />
+    </record>
+
+    <record id="estate_harvest_supreme_harvesters" model="estate.harvest.team">
+        <field name="name">Supreme Harvesters</field>
+        <field name="manager_id" ref="employee_kt" />
+        <field name="foreman_id" ref="employee_ts" />
+        <field name="clerk_id" ref="employee_rp" />
+        <field name="assistant_id" ref="employee_jt" />
+        <field name="recorder_id" ref="employee_dli" />
+        <field
+            name="labour_ids"
+            eval="[
+                (6, 0, [ref('employee_ismail'), ref('employee_rs')])
+            ]"
+        />
+    </record>
+
+    <record id="estate_harvest_garden_gladiators" model="estate.harvest.team">
+        <field name="name">Garden Gladiators</field>
+        <field name="manager_id" ref="employee_mt" />
+        <field name="foreman_id" ref="employee_bso" />
+        <field name="clerk_id" ref="employee_rp" />
+        <field name="assistant_id" ref="employee_jt" />
+        <field name="recorder_id" ref="employee_cxy" />
+        <field
+            name="labour_ids"
+            eval="[
+                (6, 0, [ref('employee_arn'), ref('employee_ky')])
+            ]"
+        />
+    </record>
+
+    <!--  Activity Analytic Plans  -->
+    <record id="estate_anl_plans_estate" model="account.analytic.plan">
+        <field name="name">Estate</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="analytic_plan_activities" />
+        <field name="color">3</field>
+    </record>
+    <record id="estate_anl_plans_harvest" model="account.analytic.plan">
+        <field name="name">Harvest</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="estate_anl_plans_estate" />
+        <field name="operation_type_id" ref="estate_operation_harvest" />
+        <field name="color">4</field>
+    </record>
+    <record id="estate_anl_plans_land_clearing" model="account.analytic.plan">
+        <field name="name">Land Clearing</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="estate_anl_plans_estate" />
+        <field name="operation_type_id" ref="estate_operation_land_clearing" />
+        <field name="color">5</field>
+    </record>
+    <record id="estate_anl_plans_seeding" model="account.analytic.plan">
+        <field name="name">Seeding</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="estate_anl_plans_estate" />
+        <field name="operation_type_id" ref="estate_operation_seeding" />
+        <field name="color">6</field>
+    </record>
+    <record id="estate_anl_plans_immature_plant" model="account.analytic.plan">
+        <field name="name">Immature Plant</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="estate_anl_plans_estate" />
+        <field name="operation_type_id" ref="estate_operation_immature" />
+        <field name="color">7</field>
+    </record>
+    <record id="estate_anl_plans_mature_plant" model="account.analytic.plan">
+        <field name="name">Mature Plant</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="estate_anl_plans_estate" />
+        <field name="operation_type_id" ref="estate_operation_mature" />
+        <field name="color">8</field>
+    </record>
+    <record id="estate_anl_plans_ho" model="account.analytic.plan">
+        <field name="name">Head Office</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" ref="analytic_plan_activities" />
+        <field name="color">9</field>
+    </record>
+
+    <!--  Activity Analytic Account  -->
+    <record id="estate_activity_harvest" model="account.analytic.account">
+        <field name="name">Harvesting General</field>
+        <field name="code">11.00.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_harvest" />
+    </record>
+    <record id="estate_activity_seeding_00" model="account.analytic.account">
+        <field name="name">Fill Soil in the Sack</field>
+        <field name="code">21.01.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_seeding" />
+    </record>
+    <record id="estate_activity_seeding_01" model="account.analytic.account">
+        <field name="name">Add Seed Soil in the Polybag</field>
+        <field name="code">21.01.0000.02</field>
+        <field name="plan_id" ref="estate_anl_plans_seeding" />
+    </record>
+    <record id="estate_activity_seeding_02" model="account.analytic.account">
+        <field name="name">Construction of Seed Water Channels</field>
+        <field name="code">21.02.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_seeding" />
+    </record>
+    <record id="estate_activity_seeding_03" model="account.analytic.account">
+        <field name="name">Seed Area Drainage Excavation</field>
+        <field name="code">21.02.0000.02</field>
+        <field name="plan_id" ref="estate_anl_plans_seeding" />
+    </record>
+    <record id="estate_activity_seeding_04" model="account.analytic.account">
+        <field name="name">Fertilizing with Kiesrite</field>
+        <field name="code">21.03.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_seeding" />
+    </record>
+    <record id="estate_activity_seeding_05" model="account.analytic.account">
+        <field name="name">Fertilizing with Rock Phosphate (RP)</field>
+        <field name="code">21.03.0000.02</field>
+        <field name="plan_id" ref="estate_anl_plans_seeding" />
+    </record>
+    <record id="estate_activity_land_clearing_00" model="account.analytic.account">
+        <field name="name">Area Determination (Initial Survey)</field>
+        <field name="code">31.01.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+    <record id="estate_activity_land_clearing_01" model="account.analytic.account">
+        <field name="name">Plant Point Spots</field>
+        <field name="code">31.01.0000.02</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+    <record id="estate_activity_land_clearing_02" model="account.analytic.account">
+        <field name="name">Clearing</field>
+        <field name="code">31.02.0000.03</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+    <record id="estate_activity_land_clearing_03" model="account.analytic.account">
+        <field name="name">Seedling Site Preparation</field>
+        <field name="code">31.02.0000.04</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+    <record id="estate_activity_land_clearing_04" model="account.analytic.account">
+        <field name="name">Reservoir Construction</field>
+        <field name="code">31.03.0000.05</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+    <record id="estate_activity_land_clearing_05" model="account.analytic.account">
+        <field name="name">Water Installation Construction</field>
+        <field name="code">31.03.0000.06</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+    <record id="estate_activity_land_clearing_06" model="account.analytic.account">
+        <field name="name">Bed Preparation and Shading Construction</field>
+        <field name="code">31.04.0000.07</field>
+        <field name="plan_id" ref="estate_anl_plans_land_clearing" />
+    </record>
+
+    <record id="estate_activity_immature_plant_00" model="account.analytic.account">
+        <field name="name">Water Gate Construction</field>
+        <field name="code">41.01.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_immature_plant" />
+    </record>
+
+    <record id="estate_activity_immature_plant_01" model="account.analytic.account">
+        <field name="name">Planting Pocket Construction</field>
+        <field name="code">41.01.0000.02</field>
+        <field name="plan_id" ref="estate_anl_plans_immature_plant" />
+    </record>
+
+    <record id="estate_activity_immature_plant_02" model="account.analytic.account">
+        <field name="name">Access Road Embankment</field>
+        <field name="code">41.01.0000.03</field>
+        <field name="plan_id" ref="estate_anl_plans_immature_plant" />
+    </record>
+
+    <record id="estate_activity_immature_plant_03" model="account.analytic.account">
+        <field name="name">Borate Fertilization with a dosage of 0.1</field>
+        <field name="code">41.02.0000.01</field>
+        <field name="plan_id" ref="estate_anl_plans_immature_plant" />
+    </record>
+
+    <record id="estate_activity_immature_plant_04" model="account.analytic.account">
+        <field name="name">Urea Fertilization with a dosage of 0.60 kg</field>
+        <field name="code">41.02.0000.02</field>
+        <field name="plan_id" ref="estate_anl_plans_immature_plant" />
+    </record>
+
+    <record id="estate_activity_immature_plant_05" model="account.analytic.account">
+        <field name="name">HGFB Fertilization with a dosage of 0.60 kg</field>
+        <field name="code">41.02.0000.03</field>
+        <field name="plan_id" ref="estate_anl_plans_immature_plant" />
+    </record>
+
+    <!-- Resources: Estate - Monthly Harvest Premi -->
+
+    <record id="premi_quantifier_1" model="estate.premi.quantifier">
+        <field name="quantifier">1.0</field>
+        <field name="premi_extra">40.0</field>
+        <field name="attendance_premi">2200.0</field>
+    </record>
+
+    <record id="premi_quantifier_2" model="estate.premi.quantifier">
+        <field name="quantifier">1.5</field>
+        <field name="premi_extra">65.0</field>
+        <field name="attendance_premi">3000.0</field>
+    </record>
+
+    <record id="premi_quantifier_3" model="estate.premi.quantifier">
+        <field name="quantifier">2.0</field>
+        <field name="premi_extra">85.0</field>
+        <field name="attendance_premi">5000.0</field>
+    </record>
+
+     <record id="premi_quantifier_4" model="estate.premi.quantifier">
+        <field name="quantifier">1.0</field>
+        <field name="premi_extra">50.0</field>
+        <field name="attendance_premi">2100.0</field>
+    </record>
+
+    <record id="premi_quantifier_5" model="estate.premi.quantifier">
+        <field name="quantifier">1.5</field>
+        <field name="premi_extra">75.0</field>
+        <field name="attendance_premi">3000.0</field>
+    </record>
+
+    <record id="premi_quantifier_6" model="estate.premi.quantifier">
+        <field name="quantifier">2.0</field>
+        <field name="premi_extra">95.0</field>
+        <field name="attendance_premi">4500.0</field>
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_01-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_01" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_01-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_01" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_01-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_01" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_02-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_02-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_02-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_02" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_03-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_03" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_03-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_03" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_03-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_03" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_04-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_04-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_04-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_04" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_05-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_05" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_05-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_05" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_01_05-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_01_05" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">750</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':40.0,
+                'attendance_premi':2200.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':65.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':85.0,
+                'attendance_premi':5000.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_01-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_01" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+        <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_01-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_01" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_01-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_01" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_02-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_02" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_02-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_02" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_02-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_02" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_03-01" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_03" />
+        <field name="start_month">1</field>
+        <field name="end_month">4</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_03-02" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_03" />
+        <field name="start_month">5</field>
+        <field name="end_month">8</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <record id="estate_harvest_premi_block_01_02_03-03" model="estate.premi">
+        <field name="premi_type">monthly_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field name="country_id" ref="base.id" />
+        <field name="qty_uom" ref="uom.product_uom_kgm" />
+        <field name="account_activity_id" ref="wi_base_farm.estate_activity_harvest" />
+        <field name="estate_block_id" ref="wi_base_farm.estate_block_01_02_03" />
+        <field name="start_month">9</field>
+        <field name="end_month">12</field>
+        <field name="harvest_base_qty">700</field>
+        <field name="other_harvest_premi">220</field>
+       <field
+            name="premi_quantifier_ids"
+            model="estate.premi.quantifier"
+            eval="[(0, 0, {'quantifier':1.0,
+                'premi_extra':50.0,
+                'attendance_premi':2100.0},
+                ),
+                (0, 0, {'quantifier':1.5,
+                'premi_extra':75.0,
+                'attendance_premi':3000.0},
+                ),
+                (0, 0, {'quantifier':2.0,
+                'premi_extra':95.0,
+                'attendance_premi':4500.0},
+                )]"
+        />
+    </record>
+
+    <!-- Resource: Estate Upkeep Premi -->
+
+    <record id="estate_upkeep_premi_estate_activity_seeding_00" model="estate.premi">
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_seeding_00"
+        />
+        <field name="premi_amount">11538</field>
+    </record>
+
+    <record id="estate_upkeep_premi_estate_activity_seeding_01" model="estate.premi">
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_seeding_01"
+        />
+        <field name="premi_amount">11935</field>
+    </record>
+
+    <record id="estate_upkeep_premi_estate_activity_seeding_02" model="estate.premi">
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_seeding_02"
+        />
+        <field name="premi_amount">12332</field>
+    </record>
+
+    <record id="estate_upkeep_premi_estate_activity_seeding_03" model="estate.premi">
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_seeding_03"
+        />
+        <field name="premi_amount">12729</field>
+    </record>
+
+    <record id="estate_upkeep_premi_estate_activity_seeding_04" model="estate.premi">
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_seeding_04"
+        />
+        <field name="premi_amount">13126</field>
+    </record>
+
+    <record id="estate_upkeep_premi_estate_activity_seeding_05" model="estate.premi">
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_seeding_05"
+        />
+        <field name="premi_amount">10523</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_00"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_00"
+        />
+        <field name="premi_amount">11538</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_01"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_01"
+        />
+        <field name="premi_amount">11935</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_02"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_02"
+        />
+        <field name="premi_amount">12332</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_03"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_03"
+        />
+        <field name="premi_amount">12729</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_04"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_04"
+        />
+        <field name="premi_amount">13126</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_05"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_05"
+        />
+        <field name="premi_amount">10523</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_land_clearing_06"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_land_clearing_06"
+        />
+        <field name="premi_amount">11538</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_immature_plant_00"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_immature_plant_00"
+        />
+        <field name="premi_amount">11935</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_immature_plant_01"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_immature_plant_01"
+        />
+        <field name="premi_amount">12332</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_immature_plant_02"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_immature_plant_02"
+        />
+        <field name="premi_amount">12729</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_immature_plant_03"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_immature_plant_03"
+        />
+        <field name="premi_amount">13126</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_immature_plant_04"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_immature_plant_04"
+        />
+        <field name="premi_amount">10523</field>
+    </record>
+
+    <record
+        id="estate_upkeep_premi_estate_activity_immature_plant_05"
+        model="estate.premi"
+    >
+        <field name="premi_type">non_harvest</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="company_id" ref="base.main_company" />
+        <field
+            name="account_activity_id"
+            ref="wi_base_farm.estate_activity_immature_plant_05"
+        />
+        <field name="premi_amount">11538</field>
+    </record>
+
+    <!-- Resources: Estate - Product -->
+    <record id="estate_product_jeruk" model="product.template">
+        <field name="farm_data">1</field>
+        <field name="name">Jeruk Bali</field>
+        <field name="detailed_type">product</field>
+        <field name="list_price">54</field>
+    </record>
+
+    <record id="estate_product_pisang" model="product.template">
+        <field name="farm_data">1</field>
+        <field name="name">Pisang Ambon</field>
+        <field name="detailed_type">product</field>
+        <field name="list_price">34</field>
+    </record>
+
+    <record id="estate_product_apokat" model="product.template">
+        <field name="farm_data">1</field>
+        <field name="name">Apokat</field>
+        <field name="detailed_type">product</field>
+        <field name="list_price">50</field>
+    </record>
+
+
+</odoo>

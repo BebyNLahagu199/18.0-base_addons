@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="farm_seed_mutation_view_tree" model="ir.ui.view">
+        <field name="name">estate.seed.mutation.view.tree</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <list default_order="operation_date desc">
+                <field name="name" />
+                <field name="block_id" />
+                <field name="operation_date" />
+                <field name="seed_id" />
+                <field name="seed_qty" />
+                <field name="seed_uom_id" groups="uom.group_uom" optional="hide" />
+                <field
+                    name="mutation_type"
+                    widget="badge"
+                    decoration-info="mutation_type == 'seeding'"
+                    decoration-primary="mutation_type == 'doubletone'"
+                    decoration-danger="mutation_type == 'afkir'"
+                    decoration-warning="mutation_type == 'transplant'"
+                    decoration-success="mutation_type == 'delivery'"
+                    decoration-muted="mutation_type == 'receipt'"
+                />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state == 'draft'"
+                    decoration-success="state == 'posted'"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="farm_seed_mutation_view_form" model="ir.ui.view">
+        <field name="name">estate.seed.mutation.view.form</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <form string="Seed Mutation">
+                <header>
+                    <button
+                        name="action_post"
+                        string="Post"
+                        class="btn btn-primary"
+                        type="object"
+                        invisible="state != 'draft'"
+                    />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_title">
+                        <field
+                            name="mutation_type"
+                            widget="radio"
+                            class="oe_edit_only"
+                            options="{'horizontal': true}"
+                            readonly="state != 'draft'"
+                        />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field
+                                name="batch_id"
+                                invisible="mutation_type in ['seeding','receipt']"
+                                readonly="state != 'draft'"
+                                required="1"
+                                options="{'no_open':True}"
+                            />
+                            <field
+                                name="batch_id"
+                                invisible="mutation_type != 'receipt' or state != 'draft'"
+                                readonly="state != 'draft'"
+                                string="Source Batch"
+                                options="{'no_open':True}"
+                            />
+                            <field
+                                name="receipt_batch_id"
+                                invisible="mutation_type != 'receipt' or state == 'draft'"
+                                readonly="1"
+                                string="Source Batch"
+                                options="{'no_open':True}"
+                            />
+                            <field
+                                name="block_id"
+                                invisible="mutation_type != 'seeding'"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="seed_id"
+                                invisible="mutation_type != 'seeding'"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="operation_date"
+                                string="Seeding Date"
+                                invisible="mutation_type != 'seeding'"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="operation_date"
+                                invisible="mutation_type == 'seeding'"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="dest_block_id"
+                                invisible="mutation_type != 'transplant'"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="dest_block_id"
+                                invisible="mutation_type != 'receipt'"
+                                readonly="state != 'draft'"
+                                string="Block"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                name="batch_id"
+                                invisible="mutation_type != 'receipt' or state == 'draft'"
+                                readonly="state != 'draft'"
+                                string="Batch"
+                                options="{'no_open':True}"
+                            />
+                            <label for="seed_qty" />
+                            <div class="o_row">
+                                <field name="seed_qty" readonly="state != 'draft'" />
+                                <field
+                                    name="seed_uom_id"
+                                    readonly="True"
+                                    options="{'no_open': True}"
+                                />
+                            </div>
+                            <field name="description" readonly="state != 'draft'" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page
+                            name="supplier_info"
+                            string="Supplier Info"
+                            invisible="mutation_type != 'seeding'"
+                        >
+                            <group>
+                                <group>
+                                    <field
+                                        name="receipt_number"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="production_date"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                                <group>
+                                    <field
+                                        name="accepted_qty"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="rejected_qty"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+                        <page
+                            name="delivery_info"
+                            string="Delivery Info"
+                            invisible="mutation_type != 'delivery'"
+                        >
+                            <group>
+                                <group>
+                                    <field
+                                        name="delivery_number"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="licence_plate"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="driver_name"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                                <group>
+                                    <field
+                                        name="delivery_type"
+                                        required="mutation_type == 'delivery'"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="dest_block_id"
+                                        invisible="delivery_type != 'internal'"
+                                        readonly="state != 'draft'"
+                                        required="1"
+                                    />
+                                    <field name="dest_partner_ids" invisible="1" />
+                                    <field
+                                        name="dest_partner_id"
+                                        invisible="delivery_type == 'internal'"
+                                        domain="[('id', 'in', dest_partner_ids)]"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="dest_note"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="farm_seed_mutation_view_search" model="ir.ui.view">
+        <field name="name">estate.seed.mutation.view.search</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <search string="Seed Mutation">
+                <field name="name" />
+                <field
+                    name="block_id"
+                    filter_domain="['|', ('block_id.name', 'ilike', self), ('block_id.code','ilike',self)]"
+                />
+                <field name="seed_id" />
+                <filter
+                    name="filter_seeding"
+                    string="Seeding"
+                    domain="[('mutation_type', '=', 'seeding')]"
+                />
+                <filter
+                    name="filter_doubletone"
+                    string="Doubletone"
+                    domain="[('mutation_type', '=', 'doubletone')]"
+                />
+                <filter
+                    name="filter_afkir"
+                    string="Afkir"
+                    domain="[('mutation_type', '=', 'afkir')]"
+                />
+                <filter
+                    name="filter_transplant"
+                    string="Transplanting"
+                    domain="[('mutation_type', '=', 'transplant')]"
+                />
+                <filter
+                    name="filter_delivery"
+                    string="Delivery"
+                    domain="[('mutation_type', '=', 'delivery')]"
+                />
+                <filter
+                    name="filter_receipt"
+                    string="Receipt"
+                    domain="[('mutation_type', '=', 'receipt')]"
+                />
+                <separator />
+                <filter
+                    name="filter_draft"
+                    string="Draft"
+                    domain="[('state', '=', 'draft')]"
+                />
+                <filter
+                    name="filter_posted"
+                    string="Posted"
+                    domain="[('state', '=', 'posted')]"
+                />
+                <separator />
+                <filter
+                    name="filter_operation_date"
+                    string="Mutation Date"
+                    date="operation_date"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="Block"
+                        name="group_block_id"
+                        domain="[]"
+                        context="{'group_by': 'block_id'}"
+                    />
+                    <filter
+                        string="Seed"
+                        name="group_seed_id"
+                        domain="[]"
+                        context="{'group_by': 'seed_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_farm_seed_mutation_view" model="ir.actions.act_window">
+        <field name="name">Seed Mutation</field>
+        <field name="res_model">estate.seed.mutation</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="farm_seed_mutation_view_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Click to add a new data.
+            </p>
+        </field>
+    </record>
+
+</odoo>

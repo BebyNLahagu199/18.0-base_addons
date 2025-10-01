@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="states_not_bkm" model="farm.issue.stage">
+        <field name="name">Not BKM</field>
+        <field name="state">not_bkm</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="states_confirmed" model="farm.issue.stage">
+        <field name="name">Confirmed</field>
+        <field name="state">confirmed</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="states_done" model="farm.issue.stage">
+        <field name="name">Done</field>
+        <field name="state">done</field>
+        <field name="sequence">3</field>
+    </record>
+</odoo>

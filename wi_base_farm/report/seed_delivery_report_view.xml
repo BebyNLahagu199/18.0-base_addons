@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="seed_delivery_report_view_tree" model="ir.ui.view">
+        <field name="name">seed.delivery.report.view.tree</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <list name="Seed Delivery Report">
+                <field name="name" />
+                <field name="batch_id" />
+                <field name="operation_date" />
+                <field name="block_id" />
+                <field name="seed_id" />
+                <field name="seed_qty" sum="Total" />
+                <field name="dest_block_id" />
+                <field name="delivery_number" />
+                <field name="driver_name" />
+                <field name="licence_plate" />
+                <field name="dest_note" />
+            </list>
+        </field>
+    </record>
+
+    <record id="seed_delivery_report_view_form" model="ir.ui.view">
+        <field name="name">seed.delivery.report.view.form</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <form string="Seed Delivery Report">
+                <sheet>
+                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="batch_id" options="{'no_open':true}" />
+                            <field name="seed_id" options="{'no_open':true}" />
+                            <field name="seed_qty" />
+                        </group>
+                        <group>
+                            <field name="operation_date" />
+                            <field name="block_id" options="{'no_open':true}" />
+                            <field name="dest_block_id" options="{'no_open':true}" />
+                        </group>
+                    </group>
+                    <group string="Delivery Details">
+                        <group>
+                            <field name="delivery_number" />
+                            <field name="dest_note" />
+                        </group>
+                        <group>
+                            <field name="driver_name" />
+                            <field name="licence_plate" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="seed_delivery_report_view_graph" model="ir.ui.view">
+        <field name="name">seed.delivery.report.view.graph</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <graph string="Seed Delivery Report" type="bar" stacked="False">
+                <field name="block_id" type="row" />
+                <field name="dest_block_id" type="row" />
+                <field name="seed_qty" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="seed_delivery_report_view_pivot" model="ir.ui.view">
+        <field name="name">seed.delivery.report.view.pivot</field>
+        <field name="model">estate.seed.mutation</field>
+        <field name="arch" type="xml">
+            <pivot string="Seed Delivery Report" sample="1">
+                <field name="block_id" type="row" />
+                <field name="dest_block_id" type="col" />
+                <field name="seed_qty" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="seed_delivery_report_action" model="ir.actions.act_window">
+        <field name="name">Seed Delivery Report</field>
+        <field name="res_model">estate.seed.mutation</field>
+        <field
+            name="domain"
+        >[('mutation_type','=','delivery'),('delivery_type','=','internal'),('state','=','posted')]</field>
+        <field name="context">{'create':False,'edit':False}</field>
+    </record>
+
+    <record
+        id="seed_delivery_report_action_tree_view"
+        model="ir.actions.act_window.view"
+    >
+        <field name="sequence" eval="3" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="seed_delivery_report_view_tree" />
+        <field name="act_window_id" ref="seed_delivery_report_action" />
+    </record>
+
+    <record
+        id="seed_delivery_report_action_form_view"
+        model="ir.actions.act_window.view"
+    >
+        <field name="sequence" eval="4" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="seed_delivery_report_view_form" />
+        <field name="act_window_id" ref="seed_delivery_report_action" />
+    </record>
+
+    <record
+        id="seed_delivery_report_action_graph_view"
+        model="ir.actions.act_window.view"
+    >
+        <field name="sequence" eval="5" />
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="seed_delivery_report_view_graph" />
+        <field name="act_window_id" ref="seed_delivery_report_action" />
+    </record>
+
+    <record
+        id="seed_delivery_report_action_pivot_view"
+        model="ir.actions.act_window.view"
+    >
+        <field name="sequence" eval="6" />
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="seed_delivery_report_view_pivot" />
+        <field name="act_window_id" ref="seed_delivery_report_action" />
+    </record>
+
+</odoo>

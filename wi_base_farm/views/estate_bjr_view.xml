@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Estate BJR Tree View -->
+    <record id="estate_bjr_view_tree" model="ir.ui.view">
+        <field name="name">estate.bjr.view.tree</field>
+        <field name="model">estate.bjr</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name" readonly="1" force_save="1" />
+                <field name="product_id" required="1" />
+                <field name="block_id" />
+                <field name="harvesting_date" />
+                <field name="planting_year" />
+                <field name="harvest_qty" sum="Total" />
+                <field name="harvest_uom_qty" sum="Total" />
+                <field name="bjr" />
+                <field name="description" />
+                <field name="company_id" optional="hide" />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_bjr_view_search" model="ir.ui.view">
+        <field name="name">estate.bjr.view.search</field>
+        <field name="model">estate.bjr</field>
+        <field name="arch" type="xml">
+            <search string="Average Harvest">
+                <field name="name" />
+                <field name="block_id" />
+                <separator />
+                <filter
+                    name="filter_harvesting_date"
+                    string="Harvesting Date"
+                    date="harvesting_date"
+                />
+                <separator />
+                <group expand='0' string='Group by...'>
+                    <filter
+                        string="Block"
+                        name="block"
+                        context="{'group_by': 'block_id'}"
+                    />
+                    <filter
+                        string="Planting Years"
+                        name="planting_year"
+                        context="{'group_by': 'planting_year'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_farm_estate_bjr_view" model="ir.actions.act_window">
+        <field name="name">BJR</field>
+        <field name="res_model">estate.bjr</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="estate_bjr_view_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Click to add a new block bjr data.
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_farm_estate_block_bjr_analysis">
+        <field name="name">Harvest Average Weight</field>
+        <field name="res_model">estate.bjr</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('block_id','=',active_id)]</field>
+        <field name="context">{'search_default_thismonth':True}</field>
+        <field name="search_view_id" ref="estate_bjr_view_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Productivity (OEE): no working or blocked time
+            </p>
+        </field>
+    </record>
+
+</odoo>

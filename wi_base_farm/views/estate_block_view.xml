@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ======================= LIST VIEW ======================= -->
+    <record id="estate_block_view_list" model="ir.ui.view">
+        <field name="name">estate.block.view.list</field>
+        <field name="model">estate.block</field>
+        <field name="arch" type="xml">
+            <list string="Blocks">
+                <field name="display_name"/>
+                <field name="code"/>
+                <field name="planting_year"/>
+                <field name="total_area"/>
+                <field name="total_tree"/>
+                <field name="harvesting_date"/>
+                <field name="type_id" optional="hide"/>
+                <field name="typography_id" optional="hide"/>
+                <field name="land_id" optional="hide"/>
+                <field name="planting_state_id" optional="hide"/>
+                <field name="company_id" optional="hide" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ======================= KANBAN VIEW ======================= -->
+    <record id="estate_block_view_kanban" model="ir.ui.view">
+        <field name="name">estate.block.view.kanban</field>
+        <field name="model">estate.block</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="color"/>
+                <field name="code"/>
+                <field name="type_id"/>
+                <field name="planting_state_id"/>
+                <field name="planting_year"/>
+                <field name="qr_code"/>
+                <field name="display_name"/>
+
+                <templates>
+                    <t t-name="kanban-box" js_class="custom_kanban">
+                        <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                        <div t-att-class="color + ' oe_kanban_global_click'">
+
+                            <!-- QR Code -->
+                            <div class="o_kanban_image">
+                                <img t-if="record.qr_code.raw_value"
+                                     alt="QR Code"
+                                     t-att-src="kanban_image('estate.block', 'qr_code', record.id.raw_value)"/>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="oe_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div>Code: <t t-esc="record.code.value"/></div>
+                                <div>State: <t t-esc="record.planting_state_id.value"/></div>
+                                <div t-if="record.planting_year.raw_value">
+                                    Year: <t t-esc="record.planting_year.value"/>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left"/>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="type_id"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- ======================= FORM VIEW ======================= -->
+    <record id="estate_block_view_form" model="ir.ui.view">
+        <field name="name">estate.block.view.form</field>
+        <field name="model">estate.block</field>
+        <field name="arch" type="xml">
+            <form string="Block">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" icon="fa-map">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="total_area" nolabel="1"/>
+                                    <field name="area_uom_id" nolabel="1" options="{'no_open': True}"/>
+                                </span>
+                                <span class="o_stat_text">Total Area</span>
+                            </div>
+                        </button>
+                        <button name="%(action_farm_estate_block_bjr_analysis)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-pie-chart">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value"><field name="total_harvest_uom_qty" nolabel="1"/></span>
+                                <span class="o_stat_text">Production</span>
+                            </div>
+                        </button>
+                        <button name="%(action_farm_estate_block_bjr_analysis)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-bar-chart">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value"><field name="average_weight" nolabel="1"/></span>
+                                <span class="o_stat_text">Average Weight</span>
+                            </div>
+                        </button>
+                        <button name="action_view_analytic"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-balance-scale"
+                                invisible="not analytic_account_id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Analytic Balance</span>
+                                <span class="o_stat_value"><field name="analytic_balance" readonly="True"/></span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Ribbon -->
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active == True"/>
+
+                    <!-- Title -->
+                    <field name="qr_code" widget="image" class="oe_avatar"/>
+                    <div class="oe_title mb16">
+                        <field name="active" invisible="1"/>
+                        <h1><field name="name" required="1" placeholder="Block Name" default_focus="1"/></h1>
+                        <div class="o_row">
+                            <field name="estate_id" placeholder="Afdeling" domain="[('location_type','=','afdeling')]"/>
+                        </div>
+                    </div>
+
+                    <!-- Main Info -->
+                    <group>
+                        <group>
+                            <field name="code" required="1"/>
+                            <field name="type_id" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="typography_id" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="land_id"/>
+                            <field name="planting_state_id"/>
+                        </group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="planting_year"/>
+                            <field name="planting_date"/>
+                            <field name="harvesting_date"/>
+                            <field name="analytic_account_id"/>
+                        </group>
+                    </group>
+
+                    <!-- Notebook Tabs -->
+                    <notebook>
+                        <page name="data" string="Data">
+                            <group>
+                                <group name="tree" string="Tree">
+                                    <field name="estate_tree_ids" nolabel="1" colspan="2">
+                                        <list editable="bottom">
+                                            <field name="type"/>
+                                            <field name="code"/>
+                                            <field name="amount"/>
+                                            <field name="uom_id" groups="uom.group_uom"/>
+                                        </list>
+                                    </field>
+                                </group>
+                                <group name="area" string="Area">
+                                    <field name="estate_area_ids" nolabel="1" colspan="2">
+                                        <list editable="bottom">
+                                            <field name="type"/>
+                                            <field name="code"/>
+                                            <field name="amount"/>
+                                            <field name="uom_id" groups="uom.group_uom"/>
+                                        </list>
+                                    </field>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="product" string="Product">
+                            <field name="product_ids" nolabel="1">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="categ_id"/>
+                                    <field name="amount"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="internal_notes" string="Internal Notes">
+                            <field name="note" placeholder="Internal Note..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter reload_on_follower="True"/>
+            </form>
+        </field>
+    </record>
+
+    <!-- ======================= SEARCH VIEW ======================= -->
+    <record id="estate_block_view_search" model="ir.ui.view">
+        <field name="name">estate.block.view.search</field>
+        <field name="model">estate.block</field>
+        <field name="arch" type="xml">
+            <search string="Search Blocks">
+                <field name="name" string="Name"
+                       filter_domain="['|', ('name','ilike',self),('code','ilike',self)]"/>
+                <field name="estate_id" string="Afdeling"
+                       filter_domain="['|', ('estate_id.name','ilike',self),('estate_id.code','ilike',self)]"/>
+                <filter name="active" string="Archived" domain="[('active','=',False)]"/>
+
+                <group expand="1" string="Group By">
+                    <filter name="group_planting_year" string="Planting Year" context="{'group_by':'planting_year'}"/>
+                    <filter name="group_land_id" string="Land" context="{'group_by':'land_id'}"/>
+                    <filter name="group_type_id" string="Type" context="{'group_by':'type_id'}"/>
+                    <filter name="group_typography_id" string="Typography" context="{'group_by':'typography_id'}"/>
+                </group>
+
+                <searchpanel>
+                    <field name="type_id" string="Type" enable_counters="1" icon="fa-map-marker"/>
+                    <field name="planting_state_id" string="Block State" enable_counters="1" icon="fa-cube"/>
+                    <field name="estate_id" string="Afdeling" enable_counters="1" icon="fa-th-large"/>
+                    <field name="company_id" string="Company" enable_counters="1" icon="fa-building"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <!-- ======================= ACTION ======================= -->
+    <record id="action_farm_estate_block_view" model="ir.actions.act_window">
+        <field name="name">Blocks</field>
+        <field name="res_model">estate.block</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="estate_block_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first Block</p>
+        </field>
+    </record>
+
+</odoo>

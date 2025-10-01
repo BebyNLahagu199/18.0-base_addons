@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_farm_inspection"
+        name="Inspection"
+        parent="wi_base_farm.menu_farm_operation_parent"
+        sequence="40"
+    />
+    <menuitem
+        id="menu_farm_inspection_menu"
+        name="Operation"
+        action="base_farm_inspection_action"
+        parent="menu_farm_inspection"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_farm_inspection_issue"
+        name="Issue"
+        action="base_farm_inspection_issue_action"
+        parent="menu_farm_inspection"
+        sequence="20"
+    />
+</odoo>
