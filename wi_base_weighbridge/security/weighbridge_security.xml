@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="weighbridge_category">
+            <field name="name">Weighbridge</field>
+            <field name="sequence">10</field>
+            <field name="parent_id" ref="base.module_category_inventory" />
+        </record>
+
+        <record id="weighbridge_user_group" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="weighbridge_category" />
+        </record>
+
+        <record id="weighbridge_manager_group" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="weighbridge_category" />
+            <field
+                name="implied_ids"
+                eval="[(4,ref('wi_base_weighbridge.weighbridge_user_group'))]"
+            />
+        </record>
+
+        <record id="weighbridge_administrator_group" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="weighbridge_category" />
+            <field
+                name="implied_ids"
+                eval="[(4,ref('wi_base_weighbridge.weighbridge_manager_group'))]"
+            />
+            <field
+                name="users"
+                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+            />
+        </record>
+
+        <record id="group_shrinkage" model="res.groups">
+            <field name="name">Allowed to View and Fill Shrinkage Data</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+    </data>
+
+    <data>
+        <record id="model_weighbridge_scale_comp_rule" model="ir.rule">
+            <field name="name">Weighbridge Scale multi-company</field>
+            <field name="model_id" ref="model_weighbridge_scale" />
+            <field name="domain_force">
+                ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+            </field>
+        </record>
+
+        <record id="model_weighbridge_quality_control_comp_rule" model="ir.rule">
+            <field name="name">Weighbridge Quality Control multi-company</field>
+            <field name="model_id" ref="model_weighbridge_quality_control" />
+            <field name="domain_force">
+                ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+            </field>
+        </record>
+
+        <record id="model_weighbridge_scale_dashboard_comp_rule" model="ir.rule">
+            <field name="name">Weighbridge Scale Dashboard multi-company</field>
+            <field name="model_id" ref="model_weighbridge_scale_dashboard" />
+            <field name="domain_force">
+                ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+            </field>
+        </record>
+
+        <record id="model_weighbridge_weighbridge_comp_rule" model="ir.rule">
+            <field name="name">Weighbridge Weighbridge multi-company</field>
+            <field name="model_id" ref="model_weighbridge_weighbridge" />
+            <field name="domain_force">
+                ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_form_inherit_wi_base_weighbridge" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.weighbridge</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='misc']" position="before">
+                <group string="Weighbridge" name="weighbridge">
+                    <field
+                        name="partner_type"
+                        widget="radio"
+                        options="{'horizontal': true}"
+                    />
+                    <field name="weighbridge_data" widget="boolean_toggle" />
+                    <field
+                        name="weighbridge_customer"
+                        invisible="not weighbridge_data"
+                    />
+                    <field name="weighbridge_vendor" invisible="not weighbridge_data" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_inherit_wi_base_weighbridge" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="before">
+                <filter
+                    string="Weighbridge Data"
+                    name="wb"
+                    domain="[('weighbridge_data','=', True)]"
+                />
+                <filter
+                    string="Customers"
+                    name="wb_customer"
+                    domain="[('weighbridge_customer','=', True)]"
+                />
+                <filter
+                    string="Vendors"
+                    name="wb_vendor"
+                    domain="[('weighbridge_vendor','=', True)]"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="weighbridge_res_partner_action_customer" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field
+            name="context"
+        >{'search_default_wb_customer': 1,'default_is_company': True, 'default_weighbridge_data': True, 'default_weighbridge_customer': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create a new customer in your address book
+            </p><p>
+            Odoo helps you easily track all activities related to a customer.
+            </p>
+        </field>
+    </record>
+
+    <record id="weighbridge_res_partner_action_vendor" model="ir.actions.act_window">
+        <field name="name">Vendors</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field
+            name="context"
+        >{'search_default_wb_vendor': 1,'default_is_company': True, 'default_weighbridge_data': True, 'default_weighbridge_vendor': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Create a new vendor in your address book
+            </p><p>
+            Odoo helps you easily track all activities related to a customer.
+            </p>
+        </field>
+    </record>
+
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_weighbridge_weighbridge_form" model="ir.ui.view">
+        <field name="name">weighbridge.weighbridge.form</field>
+        <field name="model">weighbridge.weighbridge</field>
+        <field name="type">form</field>
+        <field
+            name="inherit_id"
+            ref="wi_base_weighbridge.view_weighbridge_weighbridge_form"
+        />
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="separate_purchase_sequence" invisible="1" />
+            </field>
+            <xpath expr="//group[@name='sequence_config']" position="inside">
+                <label
+                    for="purchase_sequence_id"
+                    invisible="separate_purchase_sequence == False"
+                />
+                <field
+                    name="purchase_sequence_id"
+                    nolabel="1"
+                    invisible="separate_purchase_sequence == False"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

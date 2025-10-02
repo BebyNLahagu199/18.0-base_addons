@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Resources: Weighbridge Address -->
+    <record id="partner_weighbridge" model="res.partner">
+        <field name="name">Weighbridge General Factory</field>
+        <field name="street">Jl. Pulau Jawa, MABAR</field>
+        <field name="street2">Kec. Medan Deli</field>
+        <field name="city">Medan</field>
+        <field name="state_id" ref="base.state_id_su" />
+        <field name="zip">20242</field>
+        <field name="country_id" ref="base.id" />
+        <field name="parent_id" ref="base.main_partner" />
+    </record>
+
+    <!-- Resources: Contact Customer and Vendor -->
+    <record id="partner_company_one" model="res.partner">
+        <field name="name">National Petroleum Limited</field>
+        <field name="street">Level 65, Tower 2, PETRONAS Twin Towers</field>
+        <field name="city">Kuala Lumpur City Centre</field>
+        <field name="zip">50088</field>
+        <field name="country_id" ref="base.my" />
+        <field name="state_id" ref="base.state_my_kul" />
+        <field name="phone">+603 2331 2056</field>
+        <field name="email">contactmplus@petronas.com</field>
+        <field name="weighbridge_data">True</field>
+        <field name="weighbridge_vendor">True</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/petronas.png"
+        />
+    </record>
+
+    <record id="partner_company_two" model="res.partner">
+        <field name="name">PT Pertamina (Persero)</field>
+        <field name="street">Graha Pertamina, Jl. Medan Merdeka Timur No.11-13</field>
+        <field name="city">Jakarta</field>
+        <field name="zip">10110</field>
+        <field name="country_id" ref="base.id" />
+        <field name="state_id" ref="base.state_id_jk" />
+        <field name="phone">135</field>
+        <field name="email">pcc135@pertamina.com</field>
+        <field name="weighbridge_data">True</field>
+        <field name="weighbridge_customer">True</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/pertamina.jpeg"
+        />
+    </record>
+
+    <record id="partner_company_three" model="res.partner">
+        <field name="name">PT AKR Corporindo Tbk</field>
+        <field name="street">JL. Panjang No. 5 Kebon Jeruk </field>
+        <field name="city">Jakarta</field>
+        <field name="zip">11530</field>
+        <field name="country_id" ref="base.id" />
+        <field name="state_id" ref="base.state_id_jk" />
+        <field name="phone">+62 21 5311110</field>
+        <field name="email">info@akr.co.id/</field>
+        <field name="weighbridge_data">True</field>
+        <field name="weighbridge_vendor">True</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/akr.png"
+        />
+    </record>
+
+    <!-- Add Partner With Company-->
+    <record id="res_partner_address_1" model="res.partner">
+        <field name="name">Ahmad bin Abdullah</field>
+        <field name="parent_id" ref="partner_company_one" />
+        <field name="function">Sales Manager</field>
+        <field name="email">ahmad.abdullah@petronas.com</field>
+        <field name="phone">+6012-3456789</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/aba.png"
+        />
+    </record>
+
+    <record id="res_partner_address_2" model="res.partner">
+        <field name="name">Siti binti Ali</field>
+        <field name="parent_id" ref="partner_company_one" />
+        <field name="function">Finance &amp; Accountant</field>
+        <field name="email">siti.ali@petronas.com</field>
+        <field name="phone">+6012-9876543</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/sb.jpg"
+        />
+    </record>
+
+    <record id="res_partner_address_3" model="res.partner">
+        <field name="name">Wong Li</field>
+        <field name="parent_id" ref="partner_company_one" />
+        <field name="function">Purchasing Manager</field>
+        <field name="email">wong.li@petronas.com</field>
+        <field name="phone">+6012-1234567</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/wl.jpg"
+        />
+    </record>
+
+    <record id="res_partner_address_4" model="res.partner">
+        <field name="name">Lim Yee</field>
+        <field name="parent_id" ref="partner_company_one" />
+        <field name="function">IT Specialist</field>
+        <field name="email">lim.yee@petronas.com</field>
+        <field name="phone">+6012-2345678</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/ly.png"
+        />
+    </record>
+
+    <record id="res_partner_address_5" model="res.partner">
+        <field name="name">Brilian Perdana</field>
+        <field name="parent_id" ref="partner_company_two" />
+        <field name="function">Director of Operations</field>
+        <field name="email">coo.bp@example.com</field>
+        <field name="phone">+6212-2345679</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/bp.jpeg"
+        />
+    </record>
+
+    <!-- Resoure: Portal user -->
+    <record id="user_demo_company_01" model="res.users">
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="login">sales@petronas.com</field>
+        <field name="password">petronas</field>
+        <field name="signature" type="html"><span>-- <br
+                />+National Petroleum Limited</span></field>
+        <field name="company_id" ref="base.main_company" />
+        <field name="groups_id" eval="[Command.set([ref('base.group_portal')])]" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/petronas.png"
+        />
+    </record>
+
+    <record id="user_demo_company_02" model="res.users">
+        <field name="partner_id" ref="res_partner_address_4" />
+        <field name="login">lim.yee@petronas.com</field>
+        <field name="password">petronas</field>
+        <field name="signature" type="html"><span><u><b
+                    >Lim Yee - IT Specialist</b></u> <br />National Petroleum Limited<br
+                />Level 65, Tower 2, PETRONAS Twin Towers<br
+                />Kuala Lumpur City Centre, 50088</span></field>
+        <field name="company_id" ref="base.main_company" />
+        <field name="groups_id" eval="[Command.set([ref('base.group_portal')])]" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/ly.png"
+        />
+    </record>
+
+    <record id="user_demo_company_03" model="res.users">
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="login">purchase@pertamina.com</field>
+        <field name="password">pertamina</field>
+        <field name="signature" type="html"><span>-- <br
+                />+PT Pertamina (Persero)</span></field>
+        <field name="company_id" ref="base.main_company" />
+        <field name="groups_id" eval="[Command.set([ref('base.group_portal')])]" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/pertamina.jpeg"
+        />
+    </record>
+
+    <record id="user_demo_company_04" model="res.users">
+        <field name="partner_id" ref="res_partner_address_5" />
+        <field name="login">coo.bp@example.com</field>
+        <field name="password">pertamina</field>
+        <field name="signature" type="html"><span><u><b
+                    >Brilian Perdana - Director of Operations</b></u> <br
+                />PT Pertamina (Persero)<br
+                />Grha Pertamina, Jl. Medan Merdeka Timur No.11-13<br
+                />Jakarta, 10110</span></field>
+        <field name="company_id" ref="base.main_company" />
+        <field name="groups_id" eval="[Command.set([ref('base.group_portal')])]" />
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/bp.jpeg"
+        />
+    </record>
+
+    <!-- Resource: Product Category -->
+    <record id="product_category_fuel" model="product.category">
+        <field name="parent_id" ref="product.product_category_1" />
+        <field name="name">Commodity</field>
+    </record>
+
+    <!-- Resource: Product Product -->
+
+    <record id="product_product_ron95" model="product.product">
+        <field name="name">Petronas Primax 95</field>
+        <field name="categ_id" ref="product_category_fuel" />
+        <field name="standard_price">5000</field>
+        <field name="list_price">6000</field>
+        <field name="detailed_type">product</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field
+            name="description"
+        >RON95 fuel provided by Petronas for various vehicle types.</field>
+        <field name="default_code">RON95_1234</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/primax95.png"
+        />
+    </record>
+
+    <record id="product_product_ron97" model="product.product">
+        <field name="name">Petronas Primax 97</field>
+        <field name="categ_id" ref="product_category_fuel" />
+        <field name="standard_price">6000</field>
+        <field name="list_price">7000</field>
+       <field name="detailed_type">product</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field
+            name="description"
+        >RON97 fuel provided by Petronas for various vehicle types.</field>
+        <field name="default_code">RON97_5678</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/primax97.png"
+        />
+    </record>
+    <record id="product_product_pertamax" model="product.product">
+        <field name="name">Pertamax</field>
+        <field name="categ_id" ref="product_category_fuel" />
+        <field name="standard_price">6500</field>
+        <field name="list_price">7500</field>
+        <field name="detailed_type">product</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field
+            name="description"
+        >Pertamax fuel suitable for various vehicle types.</field>
+        <field name="default_code">PTX92_1234</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/pertamax.png"
+        />
+    </record>
+
+    <record id="product_product_pertamax_turbo" model="product.product">
+        <field name="name">Pertamax Turbo</field>
+        <field name="categ_id" ref="product_category_fuel" />
+        <field name="standard_price">7000</field>
+        <field name="list_price">8000</field>
+        <field name="detailed_type">product</field>
+        <field name="uom_id" ref="uom.product_uom_kgm" />
+        <field name="uom_po_id" ref="uom.product_uom_kgm" />
+        <field
+            name="description"
+        >Pertamax Turbo high-performance fuel for advanced vehicles.</field>
+        <field name="default_code">PPTX98_5678</field>
+        <field
+            name="image_1920"
+            type="base64"
+            file="wi_base_weighbridge/static/img/pertamax_turbo.png"
+        />
+    </record>
+
+
+    <!-- Resource: Weighbridge Weighbridge -->
+    <record id="weighbridge_weighbridge_one" model="weighbridge.weighbridge">
+        <field name="name">Weighbridge General Factory</field>
+        <field name="code">WGF</field>
+        <field name="partner_id" ref="partner_weighbridge" />
+        <field name="warehouse_id" ref="stock.warehouse0" />
+        <field name="type">mobile</field>
+    </record>
+
+    <!-- Resource: Weighbridge Quality Type -->
+    <record id="quality_type_quality_one" model="weighbridge.quality.type">
+        <field name="name">Ripe Quality</field>
+        <field name="categories">quality</field>
+        <field name="calculation_type">per_qty</field>
+        <field
+            name="remark"
+        >This is first quality type with quality as parent categories</field>
+    </record>
+
+    <record id="quality_type_quality_two" model="weighbridge.quality.type">
+        <field name="name">Overripe Quality</field>
+        <field name="categories">quality</field>
+        <field name="calculation_type">per_qty</field>
+        <field
+            name="remark"
+        >This is second quality type with quality as parent categories</field>
+    </record>
+
+    <record id="quality_type_return_one" model="weighbridge.quality.type">
+        <field name="name">Abnormal Fruit</field>
+        <field name="categories">return</field>
+        <field name="calculation_type">per_unit</field>
+        <field
+            name="remark"
+        >This is first quality type with return as parent categories</field>
+    </record>
+
+    <record id="quality_type_return_two" model="weighbridge.quality.type">
+        <field name="name">Hard Fruit</field>
+        <field name="categories">return</field>
+        <field name="calculation_type">per_unit</field>
+        <field
+            name="remark"
+        >This is second quality type with return as parent categories</field>
+    </record>
+
+    <record id="quality_type_deduction_one" model="weighbridge.quality.type">
+        <field name="name">Mandatory Deduction</field>
+        <field name="categories">deduction</field>
+        <field name="calculation_type">percentage</field>
+        <field
+            name="remark"
+        >This is first quality type with deduction as parent categories</field>
+    </record>
+
+    <record id="quality_type_deduction_two" model="weighbridge.quality.type">
+        <field name="name">Others Deduction</field>
+        <field name="categories">deduction</field>
+        <field name="calculation_type">percentage</field>
+        <field
+            name="remark"
+        >This is second quality type with deduction as parent categories</field>
+    </record>
+
+    <record id="quality_type_cleanliness" model="weighbridge.quality.type">
+        <field name="name">Cleanliness</field>
+        <field name="categories">quality</field>
+        <field name="calculation_type">percentage</field>
+        <field
+            name="remark"
+        >Ensure that the fuel is free from particles or impurities that may cause damage to the engine.</field>
+    </record>
+
+    <record id="quality_type_water_content" model="weighbridge.quality.type">
+        <field name="name">Water Content</field>
+        <field name="categories">quality</field>
+        <field name="calculation_type">percentage</field>
+        <field
+            name="remark"
+        >Check the water content in the fuel to avoid condensation and engine damage related to moisture.</field>
+    </record>
+
+    <record id="quality_type_fraction_00" model="weighbridge.quality.type">
+        <field name="name">Fraction 00</field>
+        <field name="categories">fraction</field>
+        <field name="calculation_type">per_unit</field>
+        <field name="remark">Fraction 00.</field>
+    </record>
+
+    <record id="quality_type_fraction_0" model="weighbridge.quality.type">
+        <field name="name">Fraction 0</field>
+        <field name="categories">fraction</field>
+        <field name="calculation_type">per_unit</field>
+        <field name="remark">Fraction 0.</field>
+    </record>
+
+    <record id="quality_type_fraction_1" model="weighbridge.quality.type">
+        <field name="name">Fraction 1</field>
+        <field name="categories">fraction</field>
+        <field name="calculation_type">per_unit</field>
+        <field name="remark">Fraction 1.</field>
+    </record>
+
+</odoo>

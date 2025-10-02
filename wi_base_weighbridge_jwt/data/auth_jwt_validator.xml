@@ -1,0 +1,141 @@
+<odoo>
+
+    <record id="weighbridge_validator" model="auth.jwt.validator">
+        <field name="name">weighbridge</field>
+        <field name="audience">auth_jwt_weighbridge_api</field>
+        <field name="issuer">odooconnector</field>
+        <field name="signature_type">secret</field>
+        <field name="secret_algorithm">HS256</field>
+        <field
+            name="secret_key"
+        >d2VpZ2hicmlkZ2Utb2Rvb2Nvbm5lY3Rvci13aXRlY2hlbnRlcnByaXNl</field>
+        <field name="user_id_strategy">static</field>
+        <field name="partner_id_strategy">email</field>
+        <field name="partner_id_required" eval="False" />
+    </record>
+
+    <record id="weighbridge_route" model="auth.jwt.route">
+        <field name="name">Weighbridge</field>
+        <field name="route">/api/weighbridge/weighbridges</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="weighbridge_partner_route" model="auth.jwt.route">
+        <field name="name">Partner</field>
+        <field name="route">/api/weighbridge/partners</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="weighbridge_product_category_route" model="auth.jwt.route">
+        <field name="name">Weighbridge Product Categories</field>
+        <field name="route">/api/weighbridge/product/categories</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="weighbridge_product_items_route" model="auth.jwt.route">
+        <field name="name">Weighbridge Product Items</field>
+        <field name="route">/api/weighbridge/product/items</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="penalty_type_route" model="auth.jwt.route">
+        <field name="name">Penalty Quality Type</field>
+        <field name="route">/api/weighbridge/quality_type/penalty</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="farm_data" eval="True" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="return_type_route" model="auth.jwt.route">
+        <field name="name">Return Quality Type</field>
+        <field name="route">/api/weighbridge/quality_type/return</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="farm_data" eval="True" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="fraction_type_route" model="auth.jwt.route">
+        <field name="name">Fraction Quality Type</field>
+        <field name="route">/api/weighbridge/quality_type/fraction</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="farm_data" eval="True" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="product_type_route" model="auth.jwt.route">
+        <field name="name">Product Quality Type</field>
+        <field name="route">/api/weighbridge/product_type</field>
+        <field name="method">GET</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="farm_data" eval="True" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="create_scale_route" model="auth.jwt.route">
+        <field name="name">Weighbridge Scale</field>
+        <field name="route">/api/weighbridge/scale_ticket</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="edit_scale_route" model="auth.jwt.route">
+        <field name="name">Weighbridge Scale</field>
+        <field name="route">/api/weighbridge/scale_ticket</field>
+        <field name="method">PUT</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="create_quality_control_route" model="auth.jwt.route">
+        <field name="name">Quality Control</field>
+        <field name="route">/api/weighbridge/quality_control</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="edit_quality_control_route" model="auth.jwt.route">
+        <field name="name">Quality Control</field>
+        <field name="route">/api/weighbridge/quality_control</field>
+        <field name="method">PUT</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="farm_data" eval="True" />
+    </record>
+
+    <record id="create_partner_route" model="auth.jwt.route">
+        <field name="name">Partner</field>
+        <field name="route">/api/weighbridge/partner</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="create_weighbridge_route" model="auth.jwt.route">
+        <field name="name">Weighbridge</field>
+        <field name="route">/api/weighbridge/weighbridge</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+    <record id="create_product_route" model="auth.jwt.route">
+        <field name="name">Product</field>
+        <field name="route">/api/weighbridge/product</field>
+        <field name="method">POST</field>
+        <field name="validator_id" ref="weighbridge_validator" />
+        <field name="weighbridge_data" eval="True" />
+    </record>
+
+</odoo>

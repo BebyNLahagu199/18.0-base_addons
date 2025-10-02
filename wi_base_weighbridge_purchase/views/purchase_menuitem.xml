@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_purchase_weighbridge"
+        name="Weighbridge"
+        parent="purchase.menu_purchase_root"
+        sequence="2"
+    >
+        <menuitem
+            id="menu_purchase_weighbridge_purchase_action"
+            name="Purchase"
+            sequence="10"
+            action="action_purchase_weighbridge_purchase_view"
+        />
+        <menuitem
+            id="menu_purchase_weighbridge_scale_action"
+            name="Scale"
+            sequence="20"
+            action="action_purchase_weighbridge_scale_view"
+        />
+    </menuitem>
+</odoo>

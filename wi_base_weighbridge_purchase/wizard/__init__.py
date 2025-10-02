@@ -1,0 +1,1 @@
+from . import weighbridge_scale_merge_order_wizard

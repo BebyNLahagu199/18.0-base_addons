@@ -1,0 +1,251 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_qr_code
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wi_base_qr_code\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-02 01:51+0000\n"
+"PO-Revision-Date: 2025-10-02 01:51+0000\n"
+"Last-Translator: Beby N Lahagu 2025\n"
+"Language-Team: Indonesian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Border"
+msgstr "Batas"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Box Size"
+msgstr "Ukuran Kotak"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Choose a Error Correction level of the QR Code."
+msgstr "Pilih tingkat Koreksi Kesalahan dari Kode QR."
+
+#. module: wi_base_qr_code
+#: model:ir.model,name:wi_base_qr_code.model_res_company
+msgid "Companies"
+msgstr "Perusahaan"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__company_id
+msgid "Company"
+msgstr "Perusahaan"
+
+#. module: wi_base_qr_code
+#: model:ir.model,name:wi_base_qr_code.model_res_config_settings
+msgid "Config Settings"
+msgstr "Pengaturan Konfigurasi"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Error Correction"
+msgstr "Koreksi Kesalahan"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,help:wi_base_qr_code.field_qr_code_mixin__qr_error_correction
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_company__qr_error_correction
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_config_settings__qr_error_correction
+msgid ""
+"Error correction level of the QR Code:\n"
+"        - Low: 7% of codewords can be restored.\n"
+"        - Medium: 15% of codewords can be restored.\n"
+"        - Quartile: 25% of codewords can be restored.\n"
+"        - High: 30% of codewords can be restored.\n"
+"        "
+msgstr ""
+"Tingkat koreksi kesalahan dari Kode QR:\n"
+"        - Rendah: 7% dari kode kata dapat dipulihkan.\n"
+"        - Sedang: 15% dari kode kata dapat dipulihkan.\n"
+"        - Kuartil: 25% dari kode kata dapat dipulihkan.\n"
+"        - Tinggi: 30% dari kode kata dapat dipulihkan.\n"
+"        "
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Generate Key"
+msgstr "Generasi Kunci"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields.selection,name:wi_base_qr_code.selection__res_company__qr_error_correction__h
+msgid "High"
+msgstr "Tinggi"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Key"
+msgstr "Kunci"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Logo"
+msgstr "Logo"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields.selection,name:wi_base_qr_code.selection__res_company__qr_error_correction__l
+msgid "Low"
+msgstr "Rendah"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields.selection,name:wi_base_qr_code.selection__res_company__qr_error_correction__m
+msgid "Medium"
+msgstr "Menengah"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR API Key"
+msgstr "Kunci API QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_border
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_company__qr_border
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_config_settings__qr_border
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR Border"
+msgstr "Batas QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_box_size
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_company__qr_box_size
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_config_settings__qr_box_size
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR Box Size"
+msgstr "Ukuran Kotak QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR Code"
+msgstr "Kode QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model,name:wi_base_qr_code.model_qr_code_mixin
+msgid "QR Code Mixin"
+msgstr "Kode QR Mixin"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,help:wi_base_qr_code.field_qr_code_mixin__qr_code
+msgid "QR Code of the record"
+msgstr "Kode QR dari catatan"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_error_correction
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_company__qr_error_correction
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_config_settings__qr_error_correction
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR Error Correction"
+msgstr "Koreksi Kesalahan QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_key
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_company__qr_key
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_config_settings__qr_key
+msgid "QR Key"
+msgstr "Kunci QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_logo
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_company__qr_logo
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_config_settings__qr_logo
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR Logo"
+msgstr "Logo QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_qr_code_mixin__qr_version
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_company__qr_version
+#: model:ir.model.fields,field_description:wi_base_qr_code.field_res_config_settings__qr_version
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "QR Version"
+msgstr "Versi QR"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields.selection,name:wi_base_qr_code.selection__res_company__qr_error_correction__q
+msgid "Quartile"
+msgstr "Quartil"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Regenerate Key"
+msgstr "Generasi Ulang Kunci"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Set a Border for QR Code with value minimum 4."
+msgstr "Setel Batas untuk Kode QR dengan nilai minimum 4."
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Set a Box Size for QR Code."
+msgstr "Setel Ukuran Kotak untuk Kode QR."
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Set a Version for QR Code with value between 1 to 40."
+msgstr "Setel Versi untuk Kode QR dengan nilai antara 1 hingga 40."
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,help:wi_base_qr_code.field_qr_code_mixin__qr_border
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_company__qr_border
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_config_settings__qr_border
+msgid "Size of the QR Code border in boxes"
+msgstr "Ukuran batas Kode QR dalam kotak"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,help:wi_base_qr_code.field_qr_code_mixin__qr_box_size
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_company__qr_box_size
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_config_settings__qr_box_size
+msgid "Size of the QR Code boxes in pixels"
+msgstr "Ukuran kotak Kode QR dalam piksel"
+
+#. module: wi_base_qr_code
+#. odoo-python
+#: code:addons/wi_base_qr_code/models/res_config_settings.py:0
+msgid "The border value must be at least 4"
+msgstr "batas nilai harus minimal 4"
+
+#. module: wi_base_qr_code
+#. odoo-python
+#: code:addons/wi_base_qr_code/models/res_config_settings.py:0
+msgid "The box size must be positive"
+msgstr "Besar kotak harus positif"
+
+#. module: wi_base_qr_code
+#. odoo-python
+#: code:addons/wi_base_qr_code/models/res_config_settings.py:0
+msgid "The version must be between 1 and 40"
+msgstr "Versi harus antara 1 dan 40"
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid ""
+"This is an API Key for QR Code encryption which is generated using Fernet "
+"library."
+msgstr ""
+"Ini adalah Kunci API untuk enkripsi Kode QR yang dihasilkan menggunakan pustaka Fernet."
+"Pustaka."
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Upload an logo for QR Code with the format of PNG."
+msgstr "Unggah logo untuk Kode QR dengan format PNG."
+
+#. module: wi_base_qr_code
+#: model_terms:ir.ui.view,arch_db:wi_base_qr_code.res_config_settings_view_form
+msgid "Version"
+msgstr "Versi"
+
+#. module: wi_base_qr_code
+#: model:ir.model.fields,help:wi_base_qr_code.field_qr_code_mixin__qr_version
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_company__qr_version
+#: model:ir.model.fields,help:wi_base_qr_code.field_res_config_settings__qr_version
+msgid "Version of the QR Code (maximum 40)"
+msgstr "Versi Kode QR (maksimum 40)"

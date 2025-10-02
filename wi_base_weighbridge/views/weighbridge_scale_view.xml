@@ -1,0 +1,615 @@
+<odoo>
+    <!-- weighbridge product move action-->
+    <record model="ir.actions.act_window" id="action_weighbridge_scale_move">
+        <field name="name">Inventory Moves</field>
+        <field name="res_model">stock.move.line</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('move_id.scale_id', '=', active_id)]</field>
+    </record>
+
+    <!-- Weighbridge Scale Tree View -->
+    <record id="view_weighbridge_scale_tree" model="ir.ui.view">
+        <field name="name">weighbridge.scale.tree</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list sample="1" decoration-danger="is_return == True">
+                <header>
+                    <button name="action_post" type="object" string="Post" />
+                </header>
+                <field name="name" />
+                <field name="partner_id" widget="many2one_avatar" />
+                <field name="date" />
+                <field name="delivery_number" />
+                <field name="product_id" />
+                <field name="weight_in" />
+                <field name="weight_out" />
+                <field name="net_weight" />
+                <field name="total_quality_control_qty" optional="show" />
+                <field name="gross_quality_control" optional="hide" />
+                <field name="net_after_quality_control" optional="show" />
+                <field name="remark" optional="hide" />
+                <field name="uom_id" optional="hide" />
+                <field name="driver_name" optional="hide" />
+                <field name="licence_plate" optional="hide" />
+                <field
+                    name="company_id"
+                    optional="hide"
+                    groups="base.group_multi_company"
+                    widget="selection"
+                />
+                <field name="delivery_type" optional="hide" />
+                <field name="is_transfer" optional="hide" />
+                <field name="is_return" column_invisible="1" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-muted="state == 'draft'"
+                    decoration-info="state == 'posted'"
+                    decoration-success="state == 'locked'"
+                    decoration-danger="state == 'cancel'"
+                />
+            </list>
+        </field>
+    </record>
+
+    <!-- Weighbridge Scale Form View -->
+    <record id="view_weighbridge_scale_form" model="ir.ui.view">
+        <field name="name">weighbridge.scale.form</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Weighbridge Scale" sample="1">
+                <header>
+                    <button
+                        name="action_post"
+                        string="Post"
+                        type="object"
+                        class="btn btn-primary"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="action_lock"
+                        string="Lock"
+                        type="object"
+                        class="btn btn-primary"
+                        invisible="state != 'posted'"
+                    />
+                    <button
+                        name="action_cancel"
+                        string="Cancel"
+                        type="object"
+                        class="btn"
+                        groups="wi_base_weighbridge.weighbridge_manager_group"
+                        invisible="state not in ['draft','posted']"
+                    />
+                    <button
+                        name="action_return"
+                        string="Return"
+                        type="object"
+                        class="btn"
+                        invisible="state not in ['posted','locked']"
+                    />
+                    <button
+                        name="action_unlock"
+                        string="Unlock"
+                        type="object"
+                        class="btn btn-primary"
+                        invisible="state != 'locked'"
+                    />
+                    <button
+                        name="action_draft"
+                        string="Reset to Draft"
+                        type="object"
+                        class="btn"
+                        invisible="state != 'cancel'"
+                    />
+                    <button
+                        name="action_preview_portal"
+                        string="Preview"
+                        type="object"
+                        class="btn-secondary"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,posted,locked"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="%(action_weighbridge_scale_move)d"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-exchange"
+                            invisible="state not in ('posted', 'locked')"
+                        >
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Product Moves</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_splitted_weighbridge_scale_tree"
+                            class="oe_stat_button"
+                            icon="oi-launch"
+                            type="object"
+                            help="List view of splitted weighbridge scale"
+                            invisible="state != 'splitted'"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Splitted to</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_splitted_from_weighbridge_scale_tree"
+                            class="oe_stat_button"
+                            icon="oi-launch"
+                            type="object"
+                            help="List view of source splitted weighbridge scale"
+                            invisible="source_id == False or source_type != 'split'"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Splitted from</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_return_from_weighbridge_scale_tree"
+                            class="oe_stat_button"
+                            icon="fa-rotate-right"
+                            type="object"
+                            help="List view of source return weighbridge scale"
+                            invisible="source_id == False or source_type != 'return'"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Return from</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_return_weighbridge_scale_tree"
+                            class="oe_stat_button"
+                            icon="fa-rotate-left"
+                            type="object"
+                            help="List view of return weighbridge scale"
+                            invisible="return_count == 0"
+                        >
+                            <field
+                                string="Returns"
+                                name="return_count"
+                                widget="statinfo"
+                            />
+                        </button>
+                        <button
+                            name="action_merged_weighbridge_scale_tree"
+                            class="oe_stat_button"
+                            icon="oi-group"
+                            type="object"
+                            help="List view of merged weighbridge scale"
+                            invisible="state != 'merged'"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Merged to</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_merged_from_weighbridge_scale_tree"
+                            class="oe_stat_button"
+                            icon="oi-group"
+                            type="object"
+                            help="List view of source merged weighbridge scale"
+                            invisible="is_merge == False"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Merged from</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field
+                                name="name"
+                                readonly="1"
+                                force_save="1"
+                                required="1"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="delivery_number" readonly="state != 'draft'" />
+                            <field name="date" readonly="state != 'draft'" />
+                            <field name="partner_id" readonly="state != 'draft'" />
+                            <field name="product_id" readonly="state != 'draft'" />
+                            <field
+                                name="uom_id"
+                                invisible="1"
+                                readonly="state != 'draft'"
+                            />
+                            <field name="company_id" />
+                            <field name="weighbridge_id" readonly="state != 'draft'" />
+                            <field
+                                name="source_id"
+                                readonly="state != 'draft'"
+                                invisible="source_id == False"
+                            />
+                            <field name="source_type" invisible="1" />
+                            <field name="is_merge" invisible="1" />
+                            <field
+                                name="return_ids"
+                                invisible="1"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="is_transfer"
+                                invisible="1"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="is_return"
+                                invisible="1"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="delivery_type"
+                                invisible="1"
+                                readonly="state != 'draft'"
+                            />
+                        </group>
+                        <group>
+                            <field name="quantity" readonly="state != 'draft'" />
+                            <label for="weight_in" />
+                            <div class="o_row">
+                                <field
+                                    name="weight_in"
+                                    class="oe_inline"
+                                    readonly="state != 'draft'"
+                                    nolabel="1"
+                                />
+                                <field name="uom_id" nolabel="1" class="pl-1 pl-sm-0" />
+                            </div>
+                            <label for="weight_out" />
+                            <div class="o_row">
+                                <field
+                                    name="weight_out"
+                                    class="oe_inline"
+                                    readonly="state != 'draft'"
+                                    nolabel="1"
+                                />
+                                <field name="uom_id" nolabel="1" class="pl-1 pl-sm-0" />
+                            </div>
+                            <label for="net_weight" />
+                            <div class="o_row">
+                                <field
+                                    name="net_weight"
+                                    class="oe_inline"
+                                    nolabel="1"
+                                />
+                                <field name="uom_id" nolabel="1" class="pl-1 pl-sm-0" />
+                            </div>
+                            <label for="gross_quality_control" />
+                            <div class="o_row">
+                                <field
+                                    name="gross_quality_control"
+                                    class="oe_inline"
+                                    readonly="state != 'draft'"
+                                    nolabel="1"
+                                />
+                                <field name="uom_id" nolabel="1" class="pl-1 pl-sm-0" />
+                            </div>
+                            <label for="total_quality_control_qty" />
+                            <div class="o_row">
+                                <field
+                                    name="total_quality_control_qty"
+                                    class="oe_inline"
+                                    readonly="1"
+                                    nolabel="1"
+                                />
+                                <field name="uom_id" nolabel="1" class="pl-1 pl-sm-0" />
+                            </div>
+                            <label for="net_after_quality_control" />
+                            <div class="o_row">
+                                <field
+                                    name="net_after_quality_control"
+                                    class="oe_inline"
+                                    readonly="state != 'draft'"
+                                    nolabel="1"
+                                />
+                                <field name="uom_id" nolabel="1" class="pl-1 pl-sm-0" />
+                            </div>
+                            <field name="remark" readonly="state != 'draft'" />
+                        </group>
+                    </group>
+                    <group name="requisition">
+                    </group>
+                    <notebook>
+                        <page name="quality_control_page" string="Quality Control">
+                            <field name="penalty_ids">
+                                <list>
+                                    <field
+                                        name="weighbridge_scale_id"
+                                        optional="hide"
+                                    />
+                                    <field name="penalty_id" />
+                                    <field name="penalty_qty" />
+                                    <field name="calculation_type" />
+                                    <field name="penalty_subtotal" sum="Total" />
+                                    <field
+                                        name="company_id"
+                                        groups="base.group_multi_company"
+                                        optional="hide"
+                                    />
+                                </list>
+                            </field>
+                        </page>
+                        <page name="transporter_page" string="Transporter Information">
+                            <group>
+                                <group string="Transporter Data">
+                                    <field
+                                        name="transporter_id"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="licence_plate"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="driver_name"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="driver_identity_no"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                                <group string="Date">
+                                    <field
+                                        name="vehicle_in"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="vehicle_out"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="vehicle_duration"
+                                        widget="float_time"
+                                    />
+                                </group>
+                                <group
+                                    string="Security"
+                                    name="security_for_acceptance"
+                                    invisible="delivery_type == 'shipment' or not delivery_type"
+                                >
+                                    <field
+                                        name="seal_number"
+                                        string="Seal No"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                                <group
+                                    string="Security"
+                                    name="security_for_shipment"
+                                    invisible="delivery_type == 'acceptance' or not delivery_type"
+                                />
+                            </group>
+                        </page>
+                        <page name="other_page" string="Others Information">
+                            <group>
+                                <group
+                                    name="supplier_unload"
+                                    string="Supplier's Unload"
+                                    invisible="delivery_type != 'acceptance'"
+                                >
+                                    <field
+                                        name="unload_in"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="unload_out"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field name="net_unload" readonly="1" />
+                                    <field
+                                        name="unload_date"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                                <group
+                                    name="customer_unload"
+                                    string="Customer's Unload"
+                                    invisible="delivery_type != 'shipment'"
+                                >
+                                    <field
+                                        name="unload_in"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="unload_out"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="additional_unload"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <field
+                                        name="net_unload_after"
+                                        string="Net Unload"
+                                    />
+                                    <field
+                                        name="unload_date"
+                                        readonly="state != 'draft'"
+                                    />
+                                </group>
+                                <group string="Quality Parameter">
+                                    <field name="load_ids">
+                                        <list editable="top">
+                                            <field
+                                                name="scale_id"
+                                                column_invisible="1"
+                                            />
+                                            <field name="type_id" />
+                                            <field name="partner" />
+                                            <field name="company" />
+                                        </list>
+                                    </field>
+                                </group>
+                                <group
+                                    string="Shrinkage"
+                                    groups="wi_base_weighbridge.group_shrinkage"
+                                >
+                                    <field
+                                        name="shrinkage"
+                                        class="oe_inline"
+                                        readonly="state != 'draft'"
+                                    />
+                                    <label for="shrinkage_percentage" />
+                                    <div class="o_row">
+                                        <field
+                                            name="shrinkage_percentage"
+                                            class="pl-1 pl-sm-0"
+                                            nolabel="1"
+                                        />
+                                    </div>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="o_attachment_preview" />
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <!-- Weighbridge Scale Pivot View -->
+    <record id="view_weighbridge_scale_pivot" model="ir.ui.view">
+        <field name="name">weighbridge.scale.pivot</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Weighbridge Scale" sample="1" display_quantity="true">
+                <field name="delivery_type" type="row" />
+                <field name="product_id" type="row" />
+                <field name="partner_id" type="row" />
+                <field name="date" type="col" interval="month" />
+                <field name="net_after_quality_control" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Weighbridge Scale Kanban View -->
+    <record id="view_weighbridge_scale_kanban" model="ir.ui.view">
+        <field name="name">weighbridge.scale.kanban</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban string="Weighbridge Scale" sample="1">
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content">
+                                <field name="name" />
+                                <field
+                                    name="product_id"
+                                    display="full"
+                                    can_create="true"
+                                    can_write="true"
+                                />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Weighbridge Scale Search View -->
+    <record id="view_weighbridge_scale_search" model="ir.ui.view">
+        <field name="name">weighbridge.scale.search</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Weighbridge Scale">
+                <field name="partner_id" />
+                <field name="product_id" />
+                <field name="name" />
+                <field name="licence_plate" />
+                <filter
+                    name="state_draft"
+                    string="State Draft"
+                    domain="[('state', '=', 'draft')]"
+                />
+                <filter
+                    name="state_posted_locked"
+                    string="State Posted or Locked"
+                    domain="[('state', 'in', ('posted','locked'))]"
+                />
+                <separator />
+                <filter
+                    name="product_in"
+                    string="Acceptance Product"
+                    domain="[('delivery_type', '=', 'acceptance')]"
+                />
+                <filter
+                    name="product_out"
+                    string="Shipment Product"
+                    domain="[('delivery_type', '=', 'shipment')]"
+                />
+                <separator />
+                 <filter name="date" string="Date" date="date" />
+                <filter
+                    string="This Year"
+                    name="year"
+                    invisible="1"
+                    domain="[('date','&lt;=', time.strftime('%%Y-12-31')),('date','&gt;=',time.strftime('%%Y-01-01'))]"
+                />
+                <filter
+                    string="Last 31 Days"
+                    name="last_days"
+                    invisible="1"
+                    domain="[
+                        ('date', '&gt;', (context_today() - datetime.timedelta(days=31)).strftime('%Y-%m-%d')),
+                        ('date', '&lt;=', context_today().strftime('%Y-%m-%d'))
+                    ]"
+                />
+                <group string="Group By">
+                    <filter
+                        name="group_by_product"
+                        string="Product"
+                        context="{'group_by': 'product_id'}"
+                    />
+                    <filter
+                        name="group_by_partner"
+                        string="Partner"
+                        context="{'group_by': 'partner_id'}"
+                    />
+                    <filter
+                        name="group_by_weighbridge"
+                        string="Weighbridge"
+                        context="{'group_by': 'weighbridge_id'}"
+                    />
+                    <separator />
+                    <filter
+                        name="group_by_date"
+                        string="Date"
+                        context="{'group_by': 'date'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_weighbridge_scale_view" model="ir.actions.act_window">
+        <field name="name">Weighbridge Scale</field>
+        <field name="res_model">weighbridge.scale</field>
+        <field name="view_mode">list,form,kanban,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_year': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no Delivery yet, let's start create a Delivery!
+            </p>
+        </field>
+    </record>
+</odoo>

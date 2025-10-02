@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_farm_inspection_jwt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-02 02:21+0000\n"
+"PO-Revision-Date: 2025-10-02 02:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_farm_inspection_jwt
+#: model:ir.model,name:wi_base_farm_inspection_jwt.model_farm_inspection
+msgid "Farm Inspection"
+msgstr ""
+
+#. module: wi_base_farm_inspection_jwt
+#. odoo-python
+#: code:addons/wi_base_farm_inspection_jwt/models/farm_inspection.py:0
+msgid "new"
+msgstr ""

@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_farm_jwt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-02 02:28+0000\n"
+"PO-Revision-Date: 2025-10-02 02:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__active
+msgid "Active"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_account_analytic_account
+msgid "Analytic Account"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Archived"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_estate_operation__assigned_to
+msgid "Assigned To"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Change Password"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__code
+msgid "Code"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_estate
+msgid "Estate"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_block
+msgid "Estate Block"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_operation
+msgid "Estate Operation Activity"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_operation_type
+msgid "Estate Operation Type"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_activity_penalty
+msgid "Estate Penalty"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_picking
+msgid "Estate Picking"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_harvest_team
+msgid "Harvest Team"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__id
+msgid "ID"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.actions.act_window,name:wi_base_farm_jwt.action_mobile_menu_view
+#: model:ir.model,name:wi_base_farm_jwt.model_mobile_menu
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_res_users__mobile_menu_ids
+#: model:ir.ui.menu,name:wi_base_farm_jwt.menu_mobile_menu
+msgid "Mobile Menu"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_estate_operation__mobile_user_ids
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_res_users__mobile_user
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Mobile User"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.actions.act_window,name:wi_base_farm_jwt.action_mobile_user_view
+#: model:ir.ui.menu,name:wi_base_farm_jwt.menu_mobile_user
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.view_users_search
+msgid "Mobile Users"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__name
+msgid "Name"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#. odoo-python
+#: code:addons/wi_base_farm_jwt/models/estate_operation.py:0
+msgid "New"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Password Management"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Preferences"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_product_category
+msgid "Product Category"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_product_product
+msgid "Product Variant"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Security"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.actions.server,name:wi_base_farm_jwt.action_set_to_mobile
+msgid "Set to Mobile"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_res_users
+msgid "User"
+msgstr ""
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "e.g. John Doe"
+msgstr ""

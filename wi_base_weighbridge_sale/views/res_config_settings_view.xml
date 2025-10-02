@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="res_config_settings_view_form_sale" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.weighbridge.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="55" />
+        <field
+            name="inherit_id"
+            ref="wi_base_weighbridge.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='weighbridge_setting_sale']" position="inside">
+                <setting
+                    string="Merge Sale Order"
+                    help="Merge scale with same weighbridge, partner, date in one Sale Order"
+                    id="merge_sale_order"
+                >
+                    <field name="merge_sale_order" />
+                </setting>
+                <setting
+                    string="Separate Sequence"
+                    help="Separate sequence for sale order from weighbridge"
+                    id="separate_sale_sequence"
+                >
+                    <field name="separate_sale_sequence" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.weighbridge.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="55" />
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='connectors_setting_container']" position="after">
+                <block
+                    title="Sale Order from Weighbridge"
+                    name="sale_setting_container"
+                >
+                    <setting
+                        string="Merge Sale Order"
+                        help="Merge scale with same weighbridge, partner, date in one Sale Order"
+                        id="merge_sale_order"
+                    >
+                        <field name="merge_sale_order" />
+                    </setting>
+                    <setting
+                        string="Separate Sequence"
+                        help="Separate sequence for sale order from weighbridge"
+                        id="separate_sale_sequence"
+                    >
+                        <field name="separate_sale_sequence" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

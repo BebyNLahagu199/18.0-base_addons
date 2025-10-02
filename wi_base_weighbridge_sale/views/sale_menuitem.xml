@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_sale_weighbridge"
+        name="Weighbridge"
+        parent="sale.sale_menu_root"
+        sequence="25"
+        groups="sales_team.group_sale_salesman_all_leads"
+    >
+        <menuitem
+            id="menu_sale_weighbridge_sale_action"
+            name="Sale Order"
+            sequence="10"
+            action="action_sale_weighbridge_sale_view"
+        />
+        <menuitem
+            id="menu_sale_weighbridge_scale_action"
+            name="Scale"
+            sequence="20"
+            action="action_sale_weighbridge_scale_view"
+        />
+    </menuitem>
+</odoo>

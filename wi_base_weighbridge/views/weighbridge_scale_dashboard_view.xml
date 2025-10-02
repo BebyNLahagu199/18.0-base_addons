@@ -1,0 +1,113 @@
+<odoo>
+
+    <record id="weighbridge_scale_dashboard_kanban_view" model="ir.ui.view">
+        <field name="name">weighbridge.scale.dashboard.kanban</field>
+        <field name="model">weighbridge.scale.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban create="false" class="o_kanban_dashboard o_scale_kanban">
+                <field name="kanban_dashboard" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="d-flex flex-column flex-fill">
+                            <t
+                                t-value="JSON.parse(record.kanban_dashboard.raw_value)"
+                                t-set="dashboard"
+                            />
+                            <t t-call="ScaleTop" />
+                            <div class="container o_kanban_card_content">
+                                <div class="row">
+                                    <t t-call="ScaleBody" />
+                                </div>
+                                <div class="row mt-auto">
+                                    <t t-call="ScaleBodyGraph" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="ScaleTop">
+                        <div t-attf-class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <div class="o_primary">
+                                    <a type="object" name="open_action"><field
+                                            name="product_id"
+                                        /></a>
+                                    <t t-if="dashboard.company_count > 1">
+                                        <span
+                                            groups="base.group_multi_company"
+                                            class="small"
+                                        > - <field name="company_id" /></span>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="ScaleBody">
+                        <div
+                            id="dashboard_scale_left"
+                            class="col-12 col-sm-2 o_kanban_primary_left"
+                        />
+                        <div
+                            id="dashboard_scale_right"
+                            class="col-12 col-sm-8 o_kanban_primary_right"
+                        >
+                            <div class="row">
+                                <div
+                                    id="dashboard_scale_total_unit"
+                                    class="col overflow-hidden text-start"
+                                >
+                                    <a type="object" name="open_action">
+                                        <span>Total Unit</span>
+                                    </a>
+                                </div>
+                                <div class="col-auto text-end">
+                                    <span><t t-out="dashboard.count" /></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div
+                                    id="dashboard_scale_total_weight"
+                                    class="col overflow-hidden text-start"
+                                >
+                                    <a type="object" name="open_action">
+                                        <span>Total Weight</span>
+                                    </a>
+                                </div>
+                                <div class="col-auto text-end">
+                                    <span><t t-out="dashboard.net_weight" /></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id="dashboard_scale_blank"
+                            class="col-12 col-sm-2 o_kanban_primary_blank"
+                        />
+                    </t>
+
+                    <t t-name="ScaleBodyGraph">
+                        <field
+                            name="kanban_dashboard_graph"
+                            t-att-graph_type="'line'"
+                            widget="dashboard_graph"
+                        />
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="open_weighbridge_scale_dashboard_kanban" model="ir.actions.act_window">
+        <field name="name">Weighbridge Scale Dashboard</field>
+        <field name="res_model">weighbridge.scale.dashboard</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="weighbridge_scale_dashboard_kanban_view" />
+        <field name="usage">menu</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_neutral_face">
+                This is the weighbridge scale dashboard
+            </p>
+        </field>
+    </record>
+
+</odoo>

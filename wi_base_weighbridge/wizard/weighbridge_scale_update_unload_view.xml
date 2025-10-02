@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="weighbridge_scale_update_unload_wizard_view" model="ir.ui.view">
+        <field name="name">weighbridge.scale.update.unload</field>
+        <field name="model">weighbridge.scale.update.unload</field>
+        <field name="arch" type="xml">
+            <form string="Update Unload">
+                <group>
+                    <field name="delivery_type" invisible="1" />
+                    <field name="unload_in" />
+                    <field name="unload_out" />
+                    <field
+                        name="net_unload"
+                        invisible="delivery_type == 'shipment'"
+                        readonly="1"
+                    />
+                    <field
+                        name="additional_unload"
+                        invisible="delivery_type == 'acceptance'"
+                    />
+                    <field
+                        name="net_unload_after"
+                        invisible="delivery_type == 'acceptance'"
+                        string="Net Unload"
+                    />
+                    <field name="unload_date" />
+                </group>
+                <footer>
+                    <button
+                        name="action_update_unload"
+                        id="action_update_unload"
+                        string="Update Unload"
+                        class="btn-primary oe-highlight"
+                        type="object"
+                    />
+
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record
+        id="action_weighbridge_scale_update_unload_wizard"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Update Unload</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">weighbridge.scale.update.unload</field>
+        <field name="view_id" ref="weighbridge_scale_update_unload_wizard_view" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field
+            name="binding_model_id"
+            ref="wi_base_weighbridge.model_weighbridge_scale"
+        />
+        <field name="binding_view_types">list,form</field>
+    </record>
+</odoo>

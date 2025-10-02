@@ -1,0 +1,224 @@
+<odoo>
+    <!-- Weighbridge Weighbridge Tree View -->
+    <record id="view_weighbridge_weighbridge_tree" model="ir.ui.view">
+        <field name="name">weighbridge.weighbridge.tree</field>
+        <field name="model">weighbridge.weighbridge</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="warehouse_id" />
+                <field name="location_stock_id" />
+                <field name="partner_id" />
+                <field name="company_id" />
+            </list>
+        </field>
+    </record>
+
+    <!-- Weighbridge Weighbridge Form View -->
+    <record id="view_weighbridge_weighbridge_form" model="ir.ui.view">
+        <field name="name">weighbridge.weighbridge.form</field>
+        <field name="model">weighbridge.weighbridge</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Weighbridge Configuration">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" force_save="1" required="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code" />
+                            <field name="type" />
+                        </group>
+                        <group>
+                            <field name="company_id" />
+                            <field name="partner_id" />
+                            <field name="show_sequence" invisible="1" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="configuration" string="Configuration">
+                            <group>
+                                <group name="warehouse_config" string="Warehouse">
+                                    <field name="warehouse_id" />
+                                    <field name="location_stock_id" />
+                                </group>
+                                <group
+                                    name="sequence_config"
+                                    invisible="show_sequence == False"
+                                    string="Sequence"
+                                />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_weighbridge_weighbridge_view" model="ir.actions.act_window">
+        <field name="name">Weighbridge</field>
+        <field name="res_model">weighbridge.weighbridge</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no Delivery yet, let's start create a Delivery!
+            </p>
+        </field>
+    </record>
+
+    <!-- Weighbridge Weighbridge Kanban View -->
+    <record id="view_weighbridge_weighbridge_kanban" model="ir.ui.view">
+        <field name="name">weighbridge.weighbridge.kanban</field>
+        <field name="model">weighbridge.weighbridge</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban create="false" class="o_kanban_dashboard">
+                <field name="color" />
+                <templates>
+                    <t t-name="kanban-menu">
+                        <div class="container">
+                            <div class="row">
+                                <div
+                                    class="col-6 o_kanban_card_manage_section o_kanban_manage_view"
+                                >
+                                    <h5
+                                        role="menuitem"
+                                        class="o_kanban_card_manage_title"
+                                    >
+                                        <span>Actions</span>
+                                    </h5>
+                                    <div role="menuitem" name="wb_scale">
+                                        <a name="action_scale" type="object">
+                                            Scale
+                                        </a>
+                                    </div>
+                                    <div role="menuitem" name="wb_quality_control">
+                                        <a name="action_quality_control" type="object">
+                                            Quality Control
+                                        </a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-6 o_kanban_card_manage_section o_kanban_manage_view"
+                                >
+                                    <h5
+                                        role="menuitem"
+                                        class="o_kanban_card_manage_title"
+                                    >
+                                        <span>Reporting</span>
+                                    </h5>
+                                    <div role="menuitem" name="wb_report_acceptance">
+                                        <a name="action_acceptance" type="object">
+                                            Acceptance
+                                        </a>
+                                    </div>
+                                    <div role="menuitem" name="wb_report_shipment">
+                                        <a name="action_shipment" type="object">
+                                            Shipment
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                t-if="widget.editable"
+                                class="o_kanban_card_manage_settings row"
+                            >
+                                <div role="menuitem" aria-haspopup="true" class="col-8">
+                                    <ul
+                                        role="menu"
+                                        class="oe_kanban_colorpicker"
+                                        data-field="color"
+                                    />
+                                </div>
+                                <div role="menuitem" class="col-4">
+                                    <a type="edit">Settings</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="kanban-box">
+                        <div
+                            t-attf-class="d-flex flex-column flex-fill #{!selection_mode ? kanban_color(record.color.raw_value) : ''}"
+                        >
+                            <t t-call="ScaleTop" />
+                            <div class="container o_kanban_card_content">
+                                <div class="row">
+                                    <t t-call="ScaleBody" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+
+                    <t t-name="ScaleTop">
+                        <div t-attf-class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <div class="o_primary">
+                                    <a type="object" name="action_scale">
+                                        <field name="name" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="ScaleBody">
+                        <div
+                            id="dashboard_scale_left"
+                            class="col-12 col-sm-6 o_kanban_primary_left"
+                        >
+                            <button
+                                class="btn btn-primary"
+                                name="action_scale"
+                                type="object"
+                            >
+                                <span>Weighbridge Scale</span>
+                            </button>
+                        </div>
+                        <div
+                            id="dashboard_scale_right"
+                            class="col-12 col-sm-6 o_kanban_primary_right"
+                        >
+                            <div class="row">
+                                <div
+                                    id="dashboard_scale_total_unit"
+                                    class="col overflow-hidden text-start"
+                                >
+                                    <a type="object" name="action_to_post">
+                                        <span>To Post</span>
+                                    </a>
+                                </div>
+                                <div class="col-auto text-end">
+                                    <a type="object" name="action_to_post">
+                                        <span>
+                                            <field name="to_post_count" />
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="open_weighbridge_scale_overview_kanban" model="ir.actions.act_window">
+        <field name="name">Weighbridge Overview</field>
+        <field name="res_model">weighbridge.weighbridge</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no Delivery yet, let's start create a Delivery!
+            </p>
+        </field>
+    </record>
+</odoo>

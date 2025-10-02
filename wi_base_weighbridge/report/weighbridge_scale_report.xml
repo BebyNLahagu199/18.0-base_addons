@@ -1,0 +1,11 @@
+<odoo>
+    <record id="action_report_weighbridge_scale" model="ir.actions.report">
+        <field name="name">Weighbridge Scale</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="model_weighbridge_scale" />
+        <field name="report_name">wi_base_weighbridge.report_weighbridge_scale</field>
+        <field name="report_file">wi_base_weighbridge.report_weighbridge_scale</field>
+        <field name="print_report_name">'Weighbridge Scale'</field>
+    </record>
+</odoo>

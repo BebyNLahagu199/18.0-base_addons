@@ -1,0 +1,27 @@
+<odoo>
+    <!-- Weighbridge Quality Type Tree View -->
+    <record id="view_weighbridge_quality_type_tree" model="ir.ui.view">
+        <field name="name">weighbridge.quality.type.tree</field>
+        <field name="model">weighbridge.quality.type</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list editable="top" multi_edit="1">
+                <field name="name" />
+                <field name="categories" />
+                <field name="calculation_type" />
+                <field name="remark" />
+            </list>
+        </field>
+    </record>
+
+    <record id="action_weighbridge_quality_type_view" model="ir.actions.act_window">
+        <field name="name">Weighbridge Quality Type</field>
+        <field name="res_model">weighbridge.quality.type</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no Delivery yet, let's start create a Delivery!
+            </p>
+        </field>
+    </record>
+</odoo>

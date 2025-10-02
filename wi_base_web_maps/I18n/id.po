@@ -1,0 +1,340 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_web_maps
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wi_base_web_maps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-02 02:43+0000\n"
+"PO-Revision-Date: 2025-10-02 02:43+0000\n"
+"Last-Translator: Beby N Lahagu 2025\n"
+"Language-Team: Indonesian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid ""
+".st0 {\n"
+"    opacity: 0.3;\n"
+"    enable-background: new;\n"
+"}\n"
+".st1 {\n"
+"    fill: currentColor;\n"
+"    stroke: #1a1919;\n"
+"    stroke-width: 3;\n"
+"    stroke-miterlimit: 10;\n"
+"}"
+msgstr ""
+".st0 {\n"
+"    opacity: 0.3;\n"
+"    enable-background: new;\n"
+"}\n"
+".st1 {\n"
+"    fill: currentColor;\n"
+"    stroke: #1a1919;\n"
+"    stroke-width: 3;\n"
+"    stroke-miterlimit: 10;\n"
+"}"
+
+#. module: wi_base_web_maps
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps.res_config_settings_view_form
+msgid ""
+"<i class=\"oi oi-arrow-right\"/>\n"
+"                                Sign up to MapBox to get a free token"
+msgstr ""
+"<i class=\"oi oi-arrow-right\"/>\n"
+"                                Daftar ke MapBox untuk mendapatkan token gratis"
+
+#. module: wi_base_web_maps
+#: model:ir.model,name:wi_base_web_maps.model_ir_actions_act_window_view
+msgid "Action Window View"
+msgstr "Jendela Tindakan"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.js:0
+msgid "Address"
+msgstr "Alamat"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__city
+msgid "City"
+msgstr "Kota"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Close"
+msgstr "Tutup"
+
+#. module: wi_base_web_maps
+#: model:ir.model,name:wi_base_web_maps.model_res_config_settings
+msgid "Config Settings"
+msgstr "Pengaturan Konfigurasi"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__contact_address_complete
+msgid "Contact Address Complete"
+msgstr "Alamat Kontak Lengkap"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__coordinate
+msgid "Coordinate"
+msgstr "Koordinat"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__country_id
+msgid "Country"
+msgstr "Negara"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,help:wi_base_web_maps.field_web_maps_mixin__coordinate
+msgid "Fill in the format Latitude,Longitude"
+msgstr "Fill in the format Latitude,Longitude"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__location_latitude
+msgid "Geo Latitude"
+msgstr "Geo Lintang"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__location_longitude
+msgid "Geo Longitude"
+msgstr "Geo Bujur"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__date_localization
+msgid "Geolocation Date"
+msgstr "Tanggal Geolokasi"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_view.js:0
+msgid "Items"
+msgstr "Item"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Locating new addresses..."
+msgstr "Menemukan alamat baru..."
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "MapBox servers unreachable"
+msgstr "Server MapBox tidak dapat dijangkau"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_view.js:0
+#: model:ir.model.fields.selection,name:wi_base_web_maps.selection__ir_actions_act_window_view__view_mode__maps
+#: model:ir.model.fields.selection,name:wi_base_web_maps.selection__ir_ui_view__type__maps
+msgid "Maps"
+msgstr "Peta"
+
+#. module: wi_base_web_maps
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps.res_config_settings_view_form
+msgid "Maps Routes"
+msgstr "Rute Peta"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.js:0
+msgid "Name"
+msgstr "Nama"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Navigate to"
+msgstr "Navigasi ke"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,help:wi_base_web_maps.field_res_config_settings__maps_box_token
+msgid "Necessary for some functionalities in the custom maps view"
+msgstr "Diperlukan untuk beberapa fungsi dalam tampilan peta khusus"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "No"
+msgstr "Tidak"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "None"
+msgstr "Tidak Ada"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Open"
+msgstr "Terbuka"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "OpenStreetMap's request limit exceeded, try again later."
+msgstr "Batas permintaan OpenStreetMap terlampaui, coba lagi nanti."
+
+#. module: wi_base_web_maps
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps.res_config_settings_view_form
+msgid "Set a MapBox account to activate routes and style"
+msgstr "Setel akun MapBox untuk mengaktifkan rute dan gaya"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Set up token"
+msgstr "Setel token"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "Some routing points are too far apart"
+msgstr "Beberapa titik rute terlalu berjauhan"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__state_id
+msgid "State"
+msgstr "Status"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__street
+msgid "Street"
+msgstr "Jalan"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__street2
+msgid "Street2"
+msgstr "Jalan2"
+
+#. module: wi_base_web_maps
+#. odoo-python
+#: code:addons/wi_base_web_maps/models/res_config_settings.py:0
+msgid "The MapBox server is unreachable"
+msgstr "Server MapBox tidak dapat dijangkau"
+
+#. module: wi_base_web_maps
+#. odoo-python
+#: code:addons/wi_base_web_maps/models/res_config_settings.py:0
+msgid "The token input is not valid"
+msgstr "Token yang diinput tidak valid"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid ""
+"The view has switched to another provider but functionalities will be "
+"limited"
+msgstr ""
+"Tampilan telah beralih ke penyedia lain tetapi fungsionalitas akan "
+"terbatas"
+
+#. module: wi_base_web_maps
+#. odoo-python
+#: code:addons/wi_base_web_maps/models/res_config_settings.py:0
+msgid "This referer is not authorized"
+msgstr "Referer ini tidak diizinkan"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid ""
+"To get routing on your map, you first need to set up your MapBox token. It's"
+" free."
+msgstr ""
+"Untuk mendapatkan rute di peta Anda, Anda harus terlebih dahulu mengatur token"
+" MapBox Anda. Ini gratis."
+
+#. module: wi_base_web_maps
+#: model_terms:ir.ui.view,arch_db:wi_base_web_maps.res_config_settings_view_form
+msgid "Token"
+msgstr "Token"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_res_config_settings__maps_box_token
+msgid "Token Maps Box"
+msgstr "Kotak Token"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "Token invalid"
+msgstr "Token tidak valid"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "Too many requests, try again in a few minutes"
+msgstr "Terlalu banyak permintaan, coba lagi dalam beberapa menit"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "Too many routing points (maximum 25)"
+msgstr "Terlalu banyak titik rute (maksimum 25)"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "Unauthorized connection"
+msgstr "Koneksi tidak sah"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Undefined"
+msgstr "Tidak Terdefinisi"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "Unsuccessful routing request:"
+msgstr "Permintaan rute tidak berhasil:"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_controller.js:0
+msgid "Untitled"
+msgstr ""
+
+#. module: wi_base_web_maps
+#: model:ir.model,name:wi_base_web_maps.model_ir_ui_view
+msgid "View"
+msgstr "Tampilan"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_ir_actions_act_window_view__view_mode
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_ir_ui_view__type
+msgid "View Type"
+msgstr "Tipe Tampilan"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_renderer.xml:0
+msgid "View in Google Maps"
+msgstr "Lihat di Google Maps"
+
+#. module: wi_base_web_maps
+#: model:ir.model,name:wi_base_web_maps.model_web_maps_mixin
+msgid "Web Maps"
+msgstr "Peta Web"
+
+#. module: wi_base_web_maps
+#. odoo-javascript
+#: code:addons/wi_base_web_maps/static/src/maps_model.js:0
+msgid "Yes"
+msgstr "Ya"
+
+#. module: wi_base_web_maps
+#: model:ir.model.fields,field_description:wi_base_web_maps.field_web_maps_mixin__zip
+msgid "Zip"
+msgstr "Kode Pos"

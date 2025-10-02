@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.weighbridge</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="45" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app
+                    string="Weighbridge"
+                    data-string="Weighbridge"
+                    name="wi_base_weighbridge"
+                    groups="wi_base_weighbridge.weighbridge_manager_group"
+                >
+                    <block title="General" name="weighbridge_setting_general">
+                        <setting
+                            string="Allow Shrinkage"
+                            help="Allow user to view and fill shrinkage data"
+                            id="weighbridge_allow_shrinkage"
+                        >
+                            <field name="group_shrinkage" />
+                        </setting>
+                        <field name="company_id" invisible="1" />
+                        <setting
+                            id="inter_company"
+                            string="Inter-Company Transactions"
+                            company_dependent="1"
+                            help="Automatically generate counterpart documents for weighbridge scale between companies"
+                            groups="base.group_multi_company"
+                            title="Configure company rules to automatically create weighbridge scale when one of your company receipt/deliver to another of your company."
+                        >
+                            <field
+                                name="module_wi_base_weighbridge_inter_company_rules"
+                                widget="upgrade_boolean"
+                            />
+                            <div
+                                class="content-group"
+                                invisible="not module_wi_base_weighbridge_inter_company_rules"
+                                id="inter_companies_rules_wb"
+                            >
+                                <div class="mt16 text-warning"><strong
+                                    >Save</strong> this page and come back here to set up the feature.</div>
+                            </div>
+                        </setting>
+                    </block>
+                    <block title="Integration" name="module_setting_container">
+
+                        <setting
+                            string="API with Auth JWT"
+                            help="Enable to use API with Auth JWT"
+                            id="weighbridge_api_auth_jwt"
+                        >
+                            <field name="module_wi_base_weighbridge_jwt" />
+                        </setting>
+                    </block>
+                    <block title="Purchase" name="weighbridge_setting_purchase">
+                        <setting
+                            string="Purchase Integration"
+                            help="Automatic create purchase order from weighbridge after posted scale with type Acceptance"
+                            id="weighbridge_purchase"
+                        >
+                            <field name="module_wi_base_weighbridge_purchase" />
+                        </setting>
+                        <setting
+                            string="Allow Purchase Requisition"
+                            help="Permit the selection of a purchases requisition at the weighbridge, and this delivery will be synchronized from the purchases requisition."
+                            id="weighbridge_purchase"
+                        >
+                            <field
+                                name="module_wi_base_purchase_requisition_weighbridge"
+                            />
+                        </setting>
+                    </block>
+                    <block title="Sale" name="weighbridge_setting_sale">
+                        <setting
+                            string="Sale Integration"
+                            help="Automatic create sale order from weighbridge after posted scale with type Shipments"
+                            id="weighbridge_sale"
+                        >
+                            <field name="module_wi_base_weighbridge_sale" />
+                        </setting>
+                        <setting
+                            string="Allow Sale Requisition"
+                            help="Permit the selection of a sales requisition at the weighbridge, and this delivery will be synchronized from the sales requisition."
+                            id="weighbridge_sale"
+                        >
+                            <field name="module_wi_base_sale_requisition_weighbridge" />
+                        </setting>
+                    </block>
+                    <block title="Seal" name="weighbridge_setting_seal">
+                        <setting
+                            string="Use Seal Number"
+                            help="Seal number data is recorded"
+                            id="weighbridge_seal_number"
+                        >
+                            <field name="module_wi_base_seal_number_weighbridge" />
+                        </setting>
+                        <setting
+                            string="Seal Number Digits"
+                            help="Seal number digits (excluding prefix and suffix)"
+                            id="weighbridge_seal_digit"
+                            invisible="not module_wi_base_seal_number_weighbridge"
+                        >
+                            <field name="seal_digit" />
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_weighbridge_config_settings" model="ir.actions.act_window">
+        <field name="name">Weighbridge Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form" />
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field
+            name="context"
+        >{'module' : 'wi_base_weighbridge', 'bin_size': False}</field>
+    </record>
+
+</odoo>

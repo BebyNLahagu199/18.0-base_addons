@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_weighbridge_scale_form_inherit_purchase" model="ir.ui.view">
+        <field name="name">weighbridge.scale.sale.inherit.view.form</field>
+        <field name="model">weighbridge.scale</field>
+        <field
+            name="inherit_id"
+            ref="wi_base_weighbridge.view_weighbridge_scale_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='source_id']" position="after">
+                <field name="purchase_id" invisible="1" />
+            </xpath>
+            <xpath
+                expr="//button[@name='action_splitted_weighbridge_scale_tree']"
+                position="after"
+            >
+                <button
+                    name="action_view_purchase_order"
+                    class="oe_stat_button"
+                    icon="fa-shopping-cart"
+                    type="object"
+                    help="Form view of purchase order"
+                    invisible="purchase_id == False"
+                    groups="purchase.group_purchase_user"
+                >
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_text">Purchase Order</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_purchase_weighbridge_scale_view" model="ir.actions.act_window">
+        <field name="name">Weighbridge Scale for Purchase</field>
+        <field name="res_model">weighbridge.scale</field>
+        <field name="view_mode">tree,form,kanban,pivot</field>
+        <field name="domain">
+            [
+                '|',
+                    '&amp;',
+                        ('delivery_type', '=', 'acceptance'),
+                        ('is_return', '=', False),
+                    '&amp;',
+                        ('delivery_type', '=', 'shipment'),
+                        ('is_return', '=', True)
+            ]
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no Delivery yet, let's start create a Delivery!
+            </p>
+        </field>
+    </record>
+</odoo>

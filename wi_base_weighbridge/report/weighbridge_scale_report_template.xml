@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_weighbridge_scale_document">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+            <div class="row justify-content-end mb16">
+                <div class="col-4" name="right_box">
+                <div>
+                    <div
+                            class="border-1 rounded d-flex flex-column align-items-center justify-content-center p-3 text-center"
+                        >
+                    <span class="text-end">
+                        <span
+                                    t-field="doc.name"
+                                    t-options="{'widget': 'barcode', 'width': 600, 'height': 100, 'img_style': 'width:350px;height:60px'}"
+                                >weighbridge barcode</span>
+                    </span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                    <t t-if="doc.weighbridge_id">
+                        <strong>Warehouse address:</strong>
+                        <div t-if="doc.weighbridge_id.partner_id">
+                            <strong>
+                                <t t-out="doc.weighbridge_id.name" />
+                            </strong>
+                            <div
+                                t-field="doc.weighbridge_id.partner_id"
+                                t-options='{"widget": "contact", "fields": ["address", "phone"], "no_marker": True, "phone_icons": True}'
+                                name="purchase_shipping_address"
+                            />
+                        </div>
+                    </t>
+                </div>
+                <div class="col-5">
+                    <strong><span>
+                        <t t-if="doc.delivery_type == 'shipment'">
+                            Customer
+                        </t>
+                        <t t-else="">Supplier</t> Address:
+                    </span></strong>
+                    <div>
+                        <t t-if="doc.delivery_type">
+                            <strong>
+                                <t t-out="doc.partner_id.name" />
+                            </strong>
+                            <div
+                                t-field="doc.partner_id"
+                                t-options='{"widget": "contact", "fields": ["address", "phone"], "no_marker": True, "phone_icons": True}'
+                            />
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="page">
+                <div class="oe_structure" />
+
+                <div class="mt-4">
+                    <h2><span t-field="doc.name" /></h2>
+                </div>
+
+                <div id="informations" class="row mt-4 mb32">
+                    <div t-if="doc.date" class="col-3 bm-2">
+                        <strong>Date:</strong>
+                        <p
+                            t-field="doc.date"
+                            class="m-0"
+                            t-options="{'widget': 'date'}"
+                        />
+                    </div>
+                    <div t-if="doc.delivery_number" class="col-3 bm-2">
+                        <strong>Delivery Number:</strong>
+                        <p t-field="doc.delivery_number" class="m-0" />
+                    </div>
+                    <div t-if="doc.delivery_type" class="col-3 bm-2">
+                        <strong>Transaction Type:</strong>
+                        <p t-field="doc.delivery_type" class="m-0" />
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table mt-4">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>
+                          <t t-if="doc.delivery_type == 'acceptance'">
+                            SUPPLIER'S UNLOAD
+                          </t>
+                          <t t-else=""> CUSTOMER'S UNLOAD </t>
+                        </span>
+                      </td>
+                      <td>
+                        <span>Weight Information</span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col-6">
+                        <table
+                                    class="table table-sm o_main_table table-borderless mt-4"
+                                >
+                            <tr>
+                                <td>Weight In</td>
+                                <td> : </td>
+                                <td><t
+                                                t-out="doc.unload_in"
+                                                t-options='{"widget":"float","precision": 2}'
+                                            /></td>
+                            </tr>
+                            <tr>
+                                <td>Weight Out</td>
+                                <td> : </td>
+                                <td><t
+                                                t-out="doc.unload_out"
+                                                t-options='{"widget":"float","precision": 2}'
+                                            /></td>
+                            </tr>
+                            <tr>
+                                <td><b>Nett Weight</b></td>
+                                <td> : </td>
+                                <td><t
+                                                t-out="doc.net_unload"
+                                                t-options='{"widget":"float","precision": 2}'
+                                            /></td>
+                            </tr>
+                        </table>
+                      </td>
+                      <td class="col-6">
+                        <table
+                                    class="table table-sm o_main_table table-borderless mt-4"
+                                >
+                            <tr>
+                                <td>Weight In</td>
+                                <td> : </td>
+                                <td>
+                                    <t
+                                                t-out="doc.weight_in"
+                                                t-options='{"widget":"float","precision": 2}'
+                                            />
+                                    (<t
+                                                t-out="doc.vehicle_in"
+                                                t-options='{"widget": "datetime", "hide_seconds": True}'
+                                            />)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Weight Out</td>
+                                <td> : </td>
+                                <td>
+                                    <t
+                                                t-out="doc.weight_out"
+                                                t-options='{"widget":"float","precision": 2}'
+                                            />
+                                    (<t
+                                                t-out="doc.vehicle_out"
+                                                t-options='{"widget": "datetime", "hide_seconds": True}'
+                                            />)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Nett Weight</b></td>
+                                <td> : </td>
+                                <td><t
+                                                t-out="doc.net_weight"
+                                                t-options='{"widget":"float","precision": 2}'
+                                            /></td>
+                            </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-sm o_main_table table-borderless mt-4">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>Product</span>
+                      </td>
+                      <td>
+                        <span>Qty</span>
+                      </td>
+                      <td>
+                        <span>Unit</span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span t-field="doc.product_id" />
+                      </td>
+                      <td>
+                        <span t-field="doc.quantity" />
+                      </td>
+                      <td>
+                        <span t-field="doc.uom_id" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-sm o_main_table mt-4">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>Driver Information</span>
+                      </td>
+                      <td>
+                        <span>Quality Control</span>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td class="col-6">
+                            <table
+                                    class="table table-sm o_main_table table-borderless mt-4"
+                                >
+                                <tr>
+                                    <td>Driver</td>
+                                    <td> : </td>
+                                    <td><t t-out="doc.driver_name" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Identification No</td>
+                                    <td> : </td>
+                                    <td><t t-out="doc.driver_identity_no" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Vehicle Req</td>
+                                    <td> : </td>
+                                    <td><t t-out="doc.licence_plate" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-6">
+                            <table
+                                    class="table table-sm o_main_table table-borderless mt-4"
+                                >
+                                <t t-set="qc" t-value="doc.quality_control_ids" />
+                                <t t-foreach="qc" t-as="quality_cont">
+                                    <t
+                                            t-set="q_line"
+                                            t-value="quality_cont.penalty_ids"
+                                        />
+                                    <t t-foreach="q_line" t-as="q_line">
+                                        <tr>
+                                            <td class="col-5">
+                                                <t t-out="q_line.penalty_id.name" />
+                                            </td>
+                                            <td> : </td>
+                                            <td>
+                                                <t t-out="q_line.penalty_qty" />
+                                                (<t
+                                                        t-out='"%.2f" % q_line.penalty_subtotal'
+                                                    />)
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </table>
+
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-sm table-borderless">
+                  <thead>
+                    <tr>
+                      <td class="col-6">
+
+                      </td>
+                      <td class="col-6">
+                          <div class="row">
+                          <div class="col-6">
+                            <b><span>Nett After QC</span></b>
+                          </div>
+                          <div class="col-6">
+                               : <t
+                                            t-out="doc.net_after_quality_control"
+                                            t-options='{"widget":"float","precision": 2}'
+                                        />
+                          </div>
+                          </div>
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+
+                <div class="mt-4 ml64 mr4" name="signature">
+                    <div class="offset-8 text-center">
+                    <strong>Signature</strong>
+                    </div>
+                    <div class="offset-8"><br /><br /><br /><br /></div>
+                    <div class="offset-8 text-center">
+                    <span>___________________</span>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span name="order_note">
+                    <p>
+                        <span><t t-out="doc.remark" /> </span>
+                    </p>
+                    </span>
+                </div>
+                <div class="footer o_standard_footer o_company_1_layout">
+                    <div class="text-center" style="border-top: 1px solid black">
+                    <ul class="list-inline mb4" />
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="report_weighbridge_scale">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t
+                    t-call="wi_base_weighbridge.report_weighbridge_scale_document"
+                    t-lang="doc.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+</odoo>

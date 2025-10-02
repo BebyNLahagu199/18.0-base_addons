@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sale_order_view_form_inherit_weighbridge" model="ir.ui.view">
+        <field name="name">sale.order.inherit.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_invoice']" position="after">
+                <button
+                    name="action_view_weighbridge_scale"
+                    class="oe_stat_button"
+                    icon="fa-balance-scale"
+                    type="object"
+                    help="View of weighbridge scale"
+                    invisible="weighbridge_scale_count == 0"
+                >
+                    <field
+                        name="weighbridge_scale_count"
+                        widget="statinfo"
+                        string="Weighbridge Scale"
+                        help="Weighbridge Scale Ticket(s)"
+                    />
+                </button>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="weighbridge_scale_ids" invisible="1" />
+                <field name="client_order_ref" readonly="state != 'draft'" />
+            </xpath>
+
+            <xpath expr="//tree//field[@name='product_id']" position="before">
+                <field
+                    name="weighbridge_scale_id"
+                    column_invisible="parent.weighbridge_scale_count == 0"
+                />
+            </xpath>
+
+            <xpath expr="//tree//field[@name='product_template_id']" position="after">
+                <field
+                    name="net_weight"
+                    column_invisible="parent.weighbridge_scale_count == 0"
+                />
+                <field
+                    name="quality_control_qty"
+                    column_invisible="parent.weighbridge_scale_count == 0"
+                />
+                <field
+                    name="adjustment"
+                    column_invisible="parent.weighbridge_scale_count == 0"
+                />
+                <field
+                    name="net_after_quality_control"
+                    column_invisible="parent.weighbridge_scale_count == 0"
+                    optional="hide"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_sale_weighbridge_sale_view" model="ir.actions.act_window">
+        <field name="name">Sale Order</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+        <!-- <field name="view_id" ref="sale.view_order_tree" /> -->
+        <field name="domain">[
+            ('weighbridge_scale_ids','!=',False)
+        ]</field>
+        <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No sale order found. Let's create one!
+                </p><p>
+                Once you confirmed your sale order, you can create a weighbridge scale ticket.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="weighbridge_merge_scale_wizard_view" model="ir.ui.view">
+        <field name="name">weighbridge.scale.merge.scale</field>
+        <field name="model">weighbridge.scale.merge</field>
+        <field name="arch" type="xml">
+            <form string="Merge Scale">
+                <group name="merge_to" string="Merge to">
+                    <field name="weighbridge_scale_id" />
+                    <field name="active_scale_ids" invisible="1" />
+                </group>
+                <group name="date" string="Date">
+                    <field name="date" no_label="1" />
+                </group>
+                <footer>
+                    <button
+                        name="action_merge_scale"
+                        id="action_merge_scale"
+                        string="Merge Scale"
+                        class="btn-primary oe-highlight"
+                        type="object"
+                    />
+
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_weighbridge_merge_scale_wizard" model="ir.actions.act_window">
+        <field name="name">Merge Scale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">weighbridge.scale.merge</field>
+        <field name="view_id" ref="weighbridge_merge_scale_wizard_view" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field
+            name="binding_model_id"
+            ref="wi_base_weighbridge.model_weighbridge_scale"
+        />
+        <field name="binding_view_types">list,form</field>
+    </record>
+</odoo>

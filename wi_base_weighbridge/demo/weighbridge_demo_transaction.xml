@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <!-- Demo Data Transaction Weighbridge -->
+    <record id="weighbridge_scale_01" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">A123456</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">John Doe</field>
+        <field name="driver_identity_no">1234567890123456</field>
+        <field name="licence_plate">AB 123 CD</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="46990" />
+        <field name="weight_out" eval="15040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="15040" />
+        <field name="unload_out" eval="46690" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_02" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">D456789</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">William Garcia</field>
+        <field name="driver_identity_no">4567890123456789</field>
+        <field name="licence_plate">IJ 901 KL</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="27990" />
+        <field name="weight_out" eval="10240" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="10240" />
+        <field name="unload_out" eval="28100" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_03" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">B234567</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Jane Smith</field>
+        <field name="driver_identity_no">2345678901234567</field>
+        <field name="licence_plate">EF 456 GH</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="37250" />
+        <field name="weight_out" eval="11350" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="11350" />
+        <field name="unload_out" eval="37250" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_04" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">E567890</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Mary Lee</field>
+        <field name="driver_identity_no">5678901234567890</field>
+        <field name="licence_plate">KL 234 MN</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="38960" />
+        <field name="weight_out" eval="10740" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="10740" />
+        <field name="unload_out" eval="38970" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_05" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">C345678</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Michael Johnson</field>
+        <field name="driver_identity_no">3456789012345678</field>
+        <field name="licence_plate">GH 789 IJ</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="39940" />
+        <field name="weight_out" eval="11440" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="11440" />
+        <field name="unload_out" eval="39950" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_06" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">F678901</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Alex Johnson</field>
+        <field name="driver_identity_no">6789012345678901</field>
+        <field name="licence_plate">MN 345 OP</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="35960" />
+        <field name="weight_out" eval="18040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="18040" />
+        <field name="unload_out" eval="35960" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_07" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">D456789</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">William Garcia</field>
+        <field name="driver_identity_no">4567890123456789</field>
+        <field name="licence_plate">IJ 901 KL</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="35510" />
+        <field name="weight_out" eval="10490" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="10490" />
+        <field name="unload_out" eval="35530" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_08" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">G789012</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Emily Smith</field>
+        <field name="driver_identity_no">7890123456789012</field>
+        <field name="licence_plate">OP 456 QR</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="50990" />
+        <field name="weight_out" eval="19040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="19040" />
+        <field name="unload_out" eval="50690" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_09" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">E567890</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Olivia Brown</field>
+        <field name="driver_identity_no">5678901234567890</field>
+        <field name="licence_plate">KL 012 MN</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="22190" />
+        <field name="weight_out" eval="11680" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="11680" />
+        <field name="unload_out" eval="22200" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_10" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">H890123</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Michael Wang</field>
+        <field name="driver_identity_no">8901234567890123</field>
+        <field name="licence_plate">QR 567 ST</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="41990" />
+        <field name="weight_out" eval="15040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="15040" />
+        <field name="unload_out" eval="51700" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_11" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">F678901</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Emma Wilson</field>
+        <field name="driver_identity_no">6789012345678901</field>
+        <field name="licence_plate">MN 123 OP</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="39800" />
+        <field name="weight_out" eval="11230" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="11230" />
+        <field name="unload_out" eval="39830" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_12" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">I901234</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Jessica Li</field>
+        <field name="driver_identity_no">9012345678901234</field>
+        <field name="licence_plate">ST 678 UV</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="42910" />
+        <field name="weight_out" eval="14240" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="14240" />
+        <field name="unload_out" eval="42990" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_13" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">G789012</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Ava Jones</field>
+        <field name="driver_identity_no">7890123456789012</field>
+        <field name="licence_plate">OP 234 QR</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="38990" />
+        <field name="weight_out" eval="13040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="13040" />
+        <field name="unload_out" eval="38690" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_14" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">J012345</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Sophia Lee</field>
+        <field name="driver_identity_no">0123456789012345</field>
+        <field name="licence_plate">UV 789 WX</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="33250" />
+        <field name="weight_out" eval="10140" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="10140" />
+        <field name="unload_out" eval="33280" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_15" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">H890123</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Sophia Martinez</field>
+        <field name="driver_identity_no">8901234567890123</field>
+        <field name="licence_plate">QR 345 ST</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="39910" />
+        <field name="weight_out" eval="12520" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="12520" />
+        <field name="unload_out" eval="39990" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_16" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">K123456</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Oliver Wong</field>
+        <field name="driver_identity_no">1234567890123456</field>
+        <field name="licence_plate">WX 890 YZ</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="44250" />
+        <field name="weight_out" eval="11040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="11040" />
+        <field name="unload_out" eval="44310" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_17" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field name="date" eval="DateTime.today()" />
+        <field name="delivery_number">I901234</field>
+        <field name="product_id" ref="product_product_ron95" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Liam Anderson</field>
+        <field name="driver_identity_no">9012345678901234</field>
+        <field name="licence_plate">ST 456 UV</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="28360" />
+        <field name="weight_out" eval="11440" />
+        <field name="vehicle_in" eval="DateTime.today()" />
+        <field name="vehicle_out" eval="DateTime.today()" />
+        <field name="unload_in" eval="11440" />
+        <field name="unload_out" eval="28400" />
+        <field name="unload_date" eval="DateTime.today()" />
+    </record>
+
+    <record id="weighbridge_scale_18" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field name="date" eval="DateTime.today()" />
+        <field name="delivery_number">L234567</field>
+        <field name="product_id" ref="product_product_ron97" />
+        <field name="partner_id" ref="partner_company_one" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">William Tan</field>
+        <field name="driver_identity_no">2345678901234567</field>
+        <field name="licence_plate">YZ 901 AB</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="35990" />
+        <field name="weight_out" eval="10040" />
+        <field name="vehicle_in" eval="DateTime.today()" />
+        <field name="vehicle_out" eval="DateTime.today()" />
+        <field name="unload_in" eval="10040" />
+        <field name="unload_out" eval="35690" />
+        <field name="unload_date" eval="DateTime.today()" />
+    </record>
+
+    <!-- Weighbridge Demo Shipment -->
+    <record id="weighbridge_scale_do_00" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.ABC123456</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Kumar Chong</field>
+        <field name="driver_identity_no">S8501234A</field>
+        <field name="licence_plate">RST 2345L</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="14500" />
+        <field name="weight_out" eval="35040" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="35020" />
+        <field name="unload_out" eval="14500" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_01" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.XYZ789012</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Goh Kaur</field>
+        <field name="driver_identity_no">M9305678B</field>
+        <field name="licence_plate">MYK 5678B</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="11800" />
+        <field name="weight_out" eval="28120" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="28110" />
+        <field name="unload_out" eval="11800" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+    <record id="weighbridge_scale_do_02" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.XYZ789012</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Ahmad Tan</field>
+        <field name="driver_identity_no">S8501234A</field>
+        <field name="licence_plate">SGX 1234A</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="12000" />
+        <field name="weight_out" eval="30250" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="30120" />
+        <field name="unload_out" eval="12000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_03" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.PQR345678</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Chin Ho</field>
+        <field name="driver_identity_no">LMN6789S</field>
+        <field name="licence_plate">XYZ 6789G</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="13000" />
+        <field name="weight_out" eval="31500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="31280" />
+        <field name="unload_out" eval="13000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_04" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.MNO901234</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Singh Wong</field>
+        <field name="driver_identity_no">OPQ0123T</field>
+        <field name="licence_plate">VWX 0123N</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="14000" />
+        <field name="weight_out" eval="32500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="32480" />
+        <field name="unload_out" eval="14000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_05" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.DEF567890</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Heng Lim</field>
+        <field name="driver_identity_no">HIJ234567</field>
+        <field name="licence_plate">JKL 2345P</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="15000" />
+        <field name="weight_out" eval="34000" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="33950" />
+        <field name="unload_out" eval="15000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_06" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.JKL012345</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Tan Wei</field>
+        <field name="driver_identity_no">NOP678901</field>
+        <field name="licence_plate">QRS 6789K</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="16000" />
+        <field name="weight_out" eval="35500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="35490" />
+        <field name="unload_out" eval="16000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_07" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.MNO890123</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Siti Lim</field>
+        <field name="driver_identity_no">PQR234567</field>
+        <field name="licence_plate">STU 2345Q</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="17000" />
+        <field name="weight_out" eval="37000" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="36990" />
+        <field name="unload_out" eval="17000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_08" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.PQR456789</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Ahmad Tan</field>
+        <field name="driver_identity_no">QRS890123</field>
+        <field name="licence_plate">XYZ 8901R</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="18000" />
+        <field name="weight_out" eval="38500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="38490" />
+        <field name="unload_out" eval="18000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_09" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.STU567890</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Lim Chee</field>
+        <field name="driver_identity_no">TUV234567</field>
+        <field name="licence_plate">ABC 2345T</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="14500" />
+        <field name="weight_out" eval="35000" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="34970" />
+        <field name="unload_out" eval="14500" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_10" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.WXY890123</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Leong Kok</field>
+        <field name="driver_identity_no">YZA345678</field>
+        <field name="licence_plate">DEF 3456M</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="14000" />
+        <field name="weight_out" eval="31500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="31490" />
+        <field name="unload_out" eval="14000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_11" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.ABC123456</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Ahmad Goh</field>
+        <field name="driver_identity_no">BCD234567</field>
+        <field name="licence_plate">EFG 2345U</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="11800" />
+        <field name="weight_out" eval="32500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="32490" />
+        <field name="unload_out" eval="11800" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_12" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.DEF234567</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Tan Kim</field>
+        <field name="driver_identity_no">EFG345678</field>
+        <field name="licence_plate">HIJ 3456V</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="22000" />
+        <field name="weight_out" eval="43500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="43490" />
+        <field name="unload_out" eval="22000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_13" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.GHI345678</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Leow Yap</field>
+        <field name="driver_identity_no">JKL456789</field>
+        <field name="licence_plate">MNO 4567W</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="23000" />
+        <field name="weight_out" eval="44500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="44490" />
+        <field name="unload_out" eval="23000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_14" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.JKL456789</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Wong Lee</field>
+        <field name="driver_identity_no">OPQ567890</field>
+        <field name="licence_plate">RST 5678X</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="24000" />
+        <field name="weight_out" eval="45500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="45490" />
+        <field name="unload_out" eval="24000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_15" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">DO.MNO567890</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Chew Wei</field>
+        <field name="driver_identity_no">UVW678901</field>
+        <field name="licence_plate">XYZ 6789Y</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="25000" />
+        <field name="weight_out" eval="46500" />
+        <field
+            name="vehicle_in"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="vehicle_out"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="unload_in" eval="46490" />
+        <field name="unload_out" eval="25000" />
+        <field
+            name="unload_date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+
+    <record id="weighbridge_scale_do_16" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field name="date" eval="DateTime.today()" />
+        <field name="delivery_number">DO.PQR789012</field>
+        <field name="product_id" ref="product_product_pertamax_turbo" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Koh Beng</field>
+        <field name="driver_identity_no">LMN890123</field>
+        <field name="licence_plate">ABC 7890Z</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="26000" />
+        <field name="weight_out" eval="47500" />
+        <field name="vehicle_in" eval="DateTime.today()" />
+        <field name="vehicle_out" eval="DateTime.today()" />
+        <field name="unload_in" eval="47490" />
+        <field name="unload_out" eval="26000" />
+        <field name="unload_date" eval="DateTime.today()" />
+    </record>
+
+    <record id="weighbridge_scale_do_17" model="weighbridge.scale">
+        <field name="weighbridge_id" ref="weighbridge_weighbridge_one" />
+        <field name="date" eval="DateTime.today()" />
+        <field name="delivery_number">DO.STU890123</field>
+        <field name="product_id" ref="product_product_pertamax" />
+        <field name="partner_id" ref="partner_company_two" />
+        <field name="transporter_id" ref="base.res_partner_address_1" />
+        <field name="driver_name">Ng Heng</field>
+        <field name="driver_identity_no">OPQ901234</field>
+        <field name="licence_plate">DEF 9012A</field>
+        <field name="state">draft</field>
+        <field name="weight_in" eval="27000" />
+        <field name="weight_out" eval="48500" />
+        <field name="vehicle_in" eval="DateTime.today()" />
+        <field name="vehicle_out" eval="DateTime.today()" />
+        <field name="unload_in" eval="48490" />
+        <field name="unload_out" eval="27000" />
+        <field name="unload_date" eval="DateTime.today()" />
+    </record>
+
+</odoo>

@@ -1,0 +1,55 @@
+{
+    "name": "Weighbridge",
+    "summary": """
+        The module is used to streamline and enhance the process of managing
+        and recording the weighbridge scale and quality control-related data.
+    """,
+    "author": "Witech Inovasi Indonesia.PT (Witech Enterprise)",
+    "maintainers": ["imstefannyyy"],
+    "website": "https://github.com/witech-io/base_addons",
+    "category": "Manufacturing/Manufacturing",
+    "version": "18.0.1.1.1",
+    "depends": ["product", "stock"],
+    "data": [
+        "security/weighbridge_security.xml",
+        "security/ir.model.access.csv",
+        "data/weighbridge_sequence.xml",
+        "views/weighbridge_scale_view.xml",
+        "views/weighbridge_quality_type_view.xml",
+        "views/weighbridge_factory_quality_type_view.xml",
+        "views/weighbridge_weighbridge_view.xml",
+        "views/weighbridge_partner_view.xml",
+        "views/weighbridge_product_view.xml",
+        "views/weighbridge_quality_control_view.xml",
+        "views/res_config_settings_view.xml",
+        "views/weighbridge_scale_dashboard_view.xml",
+        "report/weighbridge_scale_report_view.xml",
+        "report/weighbridge_quality_control_report_view.xml",
+        "report/weighbridge_scale_report.xml",
+        "report/weighbridge_scale_report_template.xml",
+        "views/weighbridge_menuitem.xml",
+        "wizard/weighbridge_scale_split_wizard_view.xml",
+        "wizard/weighbridge_scale_merge_wizard_view.xml",
+        "wizard/weighbridge_scale_update_unload_view.xml",
+        "wizard/weighbridge_scale_return_wizard_view.xml",
+        "wizard/weighbridge_scale_merge_order_wizard_view.xml",
+        "views/weighbridge_portal_template.xml",
+    ],
+    "demo": [
+        "demo/weighbridge_demo_resources.xml",
+        "demo/weighbridge_demo_transaction.xml",
+        "demo/weighbridge_demo_quality_control.xml",
+    ],
+    "assets": {
+        "web.assets_backend": [
+            "wi_base_weighbridge/static/src/scss/weighbridge_scale_dashboard.scss",
+        ],
+        "web.assets_frontend": [
+            "wi_base_weighbridge/static/src/js/weighbridge_portal_sidebar.js",
+        ],
+    },
+    "installable": True,
+    "application": True,
+    "license": "OPL-1",
+    "module_type": "official",
+}

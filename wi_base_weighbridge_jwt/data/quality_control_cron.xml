@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="ir_cron_upload_qc" model="ir.cron">
+        <field name="name">Quality Control: Upload Pending Data</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_quality_control_json" />
+        <field name="code">model.upload_qc_json()</field>
+        <field name="state">code</field>
+    </record>
+
+</odoo>

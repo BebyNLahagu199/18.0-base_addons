@@ -1,0 +1,289 @@
+<odoo>
+    <!-- Weighbridge Quality Control Tree View -->
+    <record id="view_weighbridge_quality_control_tree" model="ir.ui.view">
+        <field name="name">weighbridge.quality.control.tree</field>
+        <field name="model">weighbridge.quality.control</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="weighbridge_scale_id" />
+                <field name="delivery_number" />
+                <field name="date" />
+                <field name="scale_qty" />
+                <field name="penalty_qty_total" />
+                <field name="return_qty_total" />
+                <field name="type" optional="hide" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-muted="state == 'draft'"
+                    decoration-info="state == 'posted'"
+                    decoration-success="state == 'locked'"
+                    decoration-danger="state == 'cancel'"
+                />
+            </list>
+        </field>
+    </record>
+
+    <!-- Weighbridge Quality Control Form View -->
+    <record id="view_weighbridge_quality_control_form" model="ir.ui.view">
+        <field name="name">weighbridge.quality.control.form</field>
+        <field name="model">weighbridge.quality.control</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Weighbridge Quality Control">
+                <header>
+                    <button
+                        name="action_post"
+                        string="Post"
+                        type="object"
+                        class="btn btn-primary"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="action_lock"
+                        string="Lock"
+                        type="object"
+                        class="btn btn-primary"
+                        invisible="state != 'posted'"
+                    />
+                    <button
+                        name="action_cancel"
+                        string="Cancel"
+                        type="object"
+                        class="btn"
+                        groups="wi_base_weighbridge.weighbridge_manager_group"
+                        invisible="state not in ['draft','posted']"
+                    />
+                    <button
+                        name="action_unlock"
+                        string="Unlock"
+                        type="object"
+                        class="btn btn-primary"
+                        invisible="state != 'locked'"
+                    />
+                    <button
+                        name="action_draft"
+                        string="Reset to Draft"
+                        type="object"
+                        class="btn"
+                        invisible="state != 'cancel'"
+                    />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_splitted_quality_control_tree"
+                            class="oe_stat_button"
+                            icon="oi-launch"
+                            type="object"
+                            help="List view of splitted weighbridge quality control"
+                            invisible="state != 'splitted'"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Splitted to</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_splitted_from_quality_control_tree"
+                            class="oe_stat_button"
+                            icon="oi-launch"
+                            type="object"
+                            help="List view of source splitted weighbridge scale"
+                            invisible="source_id == False"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Splitted from</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_merged_quality_control_tree"
+                            class="oe_stat_button"
+                            icon="oi-group"
+                            type="object"
+                            help="List view of merged weighbridge quality control"
+                            invisible="state != 'merged'"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Merged to</span>
+                            </div>
+                        </button>
+                        <button
+                            name="action_merged_from_quality_control_tree"
+                            class="oe_stat_button"
+                            icon="oi-group"
+                            type="object"
+                            help="List view of source merged weighbridge scale"
+                            invisible="is_merge == False"
+                        >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Merged from</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field
+                                name="name"
+                                readonly="1"
+                                force_save="1"
+                                required="1"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field
+                                name="weighbridge_scale_id"
+                                readonly="state != 'draft'"
+                            />
+                            <field name="delivery_number" readonly="state != 'draft'" />
+                            <field name="company_id" invisible="1" />
+                            <field
+                                name="source_id"
+                                readonly="state != 'draft'"
+                                invisible="1"
+                            />
+                            <field name="is_merge" invisible="1" />
+                        </group>
+                        <group>
+                            <field name="date" readonly="state != 'draft'" />
+                            <field name="type" readonly="state != 'draft'" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="penalty_page" string="Penalty">
+                            <field name="penalty_ids" readonly="state != 'draft'">
+                                <list
+                                    editable="top"
+                                    create="1"
+                                    delete="1"
+                                    multi_edit="1"
+                                >
+                                    <field
+                                        name="weighbridge_scale_id"
+                                        optional="hide"
+                                    />
+                                    <field name="penalty_id" />
+                                    <field name="penalty_qty" />
+                                    <field name="calculation_type" />
+                                    <field name="penalty_subtotal" />
+                                    <field name="company_id" column_invisible="1" />
+                                </list>
+                            </field>
+                            <group
+                                class="oe_subtotal_footer oe_right"
+                                colspan="2"
+                                name="qty_view"
+                            >
+                                <label for="scale_qty" />
+                                <field
+                                    name="scale_qty"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                                <label for="penalty_qty_total" />
+                                <field
+                                    name="penalty_qty_total"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                                <label for="return_qty_total" />
+                                <field
+                                    name="return_qty_total"
+                                    nolabel="1"
+                                    class="oe_subtotal_footer_separator"
+                                    readonly="1"
+                                    force_save="1"
+                                />
+                            </group>
+                        </page>
+                        <page name="return_page" string="Return">
+                            <field name="return_ids" readonly="state != 'draft'">
+                                <list
+                                    editable="top"
+                                    create="1"
+                                    delete="1"
+                                    multi_edit="1"
+                                >
+                                    <field
+                                        name="weighbridge_scale_id"
+                                        optional="hide"
+                                    />
+                                    <field name="return_id" />
+                                    <field name="return_qty" />
+                                    <field name="company_id" column_invisible="1" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="o_attachment_preview" />
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <!-- Weighbridge Quality Control Kanban View -->
+    <record id="view_weighbridge_quality_control_kanban" model="ir.ui.view">
+        <field name="name">weighbridge.quality.control.kanban</field>
+        <field name="model">weighbridge.quality.control</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban string="Weighbridge Quality Control">
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content">
+                                <field name="name" />
+                                <field name="delivery_number" />
+                                <field name="scale_qty" />
+                                <field name="penalty_qty_total" />
+                                <field name="return_qty_total" />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Weighbridge Quality Control Search View -->
+    <record id="view_weighbridge_quality_control_search" model="ir.ui.view">
+        <field name="name">weighbridge.quality.control.search</field>
+        <field name="model">weighbridge.quality.control</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Weighbridge Quality Control">
+                <filter
+                    name="state_draft"
+                    string="State Draft"
+                    domain="[('state', '=', 'draft')]"
+                />
+                <filter
+                    name="state_posted_locked"
+                    string="State Posted or Locked"
+                    domain="[('state', 'in', ('posted','locked'))]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_weighbridge_quality_control_view" model="ir.actions.act_window">
+        <field name="name">Weighbridge Quality Control</field>
+        <field name="res_model">weighbridge.quality.control</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no Delivery yet, let's start create a Delivery!
+            </p>
+        </field>
+    </record>
+</odoo>

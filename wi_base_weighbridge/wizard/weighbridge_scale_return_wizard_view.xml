@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="weighbridge_scale_return_wizard_view" model="ir.ui.view">
+        <field name="name">weighbridge.scale.return.wizard</field>
+        <field name="model">weighbridge.scale.return</field>
+        <field name="arch" type="xml">
+            <form string="Return Scale">
+                <field name="scale_ids" widget="many2many_tags" invisible="1" />
+                <group>
+                    <group>
+                        <field name="return_method" widget="radio" />
+                    </group>
+                    <group>
+                        <div
+                            invisible="return_method != 'partial'"
+                            class="oe_grey"
+                            colspan="2"
+                        >
+                            The scale ticket is created in draft and can be edited before being issued.
+                        </div>
+                        <div
+                            invisible="return_method != 'full'"
+                            class="oe_grey"
+                            colspan="2"
+                        >
+                            The scale ticket is auto-posting and cannot be edited.
+                        </div>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="date" />
+                    </group>
+                    <group>
+                        <field name="reason" />
+                    </group>
+                </group>
+                <field name="return_scales">
+                    <list editable="top" create="0">
+                        <field
+                            name="scale_id"
+                            options="{'no_create': True, 'no_open': True}"
+                            readonly="1"
+                            force_save="1"
+                        />
+                        <field name="driver_name" />
+                        <field name="licence_plate" />
+                        <field name="weight_in" />
+                        <field name="weight_out" />
+                        <field name="gross_weight" />
+                        <field name="shrinkage" />
+                        <field name="net_weight" />
+                    </list>
+                </field>
+                <footer>
+                    <button
+                        name="action_return_scale"
+                        id="action_return_scale"
+                        string="Return Scale"
+                        class="btn-primary oe-highlight"
+                        type="object"
+                    />
+
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="weighbridge_scale_return_action" model="ir.actions.act_window">
+        <field name="name">Return Scale</field>
+        <field name="res_model">weighbridge.scale.return</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="weighbridge_scale_return_wizard_view" />
+        <field name="target">new</field>
+        <field
+            name="binding_model_id"
+            ref="wi_base_weighbridge.model_weighbridge_scale"
+        />
+        <field name="binding_view_types">list</field>
+    </record>
+
+
+</odoo>

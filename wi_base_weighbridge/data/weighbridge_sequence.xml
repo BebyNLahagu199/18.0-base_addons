@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="sequence_weighbridge_scale" model="ir.sequence">
+        <field name="name">Weighbridge Scale</field>
+        <field name="code">weighbridge.scale</field>
+        <field name="active">True</field>
+        <field name="prefix">WB/%(year)s/</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+        <field eval="False" name="company_id" />
+        <field name="padding">6</field>
+    </record>
+
+    <record id="sequence_weighbridge_quality_control" model="ir.sequence">
+        <field name="name">Weighbridge Quality Control</field>
+        <field name="code">weighbridge.quality.control</field>
+        <field name="active">True</field>
+        <field name="prefix">QC/%(year)s/</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+        <field eval="False" name="company_id" />
+        <field name="padding">6</field>
+    </record>
+</odoo>

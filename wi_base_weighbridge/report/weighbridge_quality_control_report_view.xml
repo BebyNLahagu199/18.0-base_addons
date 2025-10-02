@@ -1,0 +1,43 @@
+<odoo>
+
+    <record id="view_weighbridge_quality_control_graph" model="ir.ui.view">
+        <field name="name">weighbridge.quality.control.graph</field>
+        <field name="model">weighbridge.quality.control</field>
+        <field name="type">graph</field>
+        <field name="arch" type="xml">
+            <graph string="Quality Control" sample="1" stacked="0">
+                <field name="date" type="col" interval="day" />
+                <field name="product_id" type="col" />
+                <field name="penalty_qty_total" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_weighbridge_quality_control_pivot" model="ir.ui.view">
+        <field name="name">weighbridge.quality.control.pivot</field>
+        <field name="model">weighbridge.quality.control</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Quality Control" display_quantity="1" sample="1">
+                <field name="date" type="row" />
+                <field name="product_id" type="row" />
+                <field name="scale_qty" type="measure" />
+                <field name="penalty_qty_total" type="measure" />
+                <field name="return_qty_total" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_quality_control_reporting_view" model="ir.actions.act_window">
+        <field name="name">Quality Control Report</field>
+        <field name="res_model">weighbridge.quality.control</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="context">{'create':False,'edit':False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                This is no weighbridge quality control data
+            </p>
+        </field>
+    </record>
+
+</odoo>

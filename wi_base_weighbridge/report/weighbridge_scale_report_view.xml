@@ -1,0 +1,76 @@
+<odoo>
+
+    <record id="view_weighbridge_scale_graph" model="ir.ui.view">
+        <field name="name">weighbridge.scale.graph</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">graph</field>
+        <field name="arch" type="xml">
+            <graph string="Weighbridge Scale" sample="1" stacked="0">
+                <field name="date" type="col" interval="day" />
+                <field name="product_id" type="col" />
+                <field name="net_after_quality_control" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_weighbridge_scale_report_pivot" model="ir.ui.view">
+        <field name="name">weighbridge.scale.pivot</field>
+        <field name="model">weighbridge.scale</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Weighbridge Scale" display_quantity="1" sample="1">
+                <field name="date" type="row" />
+                <field name="product_id" type="row" />
+                <field name="quantity" type="measure" />
+                <field name="net_weight" type="measure" />
+                <field name="net_after_quality_control" type="measure" />
+                <field name="net_unload" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_acceptance_reporting_view" model="ir.actions.act_window">
+        <field name="name">Acceptance Report</field>
+        <field name="res_model">weighbridge.scale</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field
+            name="view_ids"
+            eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'graph', 'view_id': ref('view_weighbridge_scale_graph')}),
+            (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_weighbridge_scale_report_pivot')}),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_weighbridge_scale_tree')})
+        ]"
+        />
+        <field name="domain">[('delivery_type', '=', 'acceptance')]</field>
+        <field name="context">{'create':False,'edit':False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                This is no weighbridge scale data
+            </p>
+        </field>
+    </record>
+
+    <record id="action_shipment_reporting_view" model="ir.actions.act_window">
+        <field name="name">Shipment Report</field>
+        <field name="res_model">weighbridge.scale</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field
+            name="view_ids"
+            eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'graph', 'view_id': ref('view_weighbridge_scale_graph')}),
+            (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_weighbridge_scale_report_pivot')}),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_weighbridge_scale_tree')})
+        ]"
+        />
+        <field name="domain">[('delivery_type', '=', 'shipment')]</field>
+        <field name="context">{'create':False,'edit':False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                This is no weighbridge scale data
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="domain">[
+            ('state', 'not in', ('draft', 'sent', 'cancel')),
+            ('weighbridge_scale_ids','=',False)
+        ]</field>
+    </record>
+
+    <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+        <field name="domain">[
+            ('weighbridge_scale_ids','=',False)
+        ]</field>
+    </record>
+
+    <record id="sale.action_quotations" model="ir.actions.act_window">
+        <field name="domain">[
+            ('weighbridge_scale_ids','=',False)
+        ]</field>
+    </record>
+</odoo>

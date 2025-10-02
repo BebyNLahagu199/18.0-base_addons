@@ -1,0 +1,16 @@
+.o_scale_kanban .o_kanban_renderer {
+    --KanbanRecord-width: 400px;
+
+    .o_dashboard_graph {
+        margin-bottom: -$o-horizontal-padding/2;
+    }
+}
+
+.o_dashboard_graph {
+    position: relative;
+    margin: 16px -16px;
+
+    canvas {
+        height: 75px;
+    }
+}

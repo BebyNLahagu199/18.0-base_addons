@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="quality_control_01" model="weighbridge.quality.control">
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">K123456</field>
+        <field name="state">draft</field>
+        <field name="weighbridge_scale_id" ref="weighbridge_scale_16" />
+        <field
+            name="penalty_ids"
+            model="weighbridge.quality.control.penalty"
+            eval="[(0, 0, {
+                'penalty_id': ref('quality_type_water_content'),
+                'penalty_qty': 0.8,
+            })]"
+        />
+    </record>
+
+    <record id="quality_control_02" model="weighbridge.quality.control">
+        <field
+            name="date"
+            eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field name="delivery_number">H890123</field>
+        <field name="state">draft</field>
+        <field
+            name="penalty_ids"
+            model="weighbridge.quality.control.penalty"
+            eval="[(0, 0, {
+                'penalty_id': ref('quality_type_water_content'),
+                'penalty_qty': 0.5,
+            })]"
+        />
+    </record>
+
+    <record id="quality_control_03" model="weighbridge.quality.control">
+        <field name="date" eval="DateTime.today().date()" />
+        <field name="delivery_number">I901234</field>
+        <field name="state">draft</field>
+        <field name="weighbridge_scale_id" ref="weighbridge_scale_17" />
+        <field
+            name="penalty_ids"
+            model="weighbridge.quality.control.penalty"
+            eval="[(0, 0, {
+                'penalty_id': ref('quality_type_water_content'),
+                'penalty_qty': 1.2,
+            })]"
+        />
+    </record>
+
+    <record id="quality_control_04" model="weighbridge.quality.control">
+        <field name="date" eval="DateTime.today().date()" />
+        <field name="delivery_number">L234567</field>
+        <field name="state">draft</field>
+        <field name="weighbridge_scale_id" ref="weighbridge_scale_18" />
+        <field
+            name="penalty_ids"
+            model="weighbridge.quality.control.penalty"
+            eval="[(0, 0, {
+                'penalty_id': ref('quality_type_water_content'),
+                'penalty_qty': 0.79,
+            })]"
+        />
+    </record>
+
+</odoo>

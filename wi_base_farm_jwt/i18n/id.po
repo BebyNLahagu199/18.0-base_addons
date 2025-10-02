@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wi_base_farm_jwt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wi_base_farm_jwt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-02 02:29+0000\n"
+"PO-Revision-Date: 2025-10-02 02:29+0000\n"
+"Last-Translator: Beby N Lahagu\n"
+"Language-Team: Indonesian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Akun Analitik"
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Archived"
+msgstr "Arsip"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_estate_operation__assigned_to
+msgid "Assigned To"
+msgstr "Ditugaskan Kepada"
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Change Password"
+msgstr "Ganti Kata Sandi"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__code
+msgid "Code"
+msgstr "Kode"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__display_name
+msgid "Display Name"
+msgstr "Nama Tampilan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_hr_employee
+msgid "Employee"
+msgstr "Karyawan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_estate
+msgid "Estate"
+msgstr "Perkebunan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_block
+msgid "Estate Block"
+msgstr "Blok Perkebunan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_operation
+msgid "Estate Operation Activity"
+msgstr "Aktivitas Operasi Perkebunan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_operation_type
+msgid "Estate Operation Type"
+msgstr "Jenis Operasi Perkebunan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_activity_penalty
+msgid "Estate Penalty"
+msgstr "Denda Perkebunan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_picking
+msgid "Estate Picking"
+msgstr "Pemilihan Perkebunan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_estate_harvest_team
+msgid "Harvest Team"
+msgstr "Tim Panen"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__id
+msgid "ID"
+msgstr "ID"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__write_date
+msgid "Last Updated on"
+msgstr "Terakhir Diperbarui pada"
+
+#. module: wi_base_farm_jwt
+#: model:ir.actions.act_window,name:wi_base_farm_jwt.action_mobile_menu_view
+#: model:ir.model,name:wi_base_farm_jwt.model_mobile_menu
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_res_users__mobile_menu_ids
+#: model:ir.ui.menu,name:wi_base_farm_jwt.menu_mobile_menu
+msgid "Mobile Menu"
+msgstr "Menu Seluler"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_estate_operation__mobile_user_ids
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_res_users__mobile_user
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Mobile User"
+msgstr "Pengguna Seluler"
+
+#. module: wi_base_farm_jwt
+#: model:ir.actions.act_window,name:wi_base_farm_jwt.action_mobile_user_view
+#: model:ir.ui.menu,name:wi_base_farm_jwt.menu_mobile_user
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.view_users_search
+msgid "Mobile Users"
+msgstr "Pengguna Seluler"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model.fields,field_description:wi_base_farm_jwt.field_mobile_menu__name
+msgid "Name"
+msgstr "Nama"
+
+#. module: wi_base_farm_jwt
+#. odoo-python
+#: code:addons/wi_base_farm_jwt/models/estate_operation.py:0
+msgid "New"
+msgstr "Baru"
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Password Management"
+msgstr "Manajemen Kata Sandi"
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Preferences"
+msgstr "Referensi"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_product_category
+msgid "Product Category"
+msgstr "Kategori Produk"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_product_product
+msgid "Product Variant"
+msgstr "Varian Produk"
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "Security"
+msgstr "Keamanan"
+
+#. module: wi_base_farm_jwt
+#: model:ir.actions.server,name:wi_base_farm_jwt.action_set_to_mobile
+msgid "Set to Mobile"
+msgstr "Setel ke Seluler"
+
+#. module: wi_base_farm_jwt
+#: model:ir.model,name:wi_base_farm_jwt.model_res_users
+msgid "User"
+msgstr "Pengguna"
+
+#. module: wi_base_farm_jwt
+#: model_terms:ir.ui.view,arch_db:wi_base_farm_jwt.mobile_user_view_form
+msgid "e.g. John Doe"
+msgstr "Misalnya John Doe"

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="res_config_settings_view_form_purchase" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.weighbridge.purchase</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="50" />
+        <field
+            name="inherit_id"
+            ref="wi_base_weighbridge.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//block[@name='weighbridge_setting_purchase']"
+                position="inside"
+            >
+                <setting
+                    string="Purchase to Parent Company"
+                    help="Ensures that purchase orders are automatically directed to the parent company"
+                    id="purchase_to_parent_company"
+                >
+                    <field name="purchase_to_parent_company" />
+                </setting>
+
+                <setting
+                    string="Merge Purchase Order"
+                    help="Merge scale with same weighbridge, partner, date in one Purchase Order"
+                    id="merge_purchase_order"
+                >
+                    <field name="merge_purchase_order" />
+                </setting>
+                <setting
+                    string="Separate Sequence"
+                    help="Separate sequence for purchase order from weighbridge"
+                    id="separate_purchase_sequence"
+                >
+                    <field name="separate_purchase_sequence" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.weighbridge.purchase</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="50" />
+        <field
+            name="inherit_id"
+            ref="purchase.res_config_settings_view_form_purchase"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//block[@name='request_vendor_setting_container']"
+                position="after"
+            >
+                <block
+                    title="Purchase Order from Weighbridge"
+                    name="purchase_setting_container"
+                >
+                    <setting
+                        string="Merge Purchase Order"
+                        help="Merge scale with same weighbridge, partner, date in one Purchase Order"
+                        id="merge_purchase_order"
+                    >
+                        <field name="merge_purchase_order" />
+                    </setting>
+                    <setting
+                        string="Separate Sequence"
+                        help="Separate sequence for purchase order from weighbridge"
+                        id="separate_purchase_sequence"
+                    >
+                        <field name="separate_purchase_sequence" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
